@@ -10,15 +10,24 @@
         Title="Manage Covid Responses" Height="450" Width="800" WindowStartupLocation="CenterOwner"
         Loaded="AdonisWindow_Loaded">
     <Grid>
-        <ListView x:Name="lvResponses">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}" />
-                        <GridViewColumn Header="String" DisplayMemberBinding="{Binding String}" Width="auto"/>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Left">
+                <Button Content="New" x:Name="btnNew" Click="btnNew_Click"/>
+                <Button Content="Edit" x:Name="btnEdit" Click="btnEdit_Click"/>
+                <Button Content="Delete" x:Name="btnDelete" Click="btnDelete_Click"/>
+                <Button Content="Refresh" x:Name="btnRefresh" Click="btnRefresh_Click"/>
+            </StackPanel>
+            <ListView x:Name="lvResponses">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Path=Date}" />
+                            <GridViewColumn Header="String" DisplayMemberBinding="{Binding Path=String}" Width="auto"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>            
+        </DockPanel>
+
     </Grid>
 </adonis:AdonisWindow>

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationInsightsResourceId>/subscriptions/09136e7f-ec22-4310-9cc3-0b263ab61a4e/resourceGroups/theuktories/providers/microsoft.insights/components/theuktories</ApplicationInsightsResourceId>
+    <UserSecretsId>b42463a0-0b4d-4b00-8c26-bb3394f047b1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
