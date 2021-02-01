@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.100
-    - name: Restore dependencies TheUKTories.Data
-      working-directory: TheUKTories.Data/
+    - name: Restore dependencies TheUKTories.DataStores
+      working-directory: TheUKTories.DataStores/
       run: dotnet restore
-    - name: Build TheUKTories.Data
-      working-directory: TheUKTories.Data/
+    - name: Build TheUKTories.DataStores
+      working-directory: TheUKTories.DataStores/
       run: dotnet build --no-restore
     - name: Restore dependencies TheUKTories
       working-directory: TheUKTories/
