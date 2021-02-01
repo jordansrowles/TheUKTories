@@ -85,5 +85,21 @@ namespace TheUKTories.Dashboard.Dialogs.AusterityWindows
                     await UpdateAusterities();
             }catch { }
         }
+
+        private async void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult results = MessageBox.Show("Ae you sure you want to delete this item?", "Confirm deletion", MessageBoxButton.YesNo);
+            if (results == MessageBoxResult.Yes)
+            {
+                var selected = (Austeritys)dgAusterities.SelectedItems[0];
+
+                await _context.DeleteItemAsync<Austeritys>(selected.Id,
+                    new Microsoft.Azure.Cosmos.PartitionKey(selected.Type),
+                    _context.AusterityContainer);
+                await UpdateAusterities();
+            }
+        }
+
+        private async void btnRefresh_Click(object sender, RoutedEventArgs e) => await UpdateAusterities();
     }
 }
