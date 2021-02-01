@@ -1,0 +1,41 @@
+﻿@model TheUKTories.DataStores.AzureCosmos.Models.Person
+@{
+
+}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">@Model.CurrentTitle</span>
+        <h1 class="govuk-heading-l">@Model.FullName</h1>
+        <p class="govuk-body">
+            @if (Model.Links != null)
+            {
+                if (Model.Links.Count > 1)
+                {
+            @foreach (KeyValuePair<string, string> pair in Model.Links.SkipLast(1))
+                    {
+            <a href="@pair.Value" target="_blank">@pair.Key</a>  <span>|</span>
+                    }
+            <a href="@Model.Links.Last().Value" target="_blank">@Model.Links.Last().Key</a>
+                }
+                else
+                {
+            <a href="@Model.Links.FirstOrDefault().Value" target="_blank">@Model.Links.FirstOrDefault().Key</a>
+                }
+            }
+        </p>
+        @if (Model.OtherTitles != null)
+        {
+            <ul class="govuk-list">
+                @foreach (string othertitle in Model.OtherTitles)
+                {
+                <li>@othertitle</li>
+                }
+            </ul>
+        }
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <img style="display: inline;" src="@Model.ProfileImage" alt="@Model.ProfileImage.ToString()" height="120px" width="120px">
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+
+    <div id="cookieConsent" role="alert" class="govuk-notification-banner" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" style="margin-bottom: 0;">
+        <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Hmmm... Cookies...
+            </h2>
+        </div>
+
+        <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+                As annoying as it is, GDPR is law. We use cookies to help with development of the website. Helps knowning common browsers and screen sizes and such. Some cookies are required fo proper website functionality.
+                <button type="button" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString" class="govuk-button">
+                    <span aria-hidden="true">Ok</span>
+                </button>
+                <button type="button" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString" class="govuk-button">
+                    <span aria-hidden="true">Change Settings</span>
+                </button>
+            </p>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var button = document.querySelector("#cookieConsent button[data-cookie-string]");
+            button.addEventListener("click", function (event) {
+                document.cookie = button.dataset.cookieString;
+                document.getElementById("cookieConsent").style = "display: none!important;";
+            }, false);
+        })();
+    </script>
+    }

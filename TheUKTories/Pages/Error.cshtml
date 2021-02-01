@@ -1,0 +1,18 @@
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Ohhhh shit";
+    ViewData["SelectedTopItem"] = "";
+}
+
+<h1 class="govuk-heading-xl">An error has occured</h1>
+<h2 class="govuk-heading-l">An error occurred while processing your request.</h2>
+
+<p class="govuk-body">
+    <strong>Status Code:</strong> <code>@Response.StatusCode</code>
+    <br/>
+    @if (Model.ShowRequestId)
+    {
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    }
+</p>

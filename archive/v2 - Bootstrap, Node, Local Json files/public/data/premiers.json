@@ -1,0 +1,130 @@
+{
+    "electionyears": [
+        {
+            "year": 1979,
+            "election": "1979_United_Kingdom_general_election",
+            "who": "Margaret_Thatcher",
+            "party": "Conservative",
+            "turnout": 76.0
+        },
+        { "year": 1980 },
+        { "year": 1981 },
+        { "year": 1982 },
+        {
+            "year": 1983,
+            "election": "1983_United_Kingdom_general_election",
+            "who": "Margaret_Thatcher",
+            "party": "Conservative",
+            "turnout": 72.7
+        },
+        { "year": 1984 },
+        { "year": 1985 },
+        { "year": 1986 },
+        {
+            "year": 1987,
+            "election": "1987_United_Kingdom_general_election",
+            "who": "Margaret_Thatcher",
+            "party": "Conservative",
+            "turnout": 75.3
+        },
+        { "year": 1988 },
+        { "year": 1989 },
+        {
+            "year": 1990,
+            "election": "1990_Conservative_Party_leadership_election",
+            "who": "John_Major",
+            "party": "Conservative",
+            "share": 49.7
+        },
+        { "year": 1991 },
+        {
+            "year": 1992,
+            "election": "1992_United_Kingdom_general_election",
+            "who": "John_Major",
+            "party": "Conservative",
+            "turnout": 77.7
+        },
+        { "year": 1993 },
+        { "year": 1994 },
+        { "year": 1995 },
+        { "year": 1996 },
+        {
+            "year": 1997,
+            "election": "1997_United_Kingdom_general_election",
+            "who": "Tony_Blair",
+            "party": "Labour",
+            "turnout": 71.3
+        },
+        { "year": 1998 },
+        { "year": 1999 },
+        { "year": 2000 },
+        {
+            "year": 2001,
+            "election": "2001_United_Kingdom_general_election",
+            "who": "Tony_Blair",
+            "party": "Labour",
+            "turnout": 59.4
+        },
+        { "year": 2002 },
+        { "year": 2003 },
+        { "year": 2004 },
+        {
+            "year": 2005,
+            "election": "2005_United_Kingdom_general_election",
+            "who": "Tony_Blair",
+            "party": "Labour",
+            "turnout": 61.4
+        },
+        { "year": 2006 },
+        {
+            "year": 2007,
+            "election": "2007_Labour_Party_leadership_election_(UK)",
+            "who": "Gordon_Brown",
+            "party": "Labour",
+            "share": 88.2
+        },
+        { "year": 2008 },
+        { "year": 2009 },
+        {
+            "year": 2010,
+            "election": "2010_United_Kingdom_general_election",
+            "who": "David_Cameron",
+            "party": "Conservative",
+            "turnout": 65.1
+        },
+        { "year": 2011 },
+        { "year": 2012 },
+        { "year": 2013 },
+        { "year": 2014 },
+        {
+            "year": 2015,
+            "election": "2015_United_Kingdom_general_election",
+            "who": "David_Cameron",
+            "party": "Conservative",
+            "turnout": 66.4
+        },
+        {
+            "year": 2016,
+            "election": "2016_Conservative_Party_leadership_election",
+            "who": "Theresa_May",
+            "party": "Conservative",
+            "share": 60.5
+        },
+        {
+            "year": 2017,
+            "election": "2017_United_Kingdom_general_election",
+            "who": "Theresa_May",
+            "party": "Conservative",
+            "turnout": 68.8
+        },
+        { "year": 2018 },
+        {
+            "year": 2019,
+            "election": "2019_United_Kingdom_general_election",
+            "who": "Boris_Johnson",
+            "party": "Conservative",
+            "turnout": 67.3
+        },
+        { "year": 2020 }
+    ]
+}

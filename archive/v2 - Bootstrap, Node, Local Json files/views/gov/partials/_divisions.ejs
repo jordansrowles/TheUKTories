@@ -1,0 +1,69 @@
+<h1>Commons Divisions</h1>
+<hr/>
+<a id="top"></a>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" onclick="backPage()" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" onclick="nextPage()" href="#">Next</a></li>
+    </ul>
+</nav>
+<div id="cardHolder"></div>
+<script>
+    // set the url endpoint and the page index
+    let uri="http://lda.data.parliament.uk/commonsdivisions.json?_view=Commons+Divisions&_pageSize=50&_page=" //0
+    let page = 0;
+
+    // get new paged data, clear the holder and repopulate
+    function query() {
+        fetch(uri + page)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            document.getElementById('cardHolder').innerHTML = "";
+            for (let item = 0; item < data.result.items.length; item++) {
+                makeCard(data.result.items[item]);
+            }
+        });
+    }
+
+    // next 50 items
+    function nextPage() {
+        page = page + 1;
+        query();
+    }
+
+    // previous 50 items
+    function backPage() {
+        if (age > 0)
+            page = page - 1;
+        query();
+    }
+
+    // the html template maker, TODO remake in ejs
+    function makeCard(data) {
+        let c = document.createElement('div');
+        let cb = document.createElement('div');
+
+        let header = document.createElement('h6');
+        let span = document.createElement('span');
+        span.className = "badge badge-secondary";
+        span.style = "margin-right: 5px;";
+        span.innerText = data.date._value;
+        header.innerText = data.title;
+        header.prepend(span);
+
+        cb.append(header);
+        c.append(cb);
+        document.getElementById('cardHolder').append(c);
+    }
+
+    query(page);
+</script>
+
+<br/>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" onclick="backPage()" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" onclick="nextPage()" href="#">Next</a></li>
+    </ul>
+</nav>

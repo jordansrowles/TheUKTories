@@ -1,0 +1,81 @@
+﻿@model TheUKTories.DataStores.AzureCosmos.Models.Person
+@{
+
+}
+
+@await Html.PartialAsync("_PersonCard", Model)
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+@if (Model.GeneralPoints != null && Model.GeneralPoints.Count() != 0)
+{
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    @foreach (GeneralSubItem item in Model.GeneralPoints)
+    {
+        <li>
+            @item.String
+
+            @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+            @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
+            {
+                <small>
+                    -
+                    <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                </small>
+            }
+            @if (item.Sources.Count() > 1)
+            {
+                <small>
+                    -
+                    @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                    {
+                        <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                    }
+                    <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                </small>
+
+            }
+        </li>
+    }
+    </ul>
+}
+
+<h3 class="govuk-heading-m">Unforgettable Quotes</h3>
+
+
+@if (Model.Quotes != null && Model.Quotes.Count() != 0)
+{
+<ul class="govuk-list govuk-list--spaced">
+    @foreach (Quote item in Model.Quotes)
+    {
+        <li>
+            @item.String - <small>@item.Substring</small>
+
+            @if (item.Sources != null)
+            {
+                @if (item.Sources.Count() == 1)
+                {
+                    <small>
+                        -
+                        <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                    </small>
+                }
+                @if (item.Sources.Count() > 1)
+                {
+                    <small>
+                        -
+                        @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                        {
+                            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                        }
+                        <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                    </small>
+
+                }
+            }
+
+        </li>
+    }
+</ul>
+}
+

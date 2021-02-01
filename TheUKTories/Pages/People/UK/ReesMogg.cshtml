@@ -1,0 +1,20 @@
+﻿@page
+@model TheUKTories.Pages.People.UK.ReesMoggModel
+@{
+    ViewData["Title"] = "The UK Tories - Jacob Rees-Mogg";
+    ViewData["SelectedTopItem"] = "People";
+}
+
+<govuk-breadcrumbs>
+    <govuk-breadcrumbs-item href="/">
+        Home
+    </govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item href="/people">
+        People
+    </govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item href="/people/uk/reesmogg">
+        Jacob Rees-Mogg
+    </govuk-breadcrumbs-item>
+</govuk-breadcrumbs>
+
+@await Html.PartialAsync("_PersonPartial", Model.Jacob)

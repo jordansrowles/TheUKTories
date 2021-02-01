@@ -1,0 +1,39 @@
+﻿@page
+@using TheUKTories.DataStores.AzureCosmos.Models; 
+@model TheUKTories.Pages.People.IndexModel
+@{
+    ViewData["Title"] = "The UK Tories - People";
+    ViewData["SelectedTopItem"] = "People";
+}
+
+<h1 class="govuk-heading-xl">People Directory</h1>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<span class="govuk-caption-l">PMs, Ministers, MPs, Lords, Influential People</span>
+<h2 class="govuk-heading-l">United Kingdom</h2>
+<ul class="govuk-list">
+    @foreach (Person p in Model.People.Where(c => c.Country.ToUpper() == "UK"))
+    {
+        <li><a class="govuk-link" href="/people/uk/@p.Slug">@p.FullName</a> | <small>@p.CurrentTitle</small></li>
+    }
+</ul>
+
+
+@*
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <span class="govuk-caption-l">The Reds</span>
+    <h2 class="govuk-heading-l">Russian Federation</h2>
+    <ul class="govuk-list">
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <span class="govuk-caption-l">Land of the Free</span>
+    <h2 class="govuk-heading-l">United States</h2>
+    <ul class="govuk-list">
+    </ul>
+*@
+
+

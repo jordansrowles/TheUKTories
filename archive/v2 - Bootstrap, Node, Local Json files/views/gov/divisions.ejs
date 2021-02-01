@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a name="top"></a>
+    <% include ../partials/nav %>
+
+    <div class="container">
+        <h1>UK Government Open Data</h1>
+        <hr/>
+        <% include partials/_divisions %>
+    </div>
+
+    <% include ../partials/footer %>
+  </body>
+</html>

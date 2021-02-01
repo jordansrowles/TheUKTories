@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.17.0" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheUKTories.DataStores\TheUKTories.DataStores.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dialogs\Coronavirus\C19ContractsWindows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Reusables\AllCovidResponses.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Reusables\AllCovidResponses.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
