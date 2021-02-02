@@ -1,5 +1,7 @@
 ![.NET](https://github.com/jordansrowles/theuktories/workflows/.NET/badge.svg)
 
+![alt text](docs/img/Site.png "Main Window")
+
 # Projects
 ## TheUKTories
 The main frontend application to view data, the public website.
