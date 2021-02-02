@@ -1,6 +1,7 @@
 ![.NET](https://github.com/jordansrowles/theuktories/workflows/.NET/badge.svg)
 
 ![alt text](docs/img/Site.png "Main Window")
+![alt text](docs/img/MainWindow.png "Main Window")
 
 # Projects
 ## TheUKTories
