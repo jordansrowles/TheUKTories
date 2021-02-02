@@ -96,5 +96,11 @@ namespace TheUKTories.Dashboard
             dialog.ShowDialog();
             await ResetStats(); // todo check if changed fist
         }
+
+        private void btnAllPeople_Click(object sender, RoutedEventArgs e)
+        {
+            Dialogs.PeopleWindows.AllPeopleWindow window = new Dialogs.PeopleWindows.AllPeopleWindow(Context);
+            window.ShowDialog();
+        }
     }
 }

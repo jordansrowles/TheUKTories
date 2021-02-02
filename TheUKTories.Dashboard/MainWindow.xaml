@@ -43,7 +43,7 @@
                 <MenuItem Header="New Tactic" x:Name="btnNewTactic" Click="btnNewTactic_Click"/>
             </MenuItem>
             <MenuItem Header="People" MaxWidth="140">
-                <MenuItem Header="Manage"/>
+                <MenuItem Header="Manage" x:Name="btnAllPeople" Click="btnAllPeople_Click"/>
             </MenuItem>
             <MenuItem Header="Russia" MaxWidth="140">
                 <MenuItem Header="ISC Report">
