@@ -9,14 +9,41 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
 {
     public class ARTactics : BaseModel
     {
+        string _string;
         [JsonProperty(PropertyName = "string")]
-        public string String { get; set; }
+        public string String
+        {
+            get => _string;
+            set
+            {
+                _string = value;
+                OnPropertyChanged();
+            }
+        }
 
+        string _substring;
         [JsonProperty(PropertyName = "substring")]
-        public string Substring { get; set; }
+        public string Substring
+        {
+            get => _substring;
+            set
+            {
+                _substring = value;
+                OnPropertyChanged();
+            }
+        }
 
+        string _link;
         [JsonProperty(PropertyName = "wiki")]
-        public string WikiLink { get; set; }
+        public string WikiLink
+        {
+            get => _link;
+            set
+            {
+                _link = value;
+                OnPropertyChanged();
+            }
+        }
 
     }
 }
