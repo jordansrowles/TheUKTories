@@ -20,17 +20,4 @@
     <Folder Include="Dialogs\Coronavirus\C19ContractsWindows\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Reusables\AllCovidResponses.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Reusables\AllCovidResponses.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-
 </Project>
