@@ -89,11 +89,12 @@ namespace TheUKTories.Dashboard
             
         }
 
-        private void btnResponses_Click(object sender, RoutedEventArgs e)
+        private async void btnResponses_Click(object sender, RoutedEventArgs e)
         {
             Dialogs.Coronavirus.C19ResponseWindows.AllCovidResponses dialog
                 = new Dialogs.Coronavirus.C19ResponseWindows.AllCovidResponses(Context);
             dialog.ShowDialog();
+            await ResetStats(); // todo check if changed fist
         }
     }
 }
