@@ -1,3 +1,5 @@
+This is just the code repo. Development is being done on [Azure DevOps](https://dev.azure.com/jordansrowles/TheUKTories)
+
 ![.NET](https://github.com/jordansrowles/theuktories/workflows/.NET/badge.svg)
 
 ![alt text](docs/img/Site.png "Main Window")
