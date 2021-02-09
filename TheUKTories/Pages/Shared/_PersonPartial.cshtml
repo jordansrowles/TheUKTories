@@ -9,7 +9,7 @@
 
 @if (Model.GeneralPoints != null && Model.GeneralPoints.Count() != 0)
 {
-    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced" id="general">
         @foreach (GeneralSubItem item in Model.GeneralPoints)
         {
             <li>
@@ -41,7 +41,7 @@
 
 @if (Model.RussianConnections != null && Model.RussianConnections.Count() != 0)
 {
-    <h3 class="govuk-heading-m">Those pesky Russians</h3>
+    <h3 class="govuk-heading-m" id="russians">Those pesky Russians</h3>
     <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
         @foreach (GeneralSubItem item in Model.RussianConnections)
         {
@@ -75,7 +75,7 @@
 @* if quotes isnt null or the count isnt zero *@
 @if (Model.Quotes != null && Model.Quotes.Count() != 0)
 {
-    <h3 class="govuk-heading-m">Unforgettable Quotes</h3>
+    <h3 class="govuk-heading-m" id="quotes">Unforgettable Quotes</h3>
 
     <ul class="govuk-list govuk-list--spaced">
         @foreach (Quote item in Model.Quotes)

@@ -3,6 +3,12 @@
 @{
     ViewData["Title"] = "The UK Tories - Boris Johnson";
     ViewData["SelectedTopItem"] = "People";
+    ViewData["PageNavItems"] = new Dictionary<string, string>()
+    {
+        {"#general", "General bits and bobs" },
+        {"#russians", "Those pesky Russians" },
+        {"#quotes", "Unforgettable Quotes" }
+    };
 }
 
 <govuk-breadcrumbs>
@@ -16,5 +22,7 @@
         Boris Johnson
     </govuk-breadcrumbs-item>
 </govuk-breadcrumbs>
+
+@await Html.PartialAsync("_PageNavigation")
 
 @await Html.PartialAsync("_PersonPartial", Model.Boris)
