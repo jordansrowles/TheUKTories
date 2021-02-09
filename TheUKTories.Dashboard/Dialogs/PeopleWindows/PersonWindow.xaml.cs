@@ -76,6 +76,15 @@ namespace TheUKTories.Dashboard.Dialogs.PeopleWindows
             var selected = (Quote)dgQuotes.SelectedItems[0];
             QuoteWindow window = new QuoteWindow(selected);
             window.ShowDialog();
+
+            if ((string)window.Tag == "DataChanged")
+            {
+                Person.Quotes.Remove(selected);
+                Person.Quotes.Add(window.Quote);
+                dgQuotes.ItemsSource = Person.Quotes;
+                Unpack();
+                this.Tag = "DataChanged";
+            }
         }
     }
 }

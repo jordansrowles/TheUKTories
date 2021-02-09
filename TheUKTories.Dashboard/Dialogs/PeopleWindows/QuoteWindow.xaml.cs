@@ -41,5 +41,22 @@ namespace TheUKTories.Dashboard.Dialogs.PeopleWindows
             InitializeComponent();
             Quote = new Quote();
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            Quote = new Quote()
+            {
+                String = tbString.Text,
+                Substring = tbSubstring.Text,
+                Sources = ctrlSources.SourceItems
+            };
+            this.Tag = "DataChanged";
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

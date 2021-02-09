@@ -8,17 +8,17 @@
         xmlns:adonis="clr-namespace:AdonisUI;assembly=AdonisUI"
         xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         xmlns:reusables="clr-namespace:TheUKTories.Dashboard.Reusables"
-        Title="Quote Window" Height="450" Width="629">
+        Title="Quote Window" Height="494" Width="629">
     <DockPanel LastChildFill="True">
         <StackPanel HorizontalAlignment="Left" Margin="10">
             <Label Content="String" />
             <TextBox x:Name="tbString" Width="500" Height="100" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
             <Label Content="Substring" />
             <TextBox x:Name="tbSubstring" Width="500" Height="100" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
-            <reusables:SourcesPartial x:Name="ctrlSources" MinHeight="140"/>
+            <reusables:SourcesPartial x:Name="ctrlSources" MinHeight="180"/>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
-                <Button Content="Submit" x:Name="btnSubmit" />
-                <Button Content="Cancel" x:Name="btnCancel" />
+                <Button Content="Submit" x:Name="btnSubmit" Click="btnSubmit_Click"/>
+                <Button Content="Cancel" x:Name="btnCancel" Click="btnCancel_Click"/>
             </StackPanel>
         </StackPanel>
     </DockPanel>
