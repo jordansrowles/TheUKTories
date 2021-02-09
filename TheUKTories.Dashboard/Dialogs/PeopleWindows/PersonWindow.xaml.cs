@@ -35,6 +35,7 @@ namespace TheUKTories.Dashboard.Dialogs.PeopleWindows
             Unpack();
         }
 
+        // load all of the person data into the controls
         void Unpack()
         {
             tbCountry.Text = Person.Country;
@@ -43,15 +44,38 @@ namespace TheUKTories.Dashboard.Dialogs.PeopleWindows
             tbTitle.Text = Person.CurrentTitle;
             tbImgPath.Text = Person.ProfileImage;
 
+            // populate listviews
             if (Person.OtherTitles != null)
                 Array.ForEach(Person.OtherTitles, i => lbOtherTitles.Items.Add(i));
             if (Person.PreviousTitles != null)
                 Array.ForEach(Person.PreviousTitles, p => lbPrevTitles.Items.Add(p));
 
-            Resources["PersonLinks"] = Person.Links;
+            Resources["PersonLinks"] = Person.Links; // used for binding
             dgQuotes.ItemsSource = Person.Quotes;
 
-            imgProfile.Source = new BitmapImage(new Uri(Person.ProfileImage));
+            imgProfile.Source = new BitmapImage(new Uri(Person.ProfileImage)); // set profile image
+        }
+
+        // packup all the data and return the object
+        Person Pack() => new Person()
+        {
+            Country = tbCountry.Text,
+            FullName = tbName.Text,
+            Slug = tbSlug.Text,
+            CurrentTitle = tbTitle.Text,
+            ProfileImage = tbImgPath.Text,
+            // the complex
+            OtherTitles = lbOtherTitles.Items.OfType<string>().ToArray(),
+            PreviousTitles = lbPrevTitles.Items.OfType<string>().ToArray(),
+            Links = (Dictionary<string, string>)Resources["PersonLinks"],
+            Quotes = (List<Quote>)dgQuotes.ItemsSource
+        };
+
+        private void btnEditQuote_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = (Quote)dgQuotes.SelectedItems[0];
+            QuoteWindow window = new QuoteWindow(selected);
+            window.ShowDialog();
         }
     }
 }

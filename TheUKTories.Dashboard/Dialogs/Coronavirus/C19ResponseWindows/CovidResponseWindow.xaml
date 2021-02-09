@@ -17,7 +17,7 @@
             </StackPanel>
             <StackPanel Margin="10">
                 <Label Content="String" />
-                <TextBox x:Name="tbString"/>
+                <TextBox Height="100" x:Name="tbString" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
                 <Label Content="Date" />
                 <TextBox x:Name="tbDate" Width="100" HorizontalAlignment="Left"/>
                 <Separator Background="Transparent"/>

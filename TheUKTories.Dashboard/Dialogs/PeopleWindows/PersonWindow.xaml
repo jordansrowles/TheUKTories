@@ -90,7 +90,7 @@
                 <DockPanel LastChildFill="True">
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
                         <Button x:Name="btnNewQuote" Content="New"/>
-                        <Button x:Name="btnEditQuote" Content="Edit"/>
+                        <Button x:Name="btnEditQuote" Content="Edit" Click="btnEditQuote_Click"/>
                         <Button x:Name="btnDeleteQuote" Content="Delete"/>
                     </StackPanel>
                     <DataGrid SelectionMode="Single" x:Name="dgQuotes" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False">

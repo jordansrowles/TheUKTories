@@ -8,7 +8,7 @@
         xmlns:adonis="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
         xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
         mc:Ignorable="d"
-        Title="The UK Tories - Admin Dashboard" Height="449" Width="603"
+        Title="The UK Tories - Admin Dashboard" Height="300" Width="850"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <adonis:AdonisWindow.TitleBarContent>

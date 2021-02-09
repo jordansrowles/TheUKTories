@@ -17,7 +17,7 @@
             </StackPanel>
             <StackPanel Margin="10">
                 <Label Content="String" />
-                <TextBox Height="100" x:Name="tbString"/>
+                <TextBox Height="100" x:Name="tbString" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto"/>
                 <Separator Background="Transparent"/>
                 <ComboBox x:Name="cbType" SelectedValuePath="Content">
                     <ComboBoxItem Content="Poverty" IsSelected="True" />

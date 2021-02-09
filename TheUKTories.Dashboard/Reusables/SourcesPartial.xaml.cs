@@ -36,6 +36,14 @@ namespace TheUKTories.Dashboard.Reusables
         {
             InitializeComponent();
         }
+
+        public SourcesPartial(List<SourceItem> items)
+        {
+            InitializeComponent();
+            SourceItems = items;
+            lvSources.ItemsSource = _sourceItems;
+        }
+
         private void AdornedControl_Loaded(object sender, RoutedEventArgs e)
         {
             lvSources.ItemsSource = _sourceItems;
