@@ -9,108 +9,106 @@
 
 @if (Model.GeneralPoints != null && Model.GeneralPoints.Count() != 0)
 {
-<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (GeneralSubItem item in Model.GeneralPoints)
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        @foreach (GeneralSubItem item in Model.GeneralPoints)
         {
-    <li>
-        @item.String
+            <li>
+                @item.String
 
-        @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
-        @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
+                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
                 {
-        <small>
-            -
-            <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
-        </small>
+                <small>
+                    -
+                    <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                </small>
                 }
-        @if (item.Sources.Count() > 1)
+                @if (item.Sources.Count() > 1)
                 {
-        <small>
-            -
-            @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                    <small>
+                        -
+                        @for (int i = 0; i < item.Sources.Count() - 1; i++)
                         {
-            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
                         }
-            <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
-        </small>
-
+                        <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                    </small>
                 }
-    </li>
+            </li>
         }
-</ul>
+    </ul>
 }
 
 @if (Model.RussianConnections != null && Model.RussianConnections.Count() != 0)
 {
-<h3 class="govuk-heading-m">Those pesky Russians</h3>
-<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (GeneralSubItem item in Model.RussianConnections)
+    <h3 class="govuk-heading-m">Those pesky Russians</h3>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        @foreach (GeneralSubItem item in Model.RussianConnections)
         {
-    <li>
-        @Html.Raw(@item.String)
+            <li>
+                @Html.Raw(@item.String)
 
-        @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
-        @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
+                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
                 {
-        <small>
-            -
-            <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
-        </small>
+                    <small>
+                        -
+                        <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                    </small>
                 }
-        @if (item.Sources.Count() > 1)
+                @if (item.Sources.Count() > 1)
                 {
-        <small>
-            -
-            @for (int i = 0; i < item.Sources.Count() - 1; i++)
-                        {
-            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
-                        }
-            <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
-        </small>
-
+                    <small>
+                        -
+                        @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                                    {
+                        <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                                    }
+                        <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                    </small>
                 }
-    </li>
+            </li>
         }
-</ul>
+    </ul>
 }
 
-
+@* if quotes isnt null or the count isnt zero *@
 @if (Model.Quotes != null && Model.Quotes.Count() != 0)
 {
+    <h3 class="govuk-heading-m">Unforgettable Quotes</h3>
 
-<h3 class="govuk-heading-m">Unforgettable Quotes</h3>
-
-<ul class="govuk-list govuk-list--spaced">
-    @foreach (Quote item in Model.Quotes)
+    <ul class="govuk-list govuk-list--spaced">
+        @foreach (Quote item in Model.Quotes)
         {
-    <li>
-        @item.String - <small>@item.Substring</small>
-
-        @if (item.Sources != null)
+            <li>
+                @item.String - <small>@item.Substring</small>
+                @if (item.Sources != null)
                 {
-        @if (item.Sources.Count() == 1)
+                    @if (item.Sources.Count() == 1 && !(string.IsNullOrWhiteSpace(item.Sources[0].Link)))
                     {
-        <small>
-            -
-            <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
-        </small>
+                        <small>
+                            -
+                            <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                        </small>
                     }
-        @if (item.Sources.Count() > 1)
+                    @if (item.Sources.Count() > 1)
                     {
-        <small>
-            -
-            @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                        <small>
+                            -
+                            @* all of the sources, except the last *@
+                            @for (int i = 0; i < item.Sources.Count() - 1; i++)
                             {
-            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                                <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>&nbsp;|&nbsp;</span>
                             }
-            <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
-        </small>
-
+                            @* write the last source, or the only one *@
+                            <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                        </small>
                     }
+                    @* do nothing if theres no sources *@
+                    else { }
                 }
-
-    </li>
+            </li>
         }
-</ul>
+    </ul>
 }
 
