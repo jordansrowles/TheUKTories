@@ -22,6 +22,7 @@ namespace TheUKTories.DataStores.AzureCosmos
         public Container PeopleContainer { get; set; }
         public Container ISCReportContainer { get; set; }
         public Container ContactsContainer { get; set; }
+        public Container GovCovidContractsContainer { get; set; }
 
         public CosmosDbContext()
         {
@@ -46,6 +47,7 @@ namespace TheUKTories.DataStores.AzureCosmos
             PeopleContainer = _database.GetContainer("people");
             ISCReportContainer = _database.GetContainer("isc_report");
             ContactsContainer = _database.GetContainer("contacts");
+            GovCovidContractsContainer = _database.GetContainer("gov_covid_contracts");
         }
 
         public async Task<List<T>> ItemFeedAsync<T>(Container container)

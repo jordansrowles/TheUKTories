@@ -13,11 +13,8 @@ namespace TheUKTories.Pages.UK
     public class CoronavirusModel : PageModel
     {
         public List<CovidResponses> Responses { get; set; }
-
         public List<CovidContracts> Contracts { get; set; }
-
         CosmosDbContext _context;
-
         readonly ILogger<CoronavirusModel> _logger;
 
         public CoronavirusModel(ILogger<CoronavirusModel> logger, CosmosDbContext context)

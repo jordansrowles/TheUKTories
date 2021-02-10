@@ -1,0 +1,55 @@
+﻿@page
+@model TheUKTories.Pages.UK.CovidContractsModel
+@using GovUk.Frontend.AspNetCore
+@using System.Globalization
+@{
+    ViewData["Title"] = "UK - Corona-contracts";
+    ViewData["SelectedTopItem"] = "UK";
+
+    string FormatPrice(double p)
+    {
+        var fp = p.ToString("C3", CultureInfo.CreateSpecificCulture("en-GB"));
+        return fp.Remove(fp.Length - 1);
+    }
+}
+
+<govuk-breadcrumbs>
+    <govuk-breadcrumbs-item href="/">Home</govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item href="/uk">UK</govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item href="/uk/CovidContracts">Corona-Contracts</govuk-breadcrumbs-item>
+</govuk-breadcrumbs>
+
+<span class="govuk-caption-l" id="contractlist">The Fabled Money Tree</span>
+<h2 class="govuk-heading-xl">Covid Contracts</h2>
+
+<hr class="govuk-section-break--l" />
+
+<span class="govuk-caption-m">How much of our tax has lined the pockets of the very rich</span>
+<h1 class="govuk-heading-l">@FormatPrice(Model.Total)</h1>
+
+@foreach (GovContractCompany company in Model.Companies)
+{
+    <h1 class="govuk-heading-l">@company.CompanyName</h1>
+    <p class="govuk-body-lead">@company.Description</p>
+    <dl class="govuk-summary-list">
+        @foreach (GovContract contract in company.Contracts)
+        {
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    @FormatPrice(contract.Cost)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    @contract.Description
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="https://www.contractsfinder.service.gov.uk/notice/@contract.Link">
+                        Link
+                    </a>
+                </dd>
+            </div>
+        }
+
+    </dl>
+    <hr class="govuk-section-break--m" />
+}
+
