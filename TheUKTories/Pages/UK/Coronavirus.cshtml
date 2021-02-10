@@ -6,53 +6,22 @@
     ViewData["SelectedTopItem"] = "UK";
 }
 
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            moved
+        </strong>
+        <span class="govuk-phase-banner__text">
+            Coronavirus related contracts have moved to it's own page. <a class="govuk-link" href="/UK/CovidContracts">Click here</a> to view how the money tree of public tax money has feathered the nest of the friends of our leaders!
+        </span>
+    </p>
+</div>
+
 <govuk-breadcrumbs>
     <govuk-breadcrumbs-item href="/">Home</govuk-breadcrumbs-item>
     <govuk-breadcrumbs-item href="/uk">UK</govuk-breadcrumbs-item>
     <govuk-breadcrumbs-item href="/uk/coronavirus">Coronavirus</govuk-breadcrumbs-item>
 </govuk-breadcrumbs>
-
-@*
-<span class="govuk-caption-l" id="contractlist">The Fabled Money Tree</span>
-<h2 class="govuk-heading-l">Covid Contracts</h2>
-<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (CovidContracts item in Model.Contracts)
-    {
-        <li>
-            @item.String
-             
-            @if (item.Sources.Count() == 1)
-            {
-                <small>
-                    -
-                    <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
-                </small>
-            }
-            @if (item.Sources.Count() > 1)
-            {
-                <small>
-                    -
-                    @for (int i = 0; i < item.Sources.Count() - 1; i++)
-                    {
-                        <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
-                    }
-                    <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
-                </small>
-
-            }
-            @if (item.GovContracts != null)
-            {
-                    <ul class="govuk-list">
-                        @foreach (GovContract citem in item.GovContracts)
-                        {
-                            <li><small>@citem.Source - <a href="@citem.Link" target="_blank">govuk</a></small></li>
-                        }
-                    </ul>
-            }
-        </li>
-    }
-</ul>
-*@
 
 <span class="govuk-caption-l" id="responselist">Government Response</span>
 <h2 class="govuk-heading-l">United Kingdom</h2>
