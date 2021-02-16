@@ -1,4 +1,39 @@
 ﻿@page
 @model TheUKTories.Client.Pages.Contact.IndexModel
 @{
+    ViewData["Title"] = "The UK Tories - Home";
+    ViewData["SelectedTopItem"] = "Contact";
 }
+
+<h1 class="govuk-heading-xl">Contact Form</h1>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<form method="post">
+    <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="Name">
+                Your name
+            </label>
+            <input class="govuk-input" asp-for="Name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="EmailAddress">
+                Your email <span class="govuk-visually-hidden">address</span>
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" asp-for="EmailAddress" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="Details">
+                    What would you like to say?
+                </label>
+            </h1>
+            <textarea class="govuk-textarea" asp-for="Details" rows="5"></textarea>
+        </div>
+        <div class="govuk-form-group">
+            <input type="submit" href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button" />
+        </div>
+    </fieldset>
+</form>
