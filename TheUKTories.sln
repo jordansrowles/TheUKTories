@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.DataStores.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Dashboard", "TheUKTories.Dashboard\TheUKTories.Dashboard.csproj", "{4AE93CB7-B7DD-4E18-A3AF-490E0A09D02E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheUKTories.Client", "TheUKTories.Client\TheUKTories.Client.csproj", "{F6D69658-C350-4374-889C-E85A01E60FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Client", "TheUKTories.Client\TheUKTories.Client.csproj", "{F6D69658-C350-4374-889C-E85A01E60FA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

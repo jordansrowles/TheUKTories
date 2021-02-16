@@ -12,22 +12,26 @@ using TheUKTories.DataStores.AzureCosmos.Models;
 namespace TheUKTories.Client.Pages.People
 {
     [AllowAnonymous]
-    public class IndexModel : PageModel
+    public class PersonModel : PageModel
     {
         public Person Person { get; set; }
-        public List<Person> People { get; set; }
         CosmosDbContext _context;
-        readonly ILogger<IndexModel> _logger;
+        readonly ILogger<PersonModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)
+        public string Partition { get; set; }
+        public string Id { get; set; }
+
+        public PersonModel(ILogger<PersonModel> logger, CosmosDbContext context)
         {
             _logger = logger;
             _context = context;
         }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync([FromRoute] string partition, [FromRoute] string id)
         {
-            People = await _context.GetDocumentsAsync<Person>(_context.PeopleContainer);
+            Person = await _context.ReadItemAsync<Person>(id,
+                new Microsoft.Azure.Cosmos.PartitionKey(partition),
+                _context.PeopleContainer);
         }
     }
 }
