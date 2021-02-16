@@ -1,0 +1,18 @@
+﻿@page
+@model TheUKTories.Client.Pages.People.IndexModel
+@{
+    ViewData["Title"] = "The UK Tories - People";
+    ViewData["SelectedTopItem"] = "People";
+}
+
+<h1 class="govuk-heading-xl">People Directory</h1>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<span class="govuk-caption-l">PMs, Ministers, MPs, Lords, Influential People</span>
+<h2 class="govuk-heading-l">United Kingdom</h2>
+<ul class="govuk-list">
+    @foreach (Person p in Model.People.Where(c => c.Country.ToUpper() == "UK"))
+    {
+        <li><a class="govuk-link" href="/People/Person/@p.Country.ToUpper()/@p.Id">@p.FullName</a> | <small>@p.CurrentTitle</small></li>
+    }
+</ul>

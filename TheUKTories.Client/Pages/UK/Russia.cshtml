@@ -1,0 +1,38 @@
+﻿@page
+@model TheUKTories.Client.Pages.UK.RussiaModel
+@{
+    ViewData["Title"] = "UK/Russia";
+    ViewData["SelectedTopItem"] = "UK";
+}
+
+<h1 class="govuk-heading-xl" id="iscreport">Russian Interference Report</h1>
+<p class="govuk-body-s">
+    The Russian interference report, titled 'Russia' was released on 21<sup>st</sup> July 2020 by the British Intelligence and Security Committee of Parliament (ISC). The inquiry started in 2017 and was completed in March 2019. Redaction's were made, and was sent to the PM on 17 October 2019. The government refused to release the report before the general election in December 2019. The report was approved for the release the day following the election. The report ultimately found that Russian interference is very much common place, but can not produce evidence as there has been no investigation commissioned.
+</p>
+<p class="govuk-body-s">
+    In fact, the report found that British governments have <strong>"welcomed the [Russian] oligarchs and their money with open arms, providing them with a means of recycling illicit finance through the London 'laundromat', and connections at the highest levels with access to U.K. companies and political figures."</strong>
+</p>
+
+@*
+    <h2 class="govuk-heading-m">External Links</h2>
+    <ul class="govuk-list">
+        <% data.files.forEach(function(item) { %>
+        <li>
+            <a href="/uk/covid" class="govuk-link govuk-link--no-visited-state">
+                <a href="<%- item.url %>" class="govuk-link govuk-link--no-visited-state" target="_blank"><%= item.string %></a>
+            </a>
+        </li>
+        <% }); %>
+    </ul>
+*@
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<span class="govuk-caption-l">From the report summary by the committee</span>
+<h2 class="govuk-heading-xl">Report Findings</h2>
+<ul class="govuk-list govuk-list--bullet">
+    @foreach (string item in Model.Report.Findings)
+    {
+        <li>@item</li>
+    }
+</ul> 

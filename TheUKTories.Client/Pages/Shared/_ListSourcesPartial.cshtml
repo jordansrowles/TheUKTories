@@ -1,0 +1,9 @@
+﻿@model List<SourceItem> 
+<small>
+    -
+    @foreach (SourceItem item in Model.Take(Model.Count - 1))
+    {
+        <span><a href="@item.Link" target="_blank">@item.Source</a> |</span>
+    }
+    <a href="@Model.Last().Link" target="_blank">@Model.Last().Source</a>
+</small>

@@ -1,0 +1,37 @@
+﻿@page
+@model TheUKTories.Client.Pages.AboutModel
+@{
+}
+
+<govuk-breadcrumbs>
+    <govuk-breadcrumbs-item href="/">Home</govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item href="/About">About</govuk-breadcrumbs-item>
+</govuk-breadcrumbs>
+
+<h1 class="govuk-heading-l">About theuktories.co.uk</h1>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h3 class="govuk-heading-m">History</h3>
+<p class="govuk-body">
+    The website itself, has been through several iterations and modifications. I've mainly been using this project as a way to learn more web-based technologies, now that it's the current trend to cater to mobile first users.
+</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>Originally, this website was made with handwritten HTML, CSS, JS. No server, no database. Completely static website, all data written in their respective pages. Bootstrap and jQuery were my libraries.</li>
+    <li>Then I moved out the data into local JSON files, making AJAX calls and manually templating page parts. I still wanted no database, as it was more attack surface area.</li>
+    <li>Then came the server, Node.Js using express for routing. Pages were no longer making a second request for the data files once loaded in the browser. The server was templating pages before returing them to the user.</li>
+    <li>Then came the GOV.UK Frontend Design System framework, the one they use for the GOV.UK framework. It's a local node module in the project structure that I edit and retranspile.</li>
+    <li>
+        This was about the time I decided to bring it out of beta, and into production. This was considered as my prototype. I rewrote the entire project in ASP.NET Core Razor Pages (now updated to .NET 5).
+        <ul class="govuk-list govuk-list--number">
+            <li>
+                The entire solution consists of the following projects.
+                <ul>
+                    <li>TheUKTories (this website)</li>
+                    <li>TheUKTories.Dashboard (WPF desktop app)</li>
+                    <li>TheUKTories.DataStores (data access layer, business models)</li>
+                    <li>TheUKTories.DataStores.TestConsole (for logic testing)</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
