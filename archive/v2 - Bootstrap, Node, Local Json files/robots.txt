@@ -1,4 +1,0 @@
-User-Agent: *
-Disallow: /public/data/
-Disallow: /data/
-Disallow: *.json
