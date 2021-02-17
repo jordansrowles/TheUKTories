@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TheUKTories.Client.Pages.Portal.Austerity
 {
+    [ResponseCache(NoStore = true)]
     [Authorize]
     public class NewAusterityModel : PageModel
     {

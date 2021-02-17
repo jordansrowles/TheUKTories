@@ -11,6 +11,7 @@ using TheUKTories.DataStores.AzureCosmos.Models;
 
 namespace TheUKTories.Client.Pages.People
 {
+    [ResponseCache(Duration = 180)]
     [AllowAnonymous]
     public class IndexModel : PageModel
     {

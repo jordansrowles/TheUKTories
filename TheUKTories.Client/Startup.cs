@@ -39,6 +39,7 @@ namespace TheUKTories.Client
                 // By default, all incoming requests will be authorized according to the default policy
                 options.FallbackPolicy = options.DefaultPolicy;
             });
+            services.AddResponseCaching();
             services.AddRazorPages()
                 .AddMvcOptions(options => { })
                 .AddMicrosoftIdentityUI();
@@ -68,6 +69,7 @@ namespace TheUKTories.Client
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseResponseCaching();
 
             app.UseAuthentication();
             app.UseAuthorization();

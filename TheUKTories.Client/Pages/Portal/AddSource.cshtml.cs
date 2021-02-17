@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TheUKTories.Client.Pages.Portal
 {
+    [ResponseCache(NoStore = true)]
     [Authorize]
     public class AddSourceModel : PageModel
     {

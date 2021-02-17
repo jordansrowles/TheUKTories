@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TheUKTories.Client.Pages.UK
 {
+    [ResponseCache(Duration = 180)]
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
