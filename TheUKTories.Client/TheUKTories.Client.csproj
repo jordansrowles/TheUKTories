@@ -40,4 +40,8 @@
     <EditorConfigFiles Update="F:\Projects\theuktories.co.uk\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
 </Project>
