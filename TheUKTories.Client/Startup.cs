@@ -48,7 +48,7 @@ namespace TheUKTories.Client
                 AddImportsToHtml = false
             });
 
-            services.AddTransient<CosmosDbContext>();
+            services.AddTransient<ICosmosDbContext, CosmosDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

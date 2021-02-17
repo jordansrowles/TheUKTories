@@ -17,7 +17,7 @@ namespace TheUKTories.Client.Pages.People
     {
         public Person Person { get; set; }
         public List<Person> People { get; set; }
-        CosmosDbContext _context;
+        readonly CosmosDbContext _context;
         readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)

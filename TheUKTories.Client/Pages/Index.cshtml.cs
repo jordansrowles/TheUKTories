@@ -15,7 +15,7 @@ namespace TheUKTories.Client.Pages
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        CosmosDbContext _context;
+        readonly CosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
         public List<Austeritys> Austeritys { get; set; }
 

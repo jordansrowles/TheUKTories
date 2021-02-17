@@ -16,7 +16,7 @@ namespace TheUKTories.Client.Pages.AltRight
     public class TacticsModel : PageModel
     {
         public List<ARTactics> Tactics { get; set; }
-        CosmosDbContext _context;
+        readonly CosmosDbContext _context;
         readonly ILogger<TacticsModel> _logger;
 
         public TacticsModel(ILogger<TacticsModel> logger, CosmosDbContext context)

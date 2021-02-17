@@ -10,10 +10,10 @@ using TheUKTories.DataStores.AzureCosmos.Models;
 
 namespace TheUKTories.DataStores.AzureCosmos
 {
-    public class CosmosDbContext
+    public class CosmosDbContext : ICosmosDbContext
     {
         public CosmosClient Client { get; set; }
-        Database _database;
+        readonly Database _database;
 
         public Container CovidResponsesContainer { get; set; }
         public Container CovidContractsContainer { get; set; }

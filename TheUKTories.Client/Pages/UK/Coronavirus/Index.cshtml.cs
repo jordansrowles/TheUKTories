@@ -15,7 +15,7 @@ namespace TheUKTories.Client.Pages.UK.Coronavirus
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        CosmosDbContext _context;
+        readonly CosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
         public List<CovidResponses> Responses { get; set; }
         public List<GovContractCompany> Companies { get; set; }

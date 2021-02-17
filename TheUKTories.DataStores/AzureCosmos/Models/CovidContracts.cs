@@ -16,8 +16,5 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
 
         [JsonProperty(PropertyName = "contract_links")]
         public List<GovContract> GovContracts { get; set; }
-
-        [JsonIgnore]
-        GovContract[] govContractBlank = new GovContract[] { };
     }
 }
