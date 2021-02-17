@@ -24,8 +24,8 @@ jobs:
       working-directory: TheUKTories.DataStores/
       run: dotnet build --no-restore
     - name: Restore dependencies TheUKTories
-      working-directory: TheUKTories/
+      working-directory: TheUKTories.Client/
       run: dotnet restore
     - name: Build TheUKTories
-      working-directory: TheUKTories/
+      working-directory: TheUKTories.Client/
       run: dotnet build --no-restore
