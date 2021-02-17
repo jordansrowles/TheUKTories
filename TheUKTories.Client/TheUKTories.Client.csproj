@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-TheUKTories.Client-85051A4B-7389-4B32-9749-CE79488CC04E</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0067</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Pages\Portal\Contacts\**" />
     <Content Remove="Pages\Portal\Contacts\**" />
@@ -30,6 +34,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheUKTories.DataStores\TheUKTories.DataStores.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Update="F:\Projects\theuktories.co.uk\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
 </Project>

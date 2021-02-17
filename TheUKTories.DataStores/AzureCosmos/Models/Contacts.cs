@@ -8,53 +8,17 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
 {
     public class Contacts : BaseModel
     {
-        string _name;
         [JsonProperty(PropertyName = "name")]
-        public string Name
-        {
-            get => _name;
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Name { get; set; }
 
-        string _details;
         [JsonProperty(PropertyName = "details")]
-        public string Details
-        {
-            get => _details;
-            set
-            {
-                _details = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Details { get; set; }
 
-        string _emailaddress;
         [JsonProperty(PropertyName = "email_address")]
-        public string EmailAddress
-        {
-            get => _emailaddress;
-            set
-            {
-                _emailaddress = value;
-                OnPropertyChanged();
-            }
-        }
+        public string EmailAddress { get; set; }
 
-        string _useragent;
         [JsonProperty(PropertyName = "useragent")]
-        public string UserAgent
-        {
-            get => _useragent;
-            set
-            {
-                _useragent = value;
-                OnPropertyChanged();
-            }
-        }
+        public string UserAgent { get; set; }
 
         public override string ToString() => $"{Name} ({EmailAddress})";
 

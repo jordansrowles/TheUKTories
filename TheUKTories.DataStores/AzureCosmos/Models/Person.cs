@@ -8,136 +8,37 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
 {
     public class Person : BaseModel
     {
-        string _fullname;
         [JsonProperty(PropertyName = "full_name")]
-        public string FullName
-        {
-            get => _fullname;
-            set
-            {
-                _fullname = value;
-                OnPropertyChanged();
-            }
-        }
+        public string FullName { get; set; }
 
-        string _title;
         [JsonProperty(PropertyName = "current_title")]
-        public string CurrentTitle
-        {
-            get => _title;
-            set
-            {
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
+        public string CurrentTitle { get; set; }
 
-        string[] _othertitles;
         [JsonProperty(PropertyName = "other_titles")]
-        public string[] OtherTitles
-        {
-            get => _othertitles;
-            set
-            {
-                _othertitles = value;
-                OnPropertyChanged();
-            }
-        }
+        public string[] OtherTitles { get; set; }
 
-        string[] _prevtitles;
         [JsonProperty(PropertyName = "previous_titles")]
-        public string[] PreviousTitles
-        {
-            get => _prevtitles;
-            set
-            {
-                _prevtitles = value;
-                OnPropertyChanged();
-            }
-        }
+        public string[] PreviousTitles { get; set; }
 
-        string _profileimage;
         [JsonProperty(PropertyName = "profile_image")]
-        public string ProfileImage
-        {
-            get => _profileimage;
-            set
-            {
-                _profileimage = value;
-                OnPropertyChanged();
-            }
-        }
+        public string ProfileImage { get; set; }
 
-        string _country;
         [JsonProperty(PropertyName = "country")]
-        public string Country
-        {
-            get => _country;
-            set
-            {
-                _country = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Country { get; set; }
 
-        Dictionary<string, string> _links = new Dictionary<string, string>();
         [JsonProperty(PropertyName = "links")]
-        public Dictionary<string, string> Links
-        {
-            get => _links;
-            set
-            {
-                _links = value;
-                OnPropertyChanged();
-            }
-        }
+        public Dictionary<string, string> Links { get; set; }
 
-        string _slug;
         [JsonProperty(PropertyName = "slug")]
-        public string Slug
-        {
-            get => _slug;
-            set
-            {
-                _slug = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Slug { get; set; }
 
-        List<GeneralSubItem> _general = new List<GeneralSubItem>();
         [JsonProperty(PropertyName = "general_points")]
-        public List<GeneralSubItem> GeneralPoints
-        {
-            get => _general;
-            set
-            {
-                _general = value;
-                OnPropertyChanged();
-            }
-        }
+        public List<GeneralSubItem> GeneralPoints { get; set; }
 
-        List<GeneralSubItem> _russians = new List<GeneralSubItem>();
         [JsonProperty(PropertyName = "russian_connections")]
-        public List<GeneralSubItem> RussianConnections
-        {
-            get => _russians;
-            set
-            {
-                _russians = value;
-                OnPropertyChanged();
-            }
-        }
+        public List<GeneralSubItem> RussianConnections { get; set; }
 
-        List<Quote> _quotes = new List<Quote>();
         [JsonProperty(PropertyName = "quotes")]
-        public List<Quote> Quotes
-        {
-            get => _quotes;
-            set
-            {
-                _quotes = value;
-                OnPropertyChanged();
-            }
-        }
+        public List<Quote> Quotes { get; set; }
     }
 }

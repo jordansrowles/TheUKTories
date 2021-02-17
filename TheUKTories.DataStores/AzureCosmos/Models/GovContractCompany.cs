@@ -3,54 +3,18 @@ using System.ComponentModel;
 
 namespace TheUKTories.DataStores.AzureCosmos.Models
 {
-    public class GovContractCompany : BaseModel, INotifyPropertyChanged
+    public class GovContractCompany : BaseModel
     {
-        string _companyname;
         [JsonProperty(PropertyName = "company_name")]
-        public string CompanyName
-        {
-            get => _companyname;
-            set
-            {
-                _companyname = value;
-                OnPropertyChanged();
-            }
-        }
+        public string CompanyName { get; set; }
 
-        string[] _people;
         [JsonProperty(PropertyName = "people")]
-        public string[] People
-        {
-            get => _people;
-            set
-            {
-                _people = value;
-                OnPropertyChanged();
-            }
-        }
+        public string[] People { get; set; }
 
-        string _description;
         [JsonProperty("description")]
-        public string Description
-        {
-            get => _description;
-            set
-            {
-                _description = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Description { get; set; }
 
-        GovContract[] _contracts;
         [JsonProperty("contracts")]
-        public GovContract[] Contracts
-        {
-            get => _contracts;
-            set
-            {
-                _contracts = value;
-                OnPropertyChanged();
-            }
-        }
+        public GovContract[] Contracts { get; set; }
     }
 }

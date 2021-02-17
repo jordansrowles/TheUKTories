@@ -9,42 +9,14 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
 {
     public class Austeritys : BaseModel
     {
-        string _type;
         [JsonProperty(PropertyName = "type")]
-        public string Type
-        {
-            get => _type;
-            set
-            {
-                _type = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Type { get; set; }
 
-        string _string;
         [JsonProperty(PropertyName = "string")]
-        public string String
-        {
-            get => _string;
-            set
-            {
-                _string = value;
-                OnPropertyChanged();
-            }
-        }
+        public string String { get; set; }
 
-        // todo needs to be initalised?
-        List<SourceItem> _sources = new List<SourceItem>();
         [JsonProperty(PropertyName = "sources")]
-        public List<SourceItem> Sources
-        {
-            get => _sources;
-            set
-            {
-                _sources = value;
-                OnPropertyChanged();
-            }
-        }
+        public List<SourceItem> Sources { get; set; }
 
         [JsonIgnore]
         public int CountSources => (Sources.Count);

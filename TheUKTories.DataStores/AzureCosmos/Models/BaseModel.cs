@@ -11,37 +11,15 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
     public class BaseModel : IBaseModel, INotifyPropertyChanged
     {
         // Only some models need BaseModel, things like SourceItem doesn't require an id
-        string _id;
         [JsonProperty(PropertyName = "id")]
-        public string Id
-        {
-            get => _id;
-            set
-            {
-                _id = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Id { get; set; }
 
         // Catch everything that isn't defined in the class
-        IDictionary<string, JToken> _catchall;
         [JsonExtensionData]
-        public IDictionary<string, JToken> CatchAll
-        {
-            get => _catchall;
-            set
-            {
-                _catchall = value;
-                OnPropertyChanged();
-            }
-        }
+        public IDictionary<string, JToken> CatchAll { get; set; }
 
         // INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
     }
 
     public interface IBaseModel

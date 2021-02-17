@@ -9,93 +9,26 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
     {
         // INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
-        string _source;
         [JsonProperty(PropertyName = "source")]
-        public string Source
-        {
-            get => _source;
-            set
-            {
-                _source = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Source { get; set; }
 
-        string _link;
         [JsonProperty(PropertyName = "link")]
-        public string Link
-        {
-            get => _link;
-            set
-            {
-                _link = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Link { get; set; }
 
-        string _ref;
         [JsonProperty(PropertyName = "ref")]
-        public string Reference
-        {
-            get => _ref;
-            set
-            {
-                _ref = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Reference { get; set; }
 
-        string _description;
         [JsonProperty("description")]
-        public string Description
-        {
-            get => _description;
-            set
-            {
-                _description = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Description { get; set; }
 
-        string _location;
         [JsonProperty("location")]
-        public string Location
-        {
-            get => _location;
-            set
-            {
-                _location = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Location { get; set; }
 
-        double _cost;
         [JsonProperty("cost")]
-        public double Cost
-        {
-            get => _cost;
-            set
-            {
-                _cost = value;
-                OnPropertyChanged();
-            }
-        }
+        public double Cost { get; set; }
 
-        string _date;
         [JsonProperty("date")]
-        public string Date
-        {
-            get => _date;
-            set
-            {
-                _date = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Date { get; set; }
     }
 }

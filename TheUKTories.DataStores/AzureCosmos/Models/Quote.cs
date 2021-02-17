@@ -10,57 +10,17 @@ namespace TheUKTories.DataStores.AzureCosmos.Models
     {
         // INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
-        string _string;
         [JsonProperty(PropertyName = "string")]
-        public string String
-        {
-            get => _string;
-            set
-            {
-                _string = value;
-                OnPropertyChanged();
-            }
-        }
+        public string String { get; set; }
 
-        string _substring;
         [JsonProperty(PropertyName = "substring")]
-        public string Substring
-        {
-            get => _substring;
-            set
-            {
-                _substring = value;
-                OnPropertyChanged();
-            }
-        }
+        public string Substring { get; set; }
 
-        List<SourceItem> _source = new List<SourceItem>();
         [JsonProperty(PropertyName = "sources")]
-        public List<SourceItem> Sources
-        {
-            get => _source;
-            set
-            {
-                _source = value;
-                OnPropertyChanged();
-            }
-        }
+        public List<SourceItem> Sources { get; set; }
 
-        IDictionary<string, JToken> _catchall;
         [JsonExtensionData]
-        public IDictionary<string, JToken> CatchAll
-        {
-            get => _catchall;
-            set
-            {
-                _catchall = value;
-                OnPropertyChanged();
-            }
-        }
+        public IDictionary<string, JToken> CatchAll { get; set; }
     }
 }
