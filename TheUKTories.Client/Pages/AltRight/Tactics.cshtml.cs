@@ -16,10 +16,10 @@ namespace TheUKTories.Client.Pages.AltRight
     public class TacticsModel : PageModel
     {
         public List<ARTactics> Tactics { get; set; }
-        readonly CosmosDbContext _context;
+        readonly ICosmosDbContext _context;
         readonly ILogger<TacticsModel> _logger;
 
-        public TacticsModel(ILogger<TacticsModel> logger, CosmosDbContext context)
+        public TacticsModel(ILogger<TacticsModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

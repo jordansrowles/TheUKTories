@@ -15,11 +15,11 @@ namespace TheUKTories.Client.Pages
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        readonly CosmosDbContext _context;
+        readonly ICosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
         public List<Austeritys> Austeritys { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)
+        public IndexModel(ILogger<IndexModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

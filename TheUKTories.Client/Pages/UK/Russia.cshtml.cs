@@ -16,10 +16,10 @@ namespace TheUKTories.Client.Pages.UK
     public class RussiaModel : PageModel
     {
         public ISCRusReport Report { get; set; }
-        CosmosDbContext _context;
+        ICosmosDbContext _context;
         readonly ILogger<RussiaModel> _logger;
 
-        public RussiaModel(ILogger<RussiaModel> logger, CosmosDbContext context)
+        public RussiaModel(ILogger<RussiaModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

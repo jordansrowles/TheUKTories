@@ -15,10 +15,10 @@ namespace TheUKTories.Client.Pages.Contact
         public string Details { get; set; }
         public string Name { get; set; }
         public string EmailAddress { get; set; }
-        CosmosDbContext _context;
+        ICosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)
+        public IndexModel(ILogger<IndexModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

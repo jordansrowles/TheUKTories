@@ -15,7 +15,7 @@ namespace TheUKTories.Client.Pages.UK.Coronavirus
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        readonly CosmosDbContext _context;
+        readonly ICosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
         public List<CovidResponses> Responses { get; set; }
         public List<GovContractCompany> Companies { get; set; }
@@ -23,7 +23,7 @@ namespace TheUKTories.Client.Pages.UK.Coronavirus
 
         public int TotalContracts { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)
+        public IndexModel(ILogger<IndexModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

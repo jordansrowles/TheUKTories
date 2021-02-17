@@ -16,13 +16,13 @@ namespace TheUKTories.Client.Pages.People
     public class PersonModel : PageModel
     {
         public Person Person { get; set; }
-        CosmosDbContext _context;
+        ICosmosDbContext _context;
         readonly ILogger<PersonModel> _logger;
 
         public string Partition { get; set; }
         public string Id { get; set; }
 
-        public PersonModel(ILogger<PersonModel> logger, CosmosDbContext context)
+        public PersonModel(ILogger<PersonModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;

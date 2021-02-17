@@ -17,10 +17,10 @@ namespace TheUKTories.Client.Pages.People
     {
         public Person Person { get; set; }
         public List<Person> People { get; set; }
-        readonly CosmosDbContext _context;
+        readonly ICosmosDbContext _context;
         readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger, CosmosDbContext context)
+        public IndexModel(ILogger<IndexModel> logger, ICosmosDbContext context)
         {
             _logger = logger;
             _context = context;
