@@ -14,6 +14,7 @@ namespace TheUKTories.DataStores.AzureCosmos
         public Container ISCReportContainer { get; set; }
         public Container ContactsContainer { get; set; }
         public Container GovCovidContractsContainer { get; set; }
+        public Container ExternalLinksContainer { get; set; }
 
         Task<List<T>> ItemFeedAsync<T>(Container container);
         Task<List<T>> GetDocumentsAsync<T>(Container container, string query);
