@@ -15,7 +15,8 @@ namespace TheUKTories.Client.Pages.Contact
         public string Details { get; set; }
         public string Name { get; set; }
         public string EmailAddress { get; set; }
-        ICosmosDbContext _context;
+
+        readonly ICosmosDbContext _context;
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger, ICosmosDbContext context)

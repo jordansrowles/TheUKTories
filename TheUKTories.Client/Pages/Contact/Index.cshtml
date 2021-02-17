@@ -8,6 +8,12 @@
 <h1 class="govuk-heading-xl">Contact Form</h1>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+@if (User.Identity.IsAuthenticated)
+{
+    <govuk-button asp-page="/Contact/Contacts">View Contacts</govuk-button>
+    <hr class="govuk-section-break govuk-section-break--s">
+}
+
 <form method="post">
     <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">
