@@ -30,6 +30,11 @@
         {
             @await Html.PartialAsync("_ListSourcesPartial", item.Sources)
         }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <small>| (<a href="/Portal/Austerity/Index?partition=@item.Type&id=@item.Id">edit item</a>)</small>
+            <small>(<a href="/Portal/Austerity/Index?partition=@item.Type&id=@item.Id">edit sources</a>)</small>
+        }
     </li>
     }
 
