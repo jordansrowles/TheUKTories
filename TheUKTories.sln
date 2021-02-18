@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.DataStores", "TheUKTories.DataStores\TheUKTories.DataStores.csproj", "{D8B6A189-2B12-4AE4-B046-BC1EE9BB2510}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.DataStores.TestConsole", "TheUKTories.DataStores.TestConsole\TheUKTories.DataStores.TestConsole.csproj", "{A42F6DA3-3581-4F31-BE63-34736F31DDC1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Dashboard", "TheUKTories.Dashboard\TheUKTories.Dashboard.csproj", "{4AE93CB7-B7DD-4E18-A3AF-490E0A09D02E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Client", "TheUKTories.Client\TheUKTories.Client.csproj", "{F6D69658-C350-4374-889C-E85A01E60FA4}"
@@ -38,18 +36,6 @@ Global
 		{D8B6A189-2B12-4AE4-B046-BC1EE9BB2510}.Release|x64.Build.0 = Release|Any CPU
 		{D8B6A189-2B12-4AE4-B046-BC1EE9BB2510}.Release|x86.ActiveCfg = Release|Any CPU
 		{D8B6A189-2B12-4AE4-B046-BC1EE9BB2510}.Release|x86.Build.0 = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|x64.Build.0 = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Debug|x86.Build.0 = Debug|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|x64.ActiveCfg = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|x64.Build.0 = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|x86.ActiveCfg = Release|Any CPU
-		{A42F6DA3-3581-4F31-BE63-34736F31DDC1}.Release|x86.Build.0 = Release|Any CPU
 		{4AE93CB7-B7DD-4E18-A3AF-490E0A09D02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AE93CB7-B7DD-4E18-A3AF-490E0A09D02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AE93CB7-B7DD-4E18-A3AF-490E0A09D02E}.Debug|x64.ActiveCfg = Debug|Any CPU
