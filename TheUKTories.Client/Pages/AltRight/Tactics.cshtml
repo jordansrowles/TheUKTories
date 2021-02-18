@@ -18,19 +18,25 @@
 
     @foreach (ARTactics item in Model.Tactics.OrderBy(o => o.String))
     {
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                @item.String
-            </dt>
-            <dd class="govuk-summary-list__value">
-                @item.Substring
-            </dd>
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            @item.String
+        </dt>
+        <dd class="govuk-summary-list__value">
+            @item.Substring
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="@item.WikiLink">
+                Wiki
+            </a>
+        </dd>
+        @if (User.Identity.IsAuthenticated)
+        {
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="@item.WikiLink">
-                    Wiki
-                </a>
+                <a href="/Portal/AltRight/Tactic?partition=@item.String&id=@item.Id">Edit</a>
             </dd>
-        </div>
+        }
+    </div>
     }
 
 
