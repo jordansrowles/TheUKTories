@@ -1,6 +1,7 @@
-This is just the code repo. Development is being done on [Azure DevOps](https://dev.azure.com/jordansrowles/TheUKTories)
+[![Board Status](https://dev.azure.com/jordansrowles/f361817f-1aa4-4b40-970d-390f45b3439b/0995344b-b3d3-45b8-a3b7-0798a211cd6a/_apis/work/boardbadge/c7194984-bec9-4c36-a7f2-90fc3c1b2231?columnOptions=1)](https://dev.azure.com/jordansrowles/f361817f-1aa4-4b40-970d-390f45b3439b/_boards/board/t/0995344b-b3d3-45b8-a3b7-0798a211cd6a/Microsoft.RequirementCategory/)
 
 ![.NET](https://github.com/jordansrowles/theuktories/workflows/.NET/badge.svg)
+[![Build Status](https://dev.azure.com/jordansrowles/TheUKTories/_apis/build/status/jordansrowles.TheUKTories?branchName=master)](https://dev.azure.com/jordansrowles/TheUKTories/_build/latest?definitionId=10&branchName=master)
 
 ![alt text](docs/img/Site.png "Main Window")
 ![alt text](docs/img/MainWindow.png "Main Window")
