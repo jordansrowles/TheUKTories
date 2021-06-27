@@ -14,6 +14,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories", "TheUKTories\TheUKTories.csproj", "{838829CF-E235-4BC3-A7D8-708F1414169F}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.Frontend", "TheUKTories.Frontend\", "{8EEFBD28-4A05-4470-9E35-E4A5FB384680}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51830"
+		Debug.AspNetCompiler.PhysicalPath = "TheUKTories.Frontend\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51830\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51830"
+		Release.AspNetCompiler.PhysicalPath = "TheUKTories.Frontend\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51830\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51830"
+		SlnRelativePath = "TheUKTories.Frontend\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +83,30 @@ Global
 		{F6D69658-C350-4374-889C-E85A01E60FA4}.Release|x64.Build.0 = Release|Any CPU
 		{F6D69658-C350-4374-889C-E85A01E60FA4}.Release|x86.ActiveCfg = Release|Any CPU
 		{F6D69658-C350-4374-889C-E85A01E60FA4}.Release|x86.Build.0 = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|x64.Build.0 = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Debug|x86.Build.0 = Debug|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|x64.ActiveCfg = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|x64.Build.0 = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|x86.ActiveCfg = Release|Any CPU
+		{838829CF-E235-4BC3-A7D8-708F1414169F}.Release|x86.Build.0 = Release|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|x64.Build.0 = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Debug|x86.Build.0 = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|x64.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|x64.Build.0 = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|x86.ActiveCfg = Debug|Any CPU
+		{8EEFBD28-4A05-4470-9E35-E4A5FB384680}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
