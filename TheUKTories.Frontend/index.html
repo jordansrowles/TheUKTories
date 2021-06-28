@@ -31,6 +31,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-55062061-4');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/ejs@3.1.6/ejs.js"></script>
 </head>
 
 <body class="govuk-template__body ">
@@ -106,6 +107,10 @@
     <script>
         let parent = document.getElementById("austeritylist");
 
+        function removeLastComma(str) {
+            return str.replace(/,(\s+)?$/, '');
+        }
+
         fetch('https://theuktories-api.azurewebsites.net/api/uk/austerity')
             .then(response => response.json())
             .then(function (data) {
@@ -116,11 +121,20 @@
                         li.innerHTML = `${item.string} | `;
                         let sources = document.createElement("small");
 
+                        // iterate sources
                         for (var i = 0; i < item.sources.length; i++) {
-                            var obj = item.sources[i];
-                            sources.innerHTML += `${obj.source}, `;
+                            let obj = item.sources[i];
+                            let link = document.createElement("a");
+                            link.innerHTML = obj.source;
+                            link.href = obj.link;
+                            sources.appendChild(link);
+                            // todo does this if even work?
+                            if (i !== item.sources.length) {
+                                sources.append(", ");
+                            }
                         }
-                        li.appendChild(sources);
+                        sources.innerHTML = removeLastComma(sources.innerHTML); // remove trailing comma
+                        li.appendChild(sources); // append all sources to list item
                     }
                     else {
                         li.innerHTML = item.string;
