@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head', { title: title }) %>
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <%- include('partials/header', { selection: '' }) %>
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content" role="main">
+          <h1 class="govuk-heading-l">The Messiest Eton Mess You've Ever Seen</h1>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          
+      </main>
+    </div>
+
+    <%- include('partials/footer') %>
+    <script src="/javascripts/govuk.js"></script>
+    <script>
+      window.GOVUKFrontend.initAll()
+    </script>
+  </body>
+</html>

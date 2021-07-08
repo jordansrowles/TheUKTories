@@ -37,7 +37,47 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.Frontend", "The
 		SlnRelativePath = "TheUKTories.Frontend\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheUKTories.BackendApp", "TheUKTories.BackendApp\TheUKTories.BackendApp.csproj", "{13F774A2-F64E-4F62-836F-0FE50330CAC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.BackendApp", "TheUKTories.BackendApp\TheUKTories.BackendApp.csproj", "{13F774A2-F64E-4F62-836F-0FE50330CAC9}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.EJS", "TheUKTories.EJS\", "{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51583"
+		Debug.AspNetCompiler.PhysicalPath = "TheUKTories.EJS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51583\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51583"
+		Release.AspNetCompiler.PhysicalPath = "TheUKTories.EJS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51583\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51583"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.Front", "TheUKTories.Front\", "{358AC990-FDD9-4CED-9B12-F624D968E92B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57457"
+		Debug.AspNetCompiler.PhysicalPath = "TheUKTories.Front\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57457\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57457"
+		Release.AspNetCompiler.PhysicalPath = "TheUKTories.Front\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57457\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57457"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +161,30 @@ Global
 		{13F774A2-F64E-4F62-836F-0FE50330CAC9}.Release|x64.Build.0 = Release|Any CPU
 		{13F774A2-F64E-4F62-836F-0FE50330CAC9}.Release|x86.ActiveCfg = Release|Any CPU
 		{13F774A2-F64E-4F62-836F-0FE50330CAC9}.Release|x86.Build.0 = Release|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|x64.Build.0 = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Debug|x86.Build.0 = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x64.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x64.Build.0 = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x86.ActiveCfg = Debug|Any CPU
+		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x86.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x64.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x86.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x64.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x64.Build.0 = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x86.ActiveCfg = Debug|Any CPU
+		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

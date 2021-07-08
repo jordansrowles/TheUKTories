@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', { title: title }) %>
+    <style>
+        .govuk-accordion__section-button:hover,
+        .govuk-caption-l:hover,
+        .govuk-heading-l:hover {
+            text-decoration: none !important;
+        }
+        .govuk-accordion__section-button:focus {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    </style>
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <%- include('../partials/header', { selection: 'uk' }) %>
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content" role="main">
+        <span class="govuk-caption-l" id="contractlist">An Omnibus of Omnishambles</span>
+        <h1 class="govuk-heading-xl">UK Coronavirus Response</h1>
+        
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="accordion-contracts">
+                            <span class="govuk-caption-l" id="contractlist">The Fabled Money Tree <strong class="govuk-tag"><%= contracts.length %></strong></span>
+                            <h2 class="govuk-heading-l">Covid Contracts</h2>
+                        </span>
+                    </h2>
+                </div>
+                <div id="accordion-contracts" class="govuk-accordion__section-content" aria-labelledby="accordion-contracts">
+                    <span class="govuk-caption-m">How much of our tax has lined the pockets of the very rich</span>
+                    <h1 class="govuk-heading-l">0,000,000</h1>
+        
+                    <% contracts.forEach(function(company) { %>
+                        <h1 class="govuk-heading-l"><%= company.company_name %></h1>
+                        <p class="govuk-body-lead"><%= company.description %></p>
+                        <dl class="govuk-summary-list">
+                        <% company.contracts.forEach(function(contract) { %>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    £<%= contract.cost %>
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    <%= contract.description %>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="https://www.contractsfinder.service.gov.uk/notice/<%= contract.link %>">
+                                        Link
+                                    </a>
+                                </dd>
+                            </div>
+                            <br />
+                        <% }); %>
+                        </dl>
+                    <% }); %>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-responses">
+                                <span class="govuk-caption-l">Government Responses <strong class="govuk-tag"><%= data.length %></strong></span>
+                                <h2 class="govuk-heading-l">United Kingdom</h2>
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-responses" class="govuk-accordion__section-content" aria-labelledby="accordion-responses">
+                        <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+                            <% data.forEach(function(response) { %>
+                                <li><%= response.string %> -
+                                    <small>
+                                       <% response.sources.forEach(function(s) { %>
+                                            <a href="<%= s.link %>"><%= s.source %></a>
+                                        <% }); %> 
+                                    </small>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+      </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/javascripts/govuk.js"></script>
+    <script>
+      window.GOVUKFrontend.initAll()
+    </script>
+  </body>
+</html>
