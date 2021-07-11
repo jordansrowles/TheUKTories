@@ -58,25 +58,23 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.EJS", "TheUKTor
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51583"
 	EndProjectSection
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TheUKTories.Front", "TheUKTories.Front\", "{358AC990-FDD9-4CED-9B12-F624D968E92B}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_57457"
-		Debug.AspNetCompiler.PhysicalPath = "TheUKTories.Front\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57457\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51583"
+		Debug.AspNetCompiler.PhysicalPath = "TheUKTories.EJS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51583\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_57457"
-		Release.AspNetCompiler.PhysicalPath = "TheUKTories.Front\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57457\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51583"
+		Release.AspNetCompiler.PhysicalPath = "TheUKTories.EJS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51583\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "57457"
+		VWDPort = "51583"
 	EndProjectSection
 EndProject
 Global
@@ -173,18 +171,6 @@ Global
 		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x64.Build.0 = Debug|Any CPU
 		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x86.ActiveCfg = Debug|Any CPU
 		{590ED55A-4850-4160-A1F2-4B27FB2BEBD7}.Release|x86.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x64.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Debug|x86.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x64.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x64.Build.0 = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x86.ActiveCfg = Debug|Any CPU
-		{358AC990-FDD9-4CED-9B12-F624D968E92B}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
