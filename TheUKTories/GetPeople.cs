@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -9,26 +10,30 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using TheUKTories.DataStores.AzureCosmos;
 using TheUKTories.DataStores.AzureCosmos.Models;
+using System.Linq;
 
 namespace TheUKTories
 {
-    public static class GetPerson
+    public class GetPeople
     {
-        [FunctionName("GetPerson")]
-        public static async Task<IActionResult> Run(
+        readonly ICosmosDbContext _context;
+
+        public GetPeople(ICosmosDbContext context)
+        {
+            _context = context;
+        }
+
+        [FunctionName("GetPeople")]
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", 
-                Route = "people/{partition}/{id}")] HttpRequest req,
-                string partition, string id,
+            Route = "people")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-            string name = req.Query["name"];
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
+            var responses = await _context.GetDocumentsAsync<Person>(_context.PeopleContainer);
 
-            return new OkObjectResult(name);
+            return new OkObjectResult(responses);
         }
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('partials/head', { title: title }) %>
+    <%- include('partials/head', { title: "Error" }) %>
   </head>
   <body class="govuk-template__body">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
@@ -14,7 +14,7 @@
 
           <span class="govuk-caption-l">A fatal error happened</span>
           <h2 class="govuk-heading-l">Oh shit son...</h2>
-          <p class="govuk-body">
+          <p class="govuk-body-s">
               <%= message %>
               <%= error.status %>
               <%= error.stack %>

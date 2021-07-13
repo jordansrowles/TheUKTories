@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', { title: title }) %>
+  </head>
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <%- include('../partials/header', { selection: 'ar' }) %>
+
+    <div class="govuk-width-container">
+      <main class="govuk-main-wrapper" id="main-content" role="main">
+          <%- include('../partials/breadcrumbs', { pages: [ 
+            { title: 'Home', url: '/'}, 
+            { title: 'Alt-Right', url: '/altright'},
+            { title: 'Tactics', url: '/altright/tactics'} 
+          ] }) %>
+
+          <h1 class="govuk-heading-l">Alt-Right Tactics</h1>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <dl class="govuk-summary-list">
+            <% data.forEach(function(item) { %>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        <%= item.string %>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <%= item.substring %>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="<%= item.wiki %>">
+                            Wiki
+                        </a>
+                    </dd>
+                </div>
+            <% }); %>
+        </dl>
+      </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/javascripts/govuk.js"></script>
+    <script>
+      window.GOVUKFrontend.initAll()
+    </script>
+  </body>
+</html>
