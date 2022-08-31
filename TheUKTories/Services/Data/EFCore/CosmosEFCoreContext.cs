@@ -5,19 +5,25 @@ namespace TheUKTories.Services.Data.EFCore
 {
     public class CosmosEFCoreContext : DbContext
     {
+        string database_name;
         public DbSet<Contact>? Contacts { get; set; }
         public DbSet<FacistTactic>? FacistTactics { get; set; }
         public DbSet<UKAusterityMeasure>? UKAusterityMeasures { get; set; }
 
-        public CosmosEFCoreContext()
+        public CosmosEFCoreContext(string database)
         {
             this.Database.EnsureCreated();
+            database_name = database;
+        }
+        public CosmosEFCoreContext() : base()
+        {
+            database_name = "theuktoriesdb";
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseCosmos(Globals.TryGetConnectionString(), 
-                "theuktoriesdb");
+                database_name);
         }
  
         protected override void OnModelCreating(ModelBuilder builder)
