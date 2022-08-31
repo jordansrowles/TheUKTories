@@ -1,0 +1,50 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Admin.Messages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Message details")
+
+<govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Contact.Name)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Contact.Name)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Contact.EmailAddress)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Contact.EmailAddress)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Contact.Details)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Contact.Details)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Contact.Message)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Contact.Message)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+</govuk-summary-list>
+<div>
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

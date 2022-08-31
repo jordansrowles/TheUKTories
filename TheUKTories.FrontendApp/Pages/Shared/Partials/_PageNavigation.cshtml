@@ -1,0 +1,11 @@
+@{
+    var data = (Dictionary<string, string>)ViewData["PageNavItems"];
+}
+
+<h3 class="govuk-heading-s govuk-\!-font-weight-bold" style="margin-bottom: 5px;">Page Contents</h3>
+<ul class="govuk-list">
+    @foreach (KeyValuePair<string, string> item in data)
+    {
+        <li><a href="@item.Key" class="govuk-link">@item.Value</a></li>
+    }
+</ul>

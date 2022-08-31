@@ -1,0 +1,18 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Admin.ContactsModel
+@{
+}
+
+@foreach (TheUKTories.Services.Data.EFCore.Models.Contact contact in Model.Contacts)
+{
+    <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                @contact.Name (@contact.EmailAddress)
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+            @contact.Message
+        </div>
+    </details>
+}

@@ -1,0 +1,42 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.AltRight.IndexModel
+
+@{
+    ViewData["Title"] = "The UK Tories - Tactics";
+    ViewData["SelectedTopItem"] = "Tactics";
+}
+
+<govuk-breadcrumbs>
+    <govuk-breadcrumbs-item asp-page="/Index">Home</govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item>Alt-Right</govuk-breadcrumbs-item>
+</govuk-breadcrumbs>
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Tactics used by the \"Alt Right\"")
+
+<dl class="govuk-summary-list">
+
+    @foreach (var item in Model.FacistTactic.OrderBy(o => o.Title))
+    {
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+            @item.Title
+        </dt>
+        <dd class="govuk-summary-list__value">
+            @item.Subtitle
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="@item.Link">
+                Wiki
+            </a>
+        </dd>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <dd class="govuk-summary-list__actions">
+                <a href="/Admin/AltRight/Tactic?id=@item.Id">Edit</a>
+            </dd>
+        }
+    </div>
+    }
+
+
+</dl>

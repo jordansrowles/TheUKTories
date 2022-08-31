@@ -1,0 +1,158 @@
+﻿@model TheUKTories.Models.Person
+@{
+    // set up the top page navigation. creates dictionary of links and passes to
+    //  _PageNavigation through ViewData
+    Dictionary<string, string> NavItems = new Dictionary<string, string>();
+    if (Model.GeneralPoints.Count != 0) NavItems.Add("#general", "General bits and bobs");
+    if (Model.RussianConnections.Count != 0) NavItems.Add("#russians", "Those pesky Russians");
+    if (Model.Quotes.Count != 0) NavItems.Add("#quotes", "Unforgettable Quotes");
+
+    ViewData["PageNavItems"] = NavItems;
+}
+
+@await Html.PartialAsync("Partials/_PageNavigation")
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">@Model.CurrentTitle</span>
+        <h1 class="govuk-heading-l">@Model.FullName</h1>
+        <p class="govuk-body">
+            @if (Model.Links != null)
+            {
+                if (Model.Links.Count > 1)
+                {
+                    @foreach (KeyValuePair<string, string> pair in Model.Links.SkipLast(1))
+                    {
+                        <a href="@pair.Value" target="_blank">@pair.Key</a> <span>|</span>
+                    }
+                    <a href="@Model.Links.Last().Value" target="_blank">@Model.Links.Last().Key</a>
+                }
+                else
+                {
+                    <a href="@Model.Links.FirstOrDefault().Value" target="_blank">@Model.Links.FirstOrDefault().Key</a>
+                }
+            }
+        </p>
+        @if (Model.OtherTitles != null)
+        {
+            <ul class="govuk-list">
+                @foreach (string othertitle in Model.OtherTitles)
+                {
+                    <li>@othertitle</li>
+                }
+            </ul>
+        }
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <img style="display: inline;" src="@Model.ProfileImage" alt="@Model.ProfileImage.ToString()" height="120px" width="120px">
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+@if (Model.GeneralPoints != null && Model.GeneralPoints.Count() != 0)
+{
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced" id="general">
+        @foreach (GeneralSubItem item in Model.GeneralPoints)
+        {
+            <li>
+                @item.String
+
+                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
+                {
+                    <small>
+                        -
+                        <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                    </small>
+                }
+                @if (item.Sources.Count() > 1)
+                {
+                    <small>
+                        -
+                        @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                        {
+                            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                        }
+                        <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                    </small>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@if (Model.RussianConnections != null && Model.RussianConnections.Count() != 0)
+{
+    <h3 class="govuk-heading-m" id="russians">Those pesky Russians</h3>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        @foreach (GeneralSubItem item in Model.RussianConnections)
+        {
+            <li>
+                @Html.Raw(@item.String)
+
+                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
+                {
+                    <small>
+                        -
+                        <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                    </small>
+                }
+                @if (item.Sources.Count() > 1)
+                {
+                    <small>
+                        -
+                        @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                        {
+                            <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>|</span>
+                        }
+                        <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                    </small>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@* if quotes isnt null or the count isnt zero *@
+@if (Model.Quotes != null && Model.Quotes.Count() != 0)
+{
+    <h3 class="govuk-heading-m" id="quotes">Unforgettable Quotes</h3>
+
+    <ul class="govuk-list govuk-list--spaced">
+        @foreach (Quote item in Model.Quotes)
+        {
+            <li>
+                @item.String - <small>@item.Substring</small>
+                @if (item.Sources != null)
+                {
+                    @if (item.Sources.Count() == 1 && !(string.IsNullOrWhiteSpace(item.Sources[0].Link)))
+                    {
+                        <small>
+                            -
+                            <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+                        </small>
+                    }
+                    @if (item.Sources.Count() > 1)
+                    {
+                        <small>
+                            -
+                            @* all of the sources, except the last *@
+                            @for (int i = 0; i < item.Sources.Count() - 1; i++)
+                            {
+                                <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>&nbsp;|&nbsp;</span>
+                            }
+                            @* write the last source, or the only one *@
+                            <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
+                        </small>
+                    }
+                    @* do nothing if theres no sources *@
+                    else { }
+                }
+            </li>
+        }
+    </ul>
+}
+

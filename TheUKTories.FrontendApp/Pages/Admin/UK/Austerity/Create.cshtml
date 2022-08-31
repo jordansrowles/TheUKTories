@@ -1,0 +1,44 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Admin.UK.Austerity.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UKAusterityMeasure</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UKAusterityMeasure.Type" class="control-label"></label>
+                <select asp-for="UKAusterityMeasure.Type" class="form-control"></select>
+                <span asp-validation-for="UKAusterityMeasure.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UKAusterityMeasure.Title" class="control-label"></label>
+                <input asp-for="UKAusterityMeasure.Title" class="form-control" />
+                <span asp-validation-for="UKAusterityMeasure.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UKAusterityMeasure.Date" class="control-label"></label>
+                <input asp-for="UKAusterityMeasure.Date" class="form-control" />
+                <span asp-validation-for="UKAusterityMeasure.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

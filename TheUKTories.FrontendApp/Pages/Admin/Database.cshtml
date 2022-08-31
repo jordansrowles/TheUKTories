@@ -1,0 +1,34 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Admin.DatabaseModel
+@{
+}
+
+
+
+<form>
+    <govuk-checkboxes name="BackupOptions">
+        <govuk-checkboxes-fieldset>
+            <govuk-checkboxes-fieldset-legend isPageHeader="true">
+                Database Backup Options
+            </govuk-checkboxes-fieldset-legend>
+        </govuk-checkboxes-fieldset>
+
+        <govuk-checkboxes-item value="all">Everything</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="contacts">Contacts</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="people">People</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="tactics">Alt Right Tactics</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="covid_responses">Coronavirus Responses</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="covid_contracts">Coronavirus Contracts</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="gov_covid_contracts">Coronavirus Contracts (Gov)</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="isc_report">ISC Russia Report</govuk-checkboxes-item>
+        <govuk-checkboxes-item value="external_links">Coronavirus Responses</govuk-checkboxes-item>
+
+        <govuk-checkboxes-item value="austerity">Austerity</govuk-checkboxes-item>
+    </govuk-checkboxes>
+    <govuk-button>Start Backup</govuk-button>
+</form>
+
+<form>
+    <govuk-button>Delete All Contacts</govuk-button>
+</form>
+

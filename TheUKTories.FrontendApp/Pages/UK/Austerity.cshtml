@@ -1,0 +1,39 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.UK.AusterityModel
+@{
+}
+
+<span class="govuk-caption-l">What exactly is austerity?</span>
+<h2 class="govuk-heading-l">The Age of Austerity</h2>
+<p class="govuk-body">
+    Austerity is an economic strategy on how to spend the countries money. It can include making cuts to public services, like welfare, police forces, public housing and libraries. It could also include methods like increasing taxes, such as the National Insurance contributions, council tax and road tax. Austerity should not be used during a recession, but during the growth period after the fact. Otherwise, austerity can lead to low economic growth, decreased consumer confidence (such as the "double-dip" recession during the coalition), and increased levels of unemployment.
+</p>
+
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    @foreach (Austeritys item in Model.AllItems)
+    {
+    <li>
+        @item.String
+
+        @if (item.Sources.Count() == 1)
+        {
+            <small>
+                -
+                <a href="@item.Sources[0].Link" target="_blank">@item.Sources[0].Source</a>
+            </small>
+        }
+        @if (item.Sources.Count() > 1)
+        {
+            @await Html.PartialAsync("Partials/_ListSourcesPartial", item.Sources)
+        }
+
+        @*
+        @if (User.Identity.IsAuthenticated)
+        {
+            <small>| (<a href="/Portal/Austerity/Index?partition=@item.Type&id=@item.Id">edit item</a>)</small>
+            <small>(<a href="/Portal/Austerity/Index?partition=@item.Type&id=@item.Id">edit sources</a>)</small>
+        }*@
+    </li>
+    }
+
+</ul>

@@ -1,0 +1,37 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Admin.AltRight.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>FacistTactic</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FacistTactic.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FacistTactic.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FacistTactic.Subtitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FacistTactic.Subtitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FacistTactic.Link)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FacistTactic.Link)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FacistTactic?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
