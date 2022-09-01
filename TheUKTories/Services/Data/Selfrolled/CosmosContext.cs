@@ -1,13 +1,13 @@
 ﻿using Microsoft.Azure.Cosmos;
 using System.Diagnostics;
 
-namespace TheUKTories.Services.Data
+namespace TheUKTories.Services.Data.Selfrolled
 {
     public class CosmosContext : ICosmosContext
     {
         public CosmosClient Client { get; set; }
         readonly Database _database;
-        
+
         public Container CovidResponsesContainer { get; set; }
         public Container CovidContractsContainer { get; set; }
         public Container AusterityContainer { get; set; }
@@ -102,7 +102,7 @@ namespace TheUKTories.Services.Data
             catch (CosmosException e)
             {
                 if (e.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    return default(T);
+                    return default;
                 else throw;
             }
 

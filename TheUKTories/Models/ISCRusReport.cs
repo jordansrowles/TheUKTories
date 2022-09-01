@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
-using TheUKTories.Models;
 
 namespace TheUKTories.Models
 {

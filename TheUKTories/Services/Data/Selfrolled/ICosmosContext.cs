@@ -1,6 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 
-namespace TheUKTories.Services.Data
+namespace TheUKTories.Services.Data.Selfrolled
 {
     public interface ICosmosContext
     {

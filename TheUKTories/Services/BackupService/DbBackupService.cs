@@ -1,16 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Reflection;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TheUKTories.Models;
-using TheUKTories.Services.Data;
-using Newtonsoft.Json;
+using TheUKTories.Services.Data.Selfrolled;
 
 namespace TheUKTories.Services.BackupService
 {
@@ -26,7 +17,7 @@ namespace TheUKTories.Services.BackupService
             // Prechecks
             Directory.CreateDirectory(_base); // create directory if it doesn't exist
         }
-        
+
         public async static Task Backup()
         {
             await Backup(new List<string>() { "contacts", "covid_contracts", "covid_responses",

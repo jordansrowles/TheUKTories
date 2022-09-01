@@ -5,6 +5,8 @@
     ViewData["Title"] = "Index";
 }
 
+@await Html.PartialAsync("Partials/_PageTitlePartial", "New Tactic")
+
 <p>
     <a class="govuk-button" asp-page="Create">Create New</a>
 </p>

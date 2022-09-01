@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TheUKTories.Services.Data.Selfrolled;
 
 namespace TheUKTories.FrontendApp.Pages.People
 {

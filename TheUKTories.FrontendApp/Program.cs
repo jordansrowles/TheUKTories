@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using GovUk.Frontend.AspNetCore;
+using TheUKTories.Services.Data.Selfrolled;
 
 var builder = WebApplication.CreateBuilder(args);
 

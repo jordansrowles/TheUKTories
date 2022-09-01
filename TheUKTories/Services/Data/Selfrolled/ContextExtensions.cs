@@ -1,4 +1,4 @@
-﻿namespace TheUKTories.Services.Data
+﻿namespace TheUKTories.Services.Data.Selfrolled
 {
     using Microsoft.Azure.Cosmos;
     using TheUKTories.Models;

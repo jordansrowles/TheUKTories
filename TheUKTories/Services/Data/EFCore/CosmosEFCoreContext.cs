@@ -22,10 +22,10 @@ namespace TheUKTories.Services.Data.EFCore
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseCosmos(Globals.TryGetConnectionString(), 
+            options.UseCosmos(Globals.TryGetConnectionString(),
                 database_name);
         }
- 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Contact>().ToContainer("Contacts")

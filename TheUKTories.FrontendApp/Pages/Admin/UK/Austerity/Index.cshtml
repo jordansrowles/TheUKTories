@@ -5,44 +5,43 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+@await Html.PartialAsync("Partials/_PageTitlePartial", "New Austerity Measure")
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="govuk-button" asp-page="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Date)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+
 @foreach (var item in Model.UKAusterityMeasure) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+        <govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Type)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(modelItem => item.Type)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Title)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(modelItem => item.Title)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.UKAusterityMeasure[0].Date)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(modelItem => item.Date)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-action asp-page="./Details" asp-route-id="@item.Id">Details</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Edit" asp-route-id="@item.Id">Edit</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Delete" asp-route-id="@item.Id">Delete</govuk-summary-list-row-action>
+    </govuk-summary-list-row>
+</govuk-summary-list>
 }
-    </tbody>
-</table>

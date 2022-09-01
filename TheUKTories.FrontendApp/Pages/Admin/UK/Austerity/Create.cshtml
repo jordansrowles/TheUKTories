@@ -10,6 +10,7 @@
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+    @*
     <govuk-select name="Type" asp-for="UKAusterityMeasure.Type">
         <govuk-select-label>Type</govuk-select-label>
         <govuk-select-item value="Other" selected="true">Other</govuk-select-item>
@@ -17,6 +18,9 @@
         <govuk-select-item value="PublicServices">Public services</govuk-select-item>
         <govuk-select-item value="Defence">Defence</govuk-select-item>
     </govuk-select>
+    *@
+
+    <govuk-input type="text" asp-for="UKAusterityMeasure.Type" />
 
     <span asp-validation-for="UKAusterityMeasure.Type" class="text-danger"/>
 

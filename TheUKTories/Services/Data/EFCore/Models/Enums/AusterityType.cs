@@ -1,9 +1,9 @@
-﻿namespace TheUKTories.Services.Data.EFCore.Models;
+﻿namespace TheUKTories.Services.Data.EFCore.Models.Enums;
 
 public enum AusterityType
 {
     Other,
-    Social, 
+    Social,
     PublicServices,
     Defence
 }
