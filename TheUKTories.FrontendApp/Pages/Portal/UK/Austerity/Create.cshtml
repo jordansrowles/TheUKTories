@@ -1,0 +1,33 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "New Austerity Measure")
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <govuk-select asp-for="UKAusterityMeasure.Type">
+        <govuk-select-item value="Other" selected="true">Other</govuk-select-item>
+        <govuk-select-item value="NHS">NHS</govuk-select-item>
+        <govuk-select-item value="Social">Social</govuk-select-item>
+        <govuk-select-item value="Defence">Defence</govuk-select-item>
+        <govuk-select-item value="Infrastructure">Infrastructure</govuk-select-item>
+    </govuk-select>
+    <span asp-validation-for="UKAusterityMeasure.Type" class="text-danger"/>
+
+    <govuk-textarea rows="5" asp-for="UKAusterityMeasure.Title"/>
+    <span asp-validation-for="UKAusterityMeasure.Title" class="text-danger"/>
+
+    <govuk-date-input asp-for="UKAusterityMeasure.Date" />
+    <span asp-validation-for="UKAusterityMeasure.Date" class="text-danger"/>
+
+    <govuk-button type="submit" value="Create">Create</govuk-button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

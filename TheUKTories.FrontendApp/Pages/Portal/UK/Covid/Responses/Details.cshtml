@@ -1,0 +1,14 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Covid Response Details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_CovidResponse", Model.CovidGovResponse)
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CovidGovResponse?.CovidGovResponseId" class="govuk-button">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.CovidGovResponse?.CovidGovResponseId" class="govuk-button govuk-button--warning">Delete</a>
+    <a asp-page="./Index" class="govuk-button">Back to List</a>
+</div>

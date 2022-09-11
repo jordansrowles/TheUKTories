@@ -1,0 +1,18 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.AltRight.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View all altright tactics")
+
+<a asp-page="Create" class="govuk-button">Create New</a>
+
+@foreach (FacistTactic item in Model.FacistTactic)
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_Tactic", item)
+    <a asp-page="./Details" asp-route-id="@item.FacistTacticId" class="govuk-button">Details</a>
+    <a asp-page="./Edit" asp-route-id="@item.FacistTacticId" class="govuk-button">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@item.FacistTacticId" class="govuk-button govuk-button--warning">Delete</a>
+}

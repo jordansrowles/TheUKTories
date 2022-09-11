@@ -1,0 +1,25 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.UK.Covid.IndexModel
+@using System.Globalization
+@{
+    string FormatPrice(double p)
+    {
+        var fp = p.ToString("C3", CultureInfo.CreateSpecificCulture("en-GB"));
+        return fp.Remove(fp.Length - 1);
+   
+    }
+}
+
+<span class="govuk-caption-l" id="contractlist">An Omnibus of Omnishambles</span>
+<h1 class="govuk-heading-xl">UK Coronavirus Response</h1>
+
+@await Html.PartialAsync("Partials/General/Titles/_TitleWithSub", ("The Fabled Money Tree", "Covid Contracts"))
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Government Responses to the Virus")
+
+<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+    @foreach (CovidGovResponse response in Model.AllResponses)
+    {
+        <li>@response.Title</li>
+    }
+</ul>

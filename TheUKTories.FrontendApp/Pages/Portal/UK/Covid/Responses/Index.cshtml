@@ -1,0 +1,15 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View all Covid Response")
+
+<a asp-page="Create" class="govuk-button">Create New</a>
+<a asp-page="./Sources/Index" class="govuk-button">All Sources</a>
+
+@foreach (var item in Model.CovidGovResponse) {
+        @await Html.PartialAsync("Partials/Portal/DetailViews/_CovidResponse", item)
+}

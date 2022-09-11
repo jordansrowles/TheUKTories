@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.FrontendApp", "TheUKTories.FrontendApp\TheUKTories.FrontendApp.csproj", "{ECEC52F1-156E-4421-9D1D-DD814D45B85D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{1930268D-2D5A-431B-B1CF-3D62E9B8CF40}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.BackupRunner", "TheUKTories.BackupRunner\TheUKTories.BackupRunner.csproj", "{77D57F99-45E3-4B0E-99F9-10A8DC3A9D87}"
 EndProject

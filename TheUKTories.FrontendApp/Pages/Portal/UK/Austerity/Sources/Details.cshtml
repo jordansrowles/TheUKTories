@@ -1,0 +1,15 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Austerity Source Details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Source", Model.UKAusterityMeasureSource)
+
+<div>
+    <a class="govuk-button" asp-page="./Edit" asp-route-id="@Model.UKAusterityMeasureSource?.UKAusterityMeasureSourceId">Edit</a>
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+</div>

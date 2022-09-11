@@ -1,0 +1,16 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View all austerity measures")
+
+<a asp-page="Create" class="govuk-button">Create New</a>
+<a asp-page="./Sources/Index" class="govuk-button">All Sources</a>
+
+@foreach (UKAusterityMeasure item in Model.UKAusterityMeasure)
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_Austerity", item)
+}

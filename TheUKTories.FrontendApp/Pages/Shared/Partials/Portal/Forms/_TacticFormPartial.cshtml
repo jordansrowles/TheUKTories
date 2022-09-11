@@ -1,0 +1,17 @@
+﻿@model FacistTactic 
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <govuk-input asp-for="Title" type="text"/>
+    <span asp-validation-for="Title" class="text-danger"/>
+
+    <govuk-textarea rows="5" asp-for="Subtitle"/>
+    <span asp-validation-for="Subtitle" class="text-danger"/>
+
+    <govuk-input asp-for="Link" type="text"/>
+    <span asp-validation-for="Link" class="text-danger"/>
+
+    <govuk-button type="submit" value="Create">Create</govuk-button>
+
+</form>

@@ -1,0 +1,22 @@
+﻿@model List<ISourceItem> 
+
+if (Model != null && Model.Count() != 0) {
+    if (Model.Count() == 1) {
+                <small> - <a href="@Model[0].Link" target="_blank">@Model[0].Source</a></small>
+    }
+    else
+    {
+         <small>
+            -
+            @foreach (var item in Model.Take(Model.Count - 1))
+            {
+                <span><a href="@item.Link" target="_blank">
+                    @item.Source 
+                </a> |</span>
+            }
+            <a href="@Model.Last().Link" target="_blank">@Model.Last().Source</a>
+        </small>   
+    }
+
+}
+

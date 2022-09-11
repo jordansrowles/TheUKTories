@@ -1,0 +1,28 @@
+﻿@model FacistTactic 
+
+<govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Title)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Title)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Subtitle)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Subtitle)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Link)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Link)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+</govuk-summary-list>

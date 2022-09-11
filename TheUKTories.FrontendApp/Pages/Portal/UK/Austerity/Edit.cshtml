@@ -1,0 +1,36 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Edit existing austerity")
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="UKAusterityMeasure.UKAusterityMeasureId" />
+
+    <govuk-select asp-for="UKAusterityMeasure.Type">
+        <govuk-select-item value="Other" selected="true">Other</govuk-select-item>
+        <govuk-select-item value="NHS">NHS</govuk-select-item>
+        <govuk-select-item value="Social">Social</govuk-select-item>
+        <govuk-select-item value="Defence">Defence</govuk-select-item>
+        <govuk-select-item value="Infrastructure">Infrastructure</govuk-select-item>
+    </govuk-select>
+    <span asp-validation-for="UKAusterityMeasure.Type" class="text-danger"/>
+
+    <govuk-textarea rows="5" asp-for="UKAusterityMeasure.Title"/>
+    <span asp-validation-for="UKAusterityMeasure.Title" class="text-danger"/>
+
+    <govuk-date-input asp-for="UKAusterityMeasure.Date" />
+    <span asp-validation-for="UKAusterityMeasure.Date" class="text-danger"/>
+
+    <govuk-button type="submit" value="Save">Save</govuk-button>
+</form>
+<a asp-page="./Index" class="govuk-button">Back to List</a>
+<a asp-page="./Sources/Create" asp-route-id="@Model.UKAusterityMeasure.UKAusterityMeasureId" class="govuk-button">Add Source</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

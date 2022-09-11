@@ -1,0 +1,16 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.AltRight.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Create new tactic")
+
+@await Html.PartialAsync("Partials/Portal/Forms/_TacticFormPartial", Model.FacistTactic)
+
+<a asp-page="./Index" class="govuk-button">Back to List</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

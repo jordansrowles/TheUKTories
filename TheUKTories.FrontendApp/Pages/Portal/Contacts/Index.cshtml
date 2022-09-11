@@ -1,0 +1,17 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Contacts.IndexModel
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View all contact messages")
+
+<a asp-page="./SendTest" class="govuk-button">Test Message</a>
+
+@foreach (Contact item in Model.Contact)
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_Contact", item)
+    <a asp-page="./Details" asp-route-id="@item.ContactId" class="govuk-button">Details</a>
+    <a asp-page="./Delete" asp-route-id="@item.ContactId" class="govuk-button govuk-button--warning">Delete</a>
+}

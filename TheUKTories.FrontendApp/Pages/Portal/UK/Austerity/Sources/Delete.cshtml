@@ -1,0 +1,17 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Are you sure you want to delete this?")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Source", Model.UKAusterityMeasureSource)
+
+<a class="govuk-button" asp-page="./Edit" asp-route-id="@Model.UKAusterityMeasureSource?.UKAusterityMeasureSourceId">Edit</a>
+<form method="post">
+    <input type="hidden" asp-for="UKAusterityMeasureSource.UKAusterityMeasureSourceId" />
+    <input type="submit" value="Delete" class="govuk-button govuk-button--warning" />
+</form>
+<a class="govuk-button" asp-page="./Index">Back to List</a>

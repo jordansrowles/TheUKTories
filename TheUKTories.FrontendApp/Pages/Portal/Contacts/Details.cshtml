@@ -1,0 +1,12 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Contacts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View contact message details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Contact", Model.Contact)
+<a asp-page="./Delete" asp-route-id="@Model.Contact.ContactId" class="govuk-button govuk-button--warning">Delete</a>
+<a asp-page="./Index" class="govuk-button">Back to list</a>

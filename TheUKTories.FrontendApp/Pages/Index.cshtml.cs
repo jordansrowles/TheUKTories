@@ -9,9 +9,9 @@ namespace TheUKTories.FrontendApp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        ICosmosContext _db;
+        SqlServerDataContext _db;
         
-        public IndexModel(ILogger<IndexModel> logger, ICosmosContext db)
+        public IndexModel(ILogger<IndexModel> logger, SqlServerDataContext db)
         {
             _logger = logger;
             _db = db;
@@ -19,6 +19,8 @@ namespace TheUKTories.FrontendApp.Pages
 
         public async Task OnGet()
         {
+            //await _db.Database.EnsureDeletedAsync();
+            await _db.Database.EnsureCreatedAsync();
         }
     }
 }

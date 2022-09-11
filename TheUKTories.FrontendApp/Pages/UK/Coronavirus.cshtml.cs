@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using TheUKTories.Services.Data.Selfrolled;
+using TheUKTories.Models;
 
 namespace TheUKTories.FrontendApp.Pages.UK
 {

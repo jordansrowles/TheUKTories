@@ -1,0 +1,16 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.IndexModel
+@{
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Backend tools")
+
+<ul class="govuk-list govuk-body">
+    <li><a asp-page="./Contacts/Index">Contacts</a></li>
+    <li><a asp-page="./AltRight/Index">All AltRight</a></li>
+    <li><a asp-page="./AltRight/Create">New AltRight</a></li>
+    <li><a asp-page="./UK/Austerity/Index">UK > Austerity > All</a></li>
+    <li><a asp-page="./UK/Austerity/Create">UK > Austerity > Create</a></li>
+    <li><a asp-page="./UK/Covid/Responses/Index">UK > Covid > Responses > All</a></li>
+    <li><a asp-page="./UK/Covid/Responses/Create">UK > Covid > Responses > Create</a></li>
+</ul>

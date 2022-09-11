@@ -1,0 +1,25 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Austerity details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Austerity", Model.UKAusterityMeasure)
+
+@if (Model.UKAusterityMeasure.SourceItems != null)
+{
+    @await Html.PartialAsync("Partials/General/Titles/_TitleWithSub", ("Source Items", "Select links to edit items"))
+
+    @foreach (var item in Model.UKAusterityMeasure.SourceItems)
+    {
+        <ul class="govuk-list govuk-list--bullet">
+            <li><govuk-tag>@item.Date.Year</govuk-tag> <a asp-page="./Sources/Edit" asp-route-id="@item.UKAusterityMeasureSourceId">@item.Source</a></li>
+        </ul>
+    }
+}
+
+
+<a asp-page="./Index" class="govuk-button">Back to All Austerity Items</a>

@@ -1,0 +1,15 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.AltRight.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "View altright tactic details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Tactic", Model.FacistTactic)
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FacistTactic?.FacistTacticId" class="govuk-button">Edit</a>
+    <a asp-page="./Delete" asp-route-id="@Model.FacistTactic?.FacistTacticId" class="govuk-button govuk-button--warning">Delete</a>
+    <a asp-page="./Index" class="govuk-button">Back to List</a>
+</div>

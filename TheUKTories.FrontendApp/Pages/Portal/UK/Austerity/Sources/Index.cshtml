@@ -1,0 +1,19 @@
+﻿@page
+@using TheUKTories.Services.Data.EFCore.Models
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "UK Austerity Measure Sources")
+
+@foreach (UKAusterityMeasureSource item in Model.UKAusterityMeasureSource)
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_Source", item)
+    <a class="govuk-button" asp-page="./Edit" asp-route-id="@item.UKAusterityMeasureSourceId">Edit</a>
+    <a class="govuk-button" asp-page="./Details" asp-route-id="@item.UKAusterityMeasureSourceId">Details</a>
+    <a class="govuk-button" asp-page="./Delete" asp-route-id="@item.UKAusterityMeasureSourceId">Delete</a>
+}
+
+

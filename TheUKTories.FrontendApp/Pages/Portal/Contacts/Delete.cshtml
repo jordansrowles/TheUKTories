@@ -1,0 +1,16 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Contacts.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Are you sure you want to delete this?")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Contact", Model.Contact)
+    
+<form method="post">
+    <input type="hidden" asp-for="Contact.ContactId" />
+    <input type="submit" value="Delete" class="govuk-button govuk-button--warning" />
+    <a asp-page="./Index" class="govuk-button">Back to List</a>
+</form>

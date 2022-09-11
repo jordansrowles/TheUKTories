@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using TheUKTories.Services.Data.EFCore;
 using TheUKTories.Services.Data.EFCore.Models;
 
@@ -14,9 +15,9 @@ namespace TheUKTories.FrontendApp.Pages.AltRight
     [AllowAnonymous]
     public class IndexModel : PageModel
     {
-        private readonly TheUKTories.Services.Data.EFCore.CosmosEFCoreContext _context;
+        private readonly SqlServerDataContext _context;
 
-        public IndexModel(TheUKTories.Services.Data.EFCore.CosmosEFCoreContext context)
+        public IndexModel(SqlServerDataContext context)
         {
             _context = context;
         }
@@ -25,6 +26,7 @@ namespace TheUKTories.FrontendApp.Pages.AltRight
 
         public async Task OnGetAsync()
         {
+
             if (_context.FacistTactics != null)
             {
                 FacistTactic = await _context.FacistTactics.ToListAsync();

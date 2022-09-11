@@ -1,0 +1,42 @@
+﻿@model UKAusterityMeasure 
+
+<govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Type)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Type)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Title)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Title)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Date)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Date)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+        <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.SourceItems)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.SourceItems.Count)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-action asp-page="./Details" asp-route-id="@Model.UKAusterityMeasureId">Details</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Edit" asp-route-id="@Model.UKAusterityMeasureId">Edit</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Delete" asp-route-id="@Model.UKAusterityMeasureId">Delete</govuk-summary-list-row-action>
+    </govuk-summary-list-row>
+</govuk-summary-list>

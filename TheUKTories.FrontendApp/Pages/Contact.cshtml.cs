@@ -20,11 +20,11 @@ namespace TheUKTories.FrontendApp.Pages
         [Display(Name = "Your Name")]
         public string? Name { get; set; }
 
-        readonly CosmosEFCoreContext _context;
+        readonly SqlServerDataContext _context;
         private readonly ILogger<ContactModel> _logger;
 
 
-        public ContactModel(ILogger<ContactModel> logger, CosmosEFCoreContext context)
+        public ContactModel(ILogger<ContactModel> logger, SqlServerDataContext context)
         {
             _logger = logger;
             _context = context;
@@ -43,7 +43,7 @@ namespace TheUKTories.FrontendApp.Pages
                 Message = Request.Form[nameof(Message)],
             };
 
-            _context.Contacts.Add(contact);
+            _context.Contacts?.Add(contact);
             await _context.SaveChangesAsync();
 
 

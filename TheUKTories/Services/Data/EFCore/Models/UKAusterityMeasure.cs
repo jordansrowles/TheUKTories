@@ -1,11 +1,30 @@
-﻿namespace TheUKTories.Services.Data.EFCore.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TheUKTories.Services.Data.EFCore.Models
 {
     public class UKAusterityMeasure
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        [Required]
+        public int UKAusterityMeasureId { get; set; }
+
+        [Required]
         public string Type { get; set; }
+
+        [Required]
         public string Title { get; set; }
-        public List<SourceItem> SourceItems { get; set; } = new List<SourceItem>();
+
+        public virtual ICollection<UKAusterityMeasureSource> SourceItems { get; set; }
+
+        [Required]
         public DateTime Date { get; set; }
+    }
+
+    public class UKAusterityMeasureSource : SourceItem, ISourceItem
+    {
+        public int UKAusterityMeasureSourceId { get; set; }
+
+        public int UKAusterityMeasureId { get; set; } // parent id
+
+        public virtual UKAusterityMeasure UKAusterityMeasure { get; set; }
     }
 }

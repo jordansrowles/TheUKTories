@@ -3,7 +3,7 @@
 ResetText();
 WriteNoticeText("Welcome to The UK Tories database backup script!");
 WriteNoticeText($"Searching for enviroment variable ({Globals.ConnectionEnvironmentVar})...");
-if (String.IsNullOrEmpty(Globals.TryGetConnectionString()))
+if (String.IsNullOrEmpty(Globals.TryGetConnectionString(Globals.ExpressConnectionString)))
 {
     WriteNoticeText("Couldn't find the environment variable to connect to the database, set it up and rerun the script");
     Environment.Exit(0);

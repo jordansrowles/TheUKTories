@@ -1,0 +1,32 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.AltRight.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Edit existing tactic")
+
+@*await Html.PartialAsync("Partials/Portal/Forms/_TacticFormPartial", Model.FacistTactic)*@
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="FacistTactic.FacistTacticId" />
+
+    <govuk-input asp-for="FacistTactic.Title" type="text"/>
+    <span asp-validation-for="FacistTactic.Title" class="text-danger"/>
+
+    <govuk-textarea rows="5" asp-for="FacistTactic.Subtitle"/>
+    <span asp-validation-for="FacistTactic.Subtitle" class="text-danger"/>
+
+    <govuk-input asp-for="FacistTactic.Link" type="text"/>
+    <span asp-validation-for="FacistTactic.Link" class="text-danger"/>
+
+    <govuk-button type="submit" value="Save">Save</govuk-button>
+</form>
+
+<a asp-page="./Index" class="govuk-button">Back to List</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

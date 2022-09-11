@@ -1,0 +1,12 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Contacts.SendTestModel
+
+@{
+    ViewData["Title"] = "Test Contact";
+}
+
+@await Html.PartialAsync("Partials/_PageTitlePartial", "Send a test contact")
+
+<form method="post">
+        <input type="submit" value="Create" class="govuk-button" />
+</form>

@@ -32,7 +32,7 @@
         @if (User.Identity.IsAuthenticated)
         {
             <dd class="govuk-summary-list__actions">
-                <a asp-page="../Admin/AltRight/Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-page="../Portal/AltRight/Edit" asp-route-id="@item.FacistTacticId">Edit</a>
             </dd>
         }
     </div>
