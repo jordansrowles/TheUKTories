@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.Extensions.Caching.Memory;
 using TheUKTories.Services.Data.EFCore.Models;
 using TheUKTories.Services.Data.EFCore.Models.Covid;
+using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.Services.Data.EFCore
 {
@@ -16,10 +16,16 @@ namespace TheUKTories.Services.Data.EFCore
         // UK.Covid
         public DbSet<CovidGovResponse>? CovidGovResponses { get; set; }
         public DbSet<CovidGovResponseSource>? CovidGovResponseSources { get; set; }
+        public DbSet<GovPPEContract>? CovidGovContracts { get; set; }
+        public DbSet<GovPPEContractCompany>? CovidGovContractCompanies { get; set; }
+        // People
+        public DbSet<Person>? People { get; set; }
+        public DbSet<Quote>? Quotes { get; set; }
+        public DbSet<PersonGeneral>? PeopleGeneral { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options//.UseLazyLoadingProxies()
+            options
                 .UseSqlServer(Globals.TryGetConnectionString(Globals.ExpressConnectionString));
 
             options.LogTo(Console.WriteLine).EnableDetailedErrors().EnableSensitiveDataLogging();

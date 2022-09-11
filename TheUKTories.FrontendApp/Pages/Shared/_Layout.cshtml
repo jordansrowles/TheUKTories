@@ -37,15 +37,22 @@
                 <nav>
                     <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
                         <li class="govuk-header__navigation-item @((string)ViewData["SelectedTopItem"] == "Covid" ? "govuk-header__navigation-item--active" : "")">
+                            <a class="govuk-header__link" href="/UK/Austerity">
+                                Austerity
+                            </a>
+                        </li>
+                        <li class="govuk-header__navigation-item @((string)ViewData["SelectedTopItem"] == "Covid" ? "govuk-header__navigation-item--active" : "")">
                             <a class="govuk-header__link" href="/UK/Covid/">
                                 Covid
                             </a>
                         </li>
+                        @*
                         <li class="govuk-header__navigation-item @((string)ViewData["SelectedTopItem"] == "People" ? "govuk-header__navigation-item--active" : "")">
                             <a class="govuk-header__link" href="/People">
                                 People
                             </a>
                         </li>
+                        *@
                         <li class="govuk-header__navigation-item @((string)ViewData["SelectedTopItem"] == "AltRight" ? "govuk-header__navigation-item--active" : "")">
                             <a class="govuk-header__link" href="/AltRight">
                                 Tactics
