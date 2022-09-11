@@ -29,6 +29,7 @@
     <govuk-button type="submit" value="Save">Save</govuk-button>
 </form>
 <a asp-page="./Index" class="govuk-button">Back to List</a>
+<a class="govuk-button govuk-button--warning" asp-page="./Delete" asp-route-id="@Model.UKAusterityMeasure.UKAusterityMeasureId">Delete</a>
 <a asp-page="./Sources/Create" asp-route-id="@Model.UKAusterityMeasure.UKAusterityMeasureId" class="govuk-button">Add Source</a>
 
 @section Scripts {
