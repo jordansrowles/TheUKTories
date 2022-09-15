@@ -27,9 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Portal\Sources\" />
     <Folder Include="Pages\Portal\UK\Covid\Contracts\Sources\" />
-    <Folder Include="Pages\Shared\Partials\People\" />
   </ItemGroup>
 
 </Project>

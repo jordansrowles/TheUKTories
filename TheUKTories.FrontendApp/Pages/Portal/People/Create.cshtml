@@ -1,0 +1,61 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Create new Person")
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Person.PersonId" />
+    <input type="hidden" asp-for="Person.IsProfilePublic" value="false" />
+
+    <govuk-select asp-for="Person.Nationality">
+        <govuk-select-item value="NoNationality">No Nationality</govuk-select-item>
+        <govuk-select-item value="British" selected="true">British</govuk-select-item>
+        <govuk-select-item value="American">American</govuk-select-item>
+        <govuk-select-item value="Canadian">Canadian</govuk-select-item>
+        <govuk-select-item value="French">French</govuk-select-item>
+        <govuk-select-item value="German">German</govuk-select-item>
+        <govuk-select-item value="Russian">Russian</govuk-select-item>
+    </govuk-select>
+    <span asp-validation-for="Person.Nationality" class="text-danger"/>
+
+    <govuk-input asp-for="Person.FullName"/>
+    <span asp-validation-for="Person.FullName" class="text-danger"/>
+
+    <govuk-date-input asp-for="Person.DateOfBirth" />
+    <span asp-validation-for="Person.DateOfBirth" class="text-danger"/>
+
+    <govuk-select asp-for="Person.PoliticalParty">
+        <govuk-select-item value="NoParty">No Party</govuk-select-item>
+        <govuk-select-item value="Crossbench">Crossbench</govuk-select-item>
+        <govuk-select-item value="Conservative" selected="true">Conservative</govuk-select-item>
+        <govuk-select-item value="Labour">Labour</govuk-select-item>
+        <govuk-select-item value="LiberalDemocrat">LiberalDemocrat</govuk-select-item>
+        <govuk-select-item value="Royal">Royal</govuk-select-item>
+    </govuk-select>
+    <span asp-validation-for="Person.PoliticalParty" class="text-danger"/>
+
+    <govuk-input asp-for="Person.CurrentTitle"/>
+    <span asp-validation-for="Person.CurrentTitle" class="text-danger"/>
+
+    <govuk-input asp-for="Person.Titles"/>
+    <span asp-validation-for="Person.CurrentTitle" class="text-danger"/>
+
+    <govuk-input asp-for="Person.ProfileImageBlobUri"/>
+    <span asp-validation-for="Person.ProfileImageBlobUri" class="text-danger"/>
+
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

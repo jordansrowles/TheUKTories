@@ -1,0 +1,70 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Person.PersonId" />
+            <div class="form-group">
+                <label asp-for="Person.FullName" class="control-label"></label>
+                <input asp-for="Person.FullName" class="form-control" />
+                <span asp-validation-for="Person.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.Nationality" class="control-label"></label>
+                <input asp-for="Person.Nationality" class="form-control" />
+                <span asp-validation-for="Person.Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.PoliticalParty" class="control-label"></label>
+                <input asp-for="Person.PoliticalParty" class="form-control" />
+                <span asp-validation-for="Person.PoliticalParty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.DateOfBirth" class="control-label"></label>
+                <input asp-for="Person.DateOfBirth" class="form-control" />
+                <span asp-validation-for="Person.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.CurrentTitle" class="control-label"></label>
+                <input asp-for="Person.CurrentTitle" class="form-control" />
+                <span asp-validation-for="Person.CurrentTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.Titles" class="control-label"></label>
+                <input asp-for="Person.Titles" class="form-control" />
+                <span asp-validation-for="Person.Titles" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.ProfileImageBlobUri" class="control-label"></label>
+                <input asp-for="Person.ProfileImageBlobUri" class="form-control" />
+                <span asp-validation-for="Person.ProfileImageBlobUri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.IsProfilePublic" class="control-label"></label>
+                <input asp-for="Person.IsProfilePublic" class="form-control" />
+                <span asp-validation-for="Person.IsProfilePublic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

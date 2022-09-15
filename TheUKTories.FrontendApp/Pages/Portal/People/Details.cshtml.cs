@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.Covid;
+using TheUKTories.Services.Data.EFCore.Models.People;
 
-namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
+namespace TheUKTories.FrontendApp.Pages.Portal.People
 {
     public class DetailsModel : PageModel
     {
@@ -19,24 +19,23 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
             _context = context;
         }
 
-      public CovidGovResponse CovidGovResponse { get; set; } = default!; 
+      public Person Person { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.CovidGovResponses == null)
+            if (id == null || _context.People == null)
             {
                 return NotFound();
             }
 
-            var covidgovresponse = await _context.CovidGovResponses.Include(i => i.CovidGovResponseSources)
-                .FirstOrDefaultAsync(m => m.CovidGovResponseId == id);
-            if (covidgovresponse == null)
+            var person = await _context.People.FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
             else 
             {
-                CovidGovResponse = covidgovresponse;
+                Person = person;
             }
             return Page();
         }

@@ -10,7 +10,7 @@ if (String.IsNullOrEmpty(Globals.TryGetConnectionString(Globals.ExpressConnectio
 }
 
 WriteNoticeText("Connection string found, connecting to database and performing a full backup");
-await TheUKTories.Services.BackupService.DbBackupService.Backup();
+await TheUKTories.Services.BackupService.OldDbBackupService.Backup();
 WriteNoticeText("Done!");
 
 // Methods

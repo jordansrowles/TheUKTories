@@ -6,9 +6,23 @@
 }
 @await Html.PartialAsync("Partials/General/Titles/_Title", "Covid Response Details")
 
-@await Html.PartialAsync("Partials/Portal/DetailViews/_CovidResponse", Model.CovidGovResponse)
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.CovidGovResponse?.CovidGovResponseId" class="govuk-button">Edit</a>
+    <a asp-page="./Sources/Create" asp-route-id="@Model.CovidGovResponse?.CovidGovResponseId" class="govuk-button">Add Source</a>
     <a asp-page="./Delete" asp-route-id="@Model.CovidGovResponse?.CovidGovResponseId" class="govuk-button govuk-button--warning">Delete</a>
     <a asp-page="./Index" class="govuk-button">Back to List</a>
 </div>
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_CovidResponse", Model.CovidGovResponse)
+
+@if (Model.CovidGovResponse.CovidGovResponseSources != null)
+{
+    @await Html.PartialAsync("Partials/General/Titles/_TitleWithSub", ("Source Items", "Select links to edit items"))
+
+    @foreach (var item in Model.CovidGovResponse.CovidGovResponseSources)
+    {
+        <ul class="govuk-list govuk-list--bullet">
+            <li><govuk-tag>@item.Date.Year</govuk-tag> <a asp-page="./Sources/Edit" asp-route-id="@item.CovidGovResponseSourceId">@item.Source</a></li>
+        </ul>
+    }
+}

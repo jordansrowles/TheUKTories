@@ -1,0 +1,13 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", $"{Model.Person.FullName}")
+@await Html.PartialAsync("Partials/Portal/DetailViews/_Person", Model.Person)
+<div>
+    <a class="govuk-button" asp-page="./Edit" asp-route-id="@Model.Person?.PersonId">Edit</a>
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+</div>

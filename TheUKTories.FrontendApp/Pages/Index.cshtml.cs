@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using TheUKTories.Services.Data.Selfrolled;
 
 namespace TheUKTories.FrontendApp.Pages
 {
     [AllowAnonymous]
+    [ResponseCache(NoStore = true)]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -19,8 +21,7 @@ namespace TheUKTories.FrontendApp.Pages
 
         public async Task OnGet()
         {
-            //await _db.Database.EnsureDeletedAsync();
-            await _db.Database.EnsureCreatedAsync();
+            _db.Database.Migrate();
         }
     }
 }

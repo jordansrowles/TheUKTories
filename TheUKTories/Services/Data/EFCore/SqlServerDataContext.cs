@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Memory;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheUKTories.Services.Data.EFCore.Models;
 using TheUKTories.Services.Data.EFCore.Models.Covid;
 using TheUKTories.Services.Data.EFCore.Models.People;
@@ -20,43 +20,27 @@ namespace TheUKTories.Services.Data.EFCore
         public DbSet<GovPPEContractCompany>? CovidGovContractCompanies { get; set; }
         // People
         public DbSet<Person>? People { get; set; }
-        public DbSet<Quote>? Quotes { get; set; }
+        public DbSet<PersonQuote>? PeopleQuotes { get; set; }
         public DbSet<PersonGeneral>? PeopleGeneral { get; set; }
+        public DbSet<PersonQuoteSource>? PersonQuoteSources { get; set; }
+        public DbSet<PersonGeneralSource>? PersonGeneralSources { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options
-                .UseSqlServer(Globals.TryGetConnectionString(Globals.ExpressConnectionString));
+                .UseSqlServer(Globals.TryGetConnectionString(Globals.ConnectionString));
 
             options.LogTo(Console.WriteLine).EnableDetailedErrors().EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            var person_titles_converter = new ValueConverter<string[], string>(
+                v => string.Join(";", v),
+                v => v.Split(";", StringSplitOptions.RemoveEmptyEntries).ToArray());
 
-        }
-    }
-
-    public class CachedDataContext : SqlServerDataContext
-    {
-        IMemoryCache _cache;
-
-        public CachedDataContext(IMemoryCache cache)
-        {
-            _cache = cache;
-        }
-
-        public async Task<PaginatedList<UKAusterityMeasure>> GetPagedAusterity(int? pageIndex, int pageSize)
-        {
-            if (!_cache.TryGetValue("item", out var x))
-            {
-
-            }
-
-            IQueryable<UKAusterityMeasure> items = from i in base.UKAusterityMeasures select i;
-            var list = await PaginatedList<UKAusterityMeasure>.CreateAsync(items.AsNoTracking().Include(i => i.SourceItems),
-                pageIndex ?? 1, pageSize);
-            return list;
+            builder.Entity<Person>()
+                .Property(i => i.Titles).HasConversion(person_titles_converter);
         }
     }
 }

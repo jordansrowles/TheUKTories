@@ -7,8 +7,6 @@
 
 @await Html.PartialAsync("Partials/_PageTitlePartial", "Edit existing tactic")
 
-@*await Html.PartialAsync("Partials/Portal/Forms/_TacticFormPartial", Model.FacistTactic)*@
-
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="FacistTactic.FacistTacticId" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -17,24 +18,13 @@ namespace TheUKTories.Services.Data.EFCore.Models.People
         public string? PoliticalParty { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? CurrentTitle { get; set; }
+        public string[] Titles { get; set; }
+        [Description("Profile Image Blob URL")]
         public string? ProfileImageBlobUri { get; set; }
-        public bool? IsProfilePublic { get; set; }
-
-        public virtual ICollection<Quote> Quotes { get; set; } = default!;
+        public bool IsProfilePublic { get; set; } = false;
+        public virtual ICollection<PersonQuote> Quotes { get; set; } = default!;
         public virtual ICollection<PersonGeneral> GeneralList { get; set; } = default!;
-    }
 
-    public class Quote : SourceItem, ISourceItem 
-    { 
-        public int QuoteId { get; set; }
-        public virtual int PersonId { get; set; }
-        public virtual Person? Person { get; set; }
-    }
-
-    public class PersonGeneral : SourceItem, ISourceItem 
-    {
-        public int PersonGeneralId { get; set; }
-        public virtual int PersonId { get; set; }
-        public virtual Person? Person { get; set; }
+        public string GetProfileImageName() => FullName.ToLower().Replace(' ', '_').Remove('\'');
     }
 }

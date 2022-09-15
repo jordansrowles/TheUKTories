@@ -18,8 +18,29 @@
 @await Html.PartialAsync("Partials/General/Titles/_Title", "Government Responses to the Virus")
 
 <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (CovidGovResponse response in Model.AllResponses)
+    @foreach (CovidGovResponse item in Model.AllResponses)
     {
-        <li>@response.Title</li>
+        <li>@item.
+        @if (item.CovidGovResponseSources != null)
+            {
+                @if (item.CovidGovResponseSources.Count == 1)
+                {
+                    <small><a href="@item.CovidGovResponseSources.FirstOrDefault().Link" target="_blank">@item.CovidGovResponseSources.FirstOrDefault().Source</a></small>
+                } else
+                {
+                    @foreach (var sourceitem in item.CovidGovResponseSources)
+                    {
+                        <a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>
+                    }
+                    
+                }
+            }else
+            {
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                }
+            }
+        </li>
     }
 </ul>

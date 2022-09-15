@@ -1,0 +1,16 @@
+﻿@model IList<Person>
+
+<govuk-accordion id="accordion-with-summary-sections" heading-level="3">
+    @foreach (var person in Model)
+    {
+        <govuk-accordion-item>
+            <govuk-accordion-item-heading>@person.FullName (@person.CurrentTitle) - @person.Nationality</govuk-accordion-item-heading>
+            @await Html.PartialAsync("Partials/Portal/DetailViews/_Person", person)
+            <div>
+                <a class="govuk-button" asp-page="./Edit" asp-route-id="@person.PersonId">Edit</a>
+                <a class="govuk-button" asp-page="./Details" asp-route-id="@person.PersonId">Details</a>
+                <a class="govuk-button govuk-button--warning" asp-page="./Delete" asp-route-id="@person.PersonId">Delete</a>
+            </div>
+        </govuk-accordion-item>        
+    }
+</govuk-accordion>

@@ -1,0 +1,72 @@
+﻿@model Person
+
+<govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.FullName)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.FullName)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.CurrentTitle)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.CurrentTitle)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Titles)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Titles)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.IsProfilePublic)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+                <span>Profile is @if (!Model.IsProfilePublic) { <span>not</span> } public</span>
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.ProfileImageBlobUri)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.ProfileImageBlobUri)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Nationality)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-action asp-page="./Details" asp-route-id="@Model.PersonId">Details</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Edit" asp-route-id="@Model.PersonId">Edit</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Delete" asp-route-id="@Model.PersonId">Delete</govuk-summary-list-row-action>
+    </govuk-summary-list-row>
+</govuk-summary-list>

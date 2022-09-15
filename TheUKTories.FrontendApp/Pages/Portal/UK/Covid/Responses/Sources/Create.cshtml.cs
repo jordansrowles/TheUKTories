@@ -19,28 +19,32 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet(int? id)
         {
-        ViewData["CovidGovResponseId"] = new SelectList(_context.CovidGovResponses, "CovidGovResponseId", "Title");
+            //ViewData["CovidGovResponseId"] = new SelectList(_context.CovidGovResponses, "CovidGovResponseId", "Title");
+            if (id == null) return NotFound();
+            CovidGovResponse = await _context.CovidGovResponses.FindAsync(id);
+            if (CovidGovResponse == null) return NotFound();
             return Page();
         }
 
         [BindProperty]
         public CovidGovResponseSource CovidGovResponseSource { get; set; } = default!;
+        [BindProperty]
+        public CovidGovResponse CovidGovResponse { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.CovidGovResponseSources == null || CovidGovResponseSource == null)
-            {
-                return Page();
-            }
-
+            CovidGovResponse = _context.CovidGovResponses.Find(CovidGovResponse.CovidGovResponseId);
+            CovidGovResponseSource.CovidGovResponseId = CovidGovResponse.CovidGovResponseId;
+            CovidGovResponseSource.CovidGovResponse = CovidGovResponse;
+            _context.Update(CovidGovResponse);
             _context.CovidGovResponseSources.Add(CovidGovResponseSource);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Create", new { id = CovidGovResponse.CovidGovResponseId });
         }
     }
 }

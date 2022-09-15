@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.Covid;
+using TheUKTories.Services.Data.EFCore.Models.People;
 
-namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
+namespace TheUKTories.FrontendApp.Pages.Portal.People
 {
     public class EditModel : PageModel
     {
@@ -21,27 +21,26 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
         }
 
         [BindProperty]
-        public CovidGovResponseSource CovidGovResponseSource { get; set; } = default!;
-        [BindProperty]
-        public CovidGovResponse CovidGovResponse { get; set; } = default!;
+        public Person Person { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.CovidGovResponseSources == null)
+            if (id == null || _context.People == null)
             {
                 return NotFound();
             }
 
-            var covidgovresponsesource =  await _context.CovidGovResponseSources.FirstOrDefaultAsync(m => m.CovidGovResponseSourceId == id);
-            if (covidgovresponsesource == null)
+            var person =  await _context.People.FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
             {
                 return NotFound();
             }
-            CovidGovResponseSource = covidgovresponsesource;
-           ViewData["CovidGovResponseId"] = new SelectList(_context.CovidGovResponses, "CovidGovResponseId", "Title");
+            Person = person;
             return Page();
         }
 
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -49,7 +48,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
                 return Page();
             }
 
-            _context.Attach(CovidGovResponseSource).State = EntityState.Modified;
+            _context.Attach(Person).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +56,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CovidGovResponseSourceExists(CovidGovResponseSource.CovidGovResponseSourceId))
+                if (!PersonExists(Person.PersonId))
                 {
                     return NotFound();
                 }
@@ -70,9 +69,9 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
             return RedirectToPage("./Index");
         }
 
-        private bool CovidGovResponseSourceExists(int id)
+        private bool PersonExists(int id)
         {
-          return (_context.CovidGovResponseSources?.Any(e => e.CovidGovResponseSourceId == id)).GetValueOrDefault();
+          return (_context.People?.Any(e => e.PersonId == id)).GetValueOrDefault();
         }
     }
 }
