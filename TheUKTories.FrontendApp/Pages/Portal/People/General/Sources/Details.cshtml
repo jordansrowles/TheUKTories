@@ -1,0 +1,43 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.General.Sources.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PersonGeneralSource</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonGeneralSource.PersonGeneral)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonGeneralSource.PersonGeneral.PersonGeneralId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonGeneralSource.Source)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonGeneralSource.Source)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonGeneralSource.Link)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonGeneralSource.Link)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PersonGeneralSource.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PersonGeneralSource.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PersonGeneralSource?.PersonGeneralSourceId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

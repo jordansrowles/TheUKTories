@@ -1,0 +1,50 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.Quotes.Sources.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PersonQuoteSource</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PersonQuoteSource.PersonQuoteSourceId" />
+            <div class="form-group">
+                <label asp-for="PersonQuoteSource.PersonQuoteId" class="control-label"></label>
+                <select asp-for="PersonQuoteSource.PersonQuoteId" class="form-control" asp-items="ViewBag.PersonQuoteId"></select>
+                <span asp-validation-for="PersonQuoteSource.PersonQuoteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonQuoteSource.Source" class="control-label"></label>
+                <input asp-for="PersonQuoteSource.Source" class="form-control" />
+                <span asp-validation-for="PersonQuoteSource.Source" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonQuoteSource.Link" class="control-label"></label>
+                <input asp-for="PersonQuoteSource.Link" class="form-control" />
+                <span asp-validation-for="PersonQuoteSource.Link" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonQuoteSource.Date" class="control-label"></label>
+                <input asp-for="PersonQuoteSource.Date" class="form-control" />
+                <span asp-validation-for="PersonQuoteSource.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

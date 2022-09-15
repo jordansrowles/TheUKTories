@@ -1,0 +1,54 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.General.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonGeneral[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonGeneral[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonGeneral[0].SubTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonGeneral[0].Person)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PersonGeneral) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FullName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PersonGeneralId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonGeneralId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonGeneralId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

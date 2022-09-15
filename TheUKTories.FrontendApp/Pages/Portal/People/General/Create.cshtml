@@ -1,0 +1,48 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.General.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PersonGeneral</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PersonGeneral.PersonId" class="control-label"></label>
+                <select asp-for="PersonGeneral.PersonId" class ="form-control" asp-items="ViewBag.PersonId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonGeneral.Category" class="control-label"></label>
+                <input asp-for="PersonGeneral.Category" class="form-control" />
+                <span asp-validation-for="PersonGeneral.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonGeneral.Title" class="control-label"></label>
+                <input asp-for="PersonGeneral.Title" class="form-control" />
+                <span asp-validation-for="PersonGeneral.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonGeneral.SubTitle" class="control-label"></label>
+                <input asp-for="PersonGeneral.SubTitle" class="form-control" />
+                <span asp-validation-for="PersonGeneral.SubTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.Quotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonQuote[0].Quote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonQuote[0].Person)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PersonQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FullName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PersonQuoteId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonQuoteId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonQuoteId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
