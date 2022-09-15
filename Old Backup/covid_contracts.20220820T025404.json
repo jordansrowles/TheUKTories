@@ -1,0 +1,109 @@
+[
+  {
+    "string": "£156,000,000 contract to Tory councillor Steve Dechan for PPE imports.",
+    "sources": [
+      {
+        "source": "openDemocracy",
+        "link": "https://www.opendemocracy.net/en/dark-money-investigations/government-accused-of-cronyism-after-tory-councillor-wins-156m-covid-contract/",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "6b8aafed-8cb3-4405-b86f-eb3c9434ad66"
+  },
+  {
+    "string": "Up to £1,100,000,000 in Government PPE Contracts Awarded to Firms Linked to Religious Sect",
+    "sources": [
+      {
+        "source": "Byline Times",
+        "link": "https://bylinetimes.com/2020/11/18/plymouth-exclusive-brethren-ppe-contracts-uk-government/",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "7255c81c-f941-4150-9133-d8c1c784ebc3"
+  },
+  {
+    "string": "£819,000 (3x contracts) to Paul Stephenson of Hanbury Strategy for polling, focus groups and strategy. Stephenson is a former Tory adviser and Cumming's ally.",
+    "sources": [
+      {
+        "source": "Scram:News",
+        "link": "https://scramnews.com/paul-stephenson-vote-leave-downing-street/",
+        "date": null
+      },
+      {
+        "source": "The National",
+        "link": "https://www.thenational.scot/news/18813681.1bn-government-contracts-given-tory-friends-donors-crisis/",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "d482c51a-3f94-41df-b8bf-23e91c74572a"
+  },
+  {
+    "string": "Go-between paid £21,000,000 in taxpayer funds for NHS PPE",
+    "sources": [
+      {
+        "source": "BBC News",
+        "link": "https://www.bbc.co.uk/news/uk-54974373",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "8cdf9e33-2932-4402-acb0-584c606fdcea"
+  },
+  {
+    "string": "£347,000,000 contract (£500,000,000 total) given to NI-based Randox, who had to recall 750,000 contaminated testing kits. No other company was allowed to bid.",
+    "sources": [
+      {
+        "source": "Guardian",
+        "link": "https://www.theguardian.com/world/2020/nov/04/tory-linked-firm-involved-in-testing-failure-awarded-new-347m-covid-contract",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "74721307-a50f-4e3f-a5de-1a0923752fd1"
+  },
+  {
+    "string": "£154,000,000 (4x contracts) to David Meller of Meller Designs for hand sanitiser and face masks. Meller donated £65,000 to the Conservative Party, is a former non-executive board member of the Department of Education, and was the finance chair for Micheal Gove's Conservative leadership campaign.",
+    "sources": [
+      {
+        "source": "Guardian",
+        "link": "https://www.theguardian.com/uk-news/2018/jan/24/david-meller-presidents-club-groping-scandal-wealthy-tory-donor",
+        "date": null
+      }
+    ],
+    "contract_links": null,
+    "id": "dc110cc8-aeb4-4cc5-b79f-6cbcf265e197"
+  },
+  {
+    "string": "£1,000,000 contract given to friend of Cumming's for public opinion surveys and strategic advice.",
+    "sources": [],
+    "contract_links": null,
+    "id": "36085ebd-2fc6-4f16-ab89-d0cf278b6a75"
+  },
+  {
+    "string": "3x contracts to PA Consulting Services Ltd.",
+    "sources": [],
+    "contract_links": null,
+    "id": "d5b1d6f2-a1c8-4236-8a99-cb73d93c0344"
+  },
+  {
+    "string": "2x £203,000,000 contacts given to Andrew Page's PPE Medpro Ltd.",
+    "sources": [],
+    "contract_links": null,
+    "id": "e06232a3-b535-4cd4-b44a-c86191c2578d"
+  },
+  {
+    "string": "£276,000,000 contract given to former Tory councillors firm P14 Medical for face shields.",
+    "sources": [],
+    "contract_links": null,
+    "id": "bace3b31-7ff7-46d0-9e7b-5ec3a895e95e"
+  },
+  {
+    "string": "£108,000,000 to Pestfix, a pest control company with 16 members of staff and assets worth around £18,000.",
+    "sources": [],
+    "contract_links": null,
+    "id": "4177095d-86a9-4986-9c89-6662342a8f2e"
+  }
+]

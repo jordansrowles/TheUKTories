@@ -1,0 +1,288 @@
+[
+  {
+    "type": "Poverty",
+    "string": "Prime Minister Boris Johnson falsely claims child poverty has fallen despite huge rise under Tories.",
+    "sources": [
+      {
+        "source": "Independent",
+        "link": "https://www.independent.co.uk/news/uk/politics/boris-johnson-child-poverty-school-meal-vouchers-marcus-rashford-a9571221.html?fbclid=IwAR3MTPH8XONpwLC-o7mv02_SluFx2pDgu_SSGBmplXsDglYVdH64zoogKaE",
+        "date": null
+      }
+    ],
+    "id": "c58589fe-2559-4633-93a3-bfbdb634304c"
+  },
+  {
+    "type": "Care",
+    "string": "Charity Age UK estimates that 1.4 million older people do not access to the care and support that they need. Older people living with an unmet care need has increased by almost 20% over the past 2 years to nearly 1 in 7 older people.",
+    "sources": [
+      {
+        "source": "Age UK",
+        "link": "https://www.ageuk.org.uk/latest-news/articles/2018/july/1.4-million-older-people-arent-getting-the-care-and-support-they-need--a-staggering-increase-of-almost-20-in-just-two-years",
+        "date": null
+      }
+    ],
+    "id": "2e88e73c-3df6-4da1-a364-bb995ce1b3b4"
+  },
+  {
+    "type": "Education",
+    "string": "According to the National Audit Office, between 2015/16 and 2017/18 school budgets were cut by £2.7 billion. The Institute of Fiscal Studies found that per pupil spending has declined by 8% since 2010.",
+    "sources": [
+      {
+        "source": "Institute for Fiscal Studies",
+        "link": "https://www.ifs.org.uk/publications/13143",
+        "date": null
+      }
+    ],
+    "id": "f3eaa46c-cc45-48b4-ad09-e034e386fd0b"
+  },
+  {
+    "type": "Social",
+    "string": "Millions of families would be £2,500 less well-off under universal credit, according to the government.",
+    "sources": [
+      {
+        "source": "The Times",
+        "link": "https://www.thetimes.co.uk/article/families-lose-200-a-month-in-universal-credit-switch-5ktwmrwr8",
+        "date": null
+      }
+    ],
+    "id": "694457d1-f74a-40af-a286-dcb364a51f1c"
+  },
+  {
+    "type": "Education",
+    "string": "Capital spending in schools has declined 42.9% between 2010/11 and 2019/20.",
+    "sources": [
+      {
+        "source": "Institute for Fiscal Studies",
+        "link": "https://www.ifs.org.uk/publications/13507",
+        "date": null
+      }
+    ],
+    "id": "d1cc9c38-b497-4df7-b2f3-1e8816c75108"
+  },
+  {
+    "type": "Poverty",
+    "string": "Demand from food banks increased by 52% within the first 12 months of universal credit, according to the Trussell Trust.",
+    "sources": [
+      {
+        "source": "The Trussell Trust",
+        "link": "https://www.trusselltrust.org/what-we-do/research-advocacy/universal-credit-and-foodbank-use/",
+        "date": null
+      }
+    ],
+    "id": "b1e96628-5798-41ae-977e-f8a65b501aa9"
+  },
+  {
+    "type": "Education",
+    "string": "Day-to-day spending in education is down 7.4% between 2010/11 and 2019/20.",
+    "sources": [
+      {
+        "source": "Institute for Fiscal Studies",
+        "link": "https://www.ifs.org.uk/publications/13507",
+        "date": null
+      }
+    ],
+    "id": "4047bb6c-46cc-4913-9cbf-d9ab1423ec87"
+  },
+  {
+    "type": "Education",
+    "string": "Sure Start spending had declined by 2/3rds since 2009 – 2010, £1.7 billion to £500 million",
+    "sources": [
+      {
+        "source": "Institute for Fiscal Studies",
+        "link": "https://www.ifs.org.uk/publications/13306",
+        "date": null
+      }
+    ],
+    "id": "e9c6ddf2-5afe-4d31-80cd-cb57ceaf47b6"
+  },
+  {
+    "type": "Education",
+    "string": "Since 2009-10 Sure Start spending has fallen from £1.7 billion to £0.5 billion, a cut of over two thirds.",
+    "sources": [
+      {
+        "source": "Guardian",
+        "link": "https://www.theguardian.com/education/2017/jul/05/poorest-students-will-finish-university-with-57000-debt-says-ifs",
+        "date": null
+      }
+    ],
+    "id": "6337f875-ff21-4667-b9de-65c338a7dc75"
+  },
+  {
+    "type": "NHS",
+    "string": "In 2015/2016, 66% (2/3rds) of NHS trusts were in a deficit due to the slowdown of NHS funding. The 2015 Spending Review provided additional funding for the NHS (in the form of a £1.8 billion annual ‘Sustainability and Transformation Fund’) which caused deficits to fall to 54% from 2016 – 2017, which then again in 2018 – 2019 to 42%. This is all a deficit increase from 2009 – 2010 at 8% (+58%), and 2010 – 2011 at 5% (+61%).",
+    "sources": [
+      {
+        "source": "The Kings Trust",
+        "link": "https://www.kingsfund.org.uk/projects/nhs-in-a-nutshell/trusts-deficit",
+        "date": null
+      },
+      {
+        "source": "The Kings Trust",
+        "link": "https://www.kingsfund.org.uk/publications/how-nhs-performing-july-2019",
+        "date": null
+      }
+    ],
+    "id": "259cbc91-f463-4a9c-84cd-2e904916f064"
+  },
+  {
+    "type": "Education",
+    "string": "1 in 5 primary and secondary schools have to ask parent for money to purchase supplies. They have also had to start charging parents for concerts and sports days.",
+    "sources": [
+      {
+        "source": "Telegraph",
+        "link": "https://www.telegraph.co.uk/news/2018/03/30/cash-strapped-schools-asking-parents-money/",
+        "date": null
+      }
+    ],
+    "id": "32d6de42-f6f4-4f92-acfb-2da87cd881bb"
+  },
+  {
+    "type": "Poverty",
+    "string": "61% of landlords have tenants who struggle to pay rent, a survey by the Residential Landlord Association.",
+    "sources": [
+      {
+        "source": "Independent",
+        "link": "https://www.independent.co.uk/news/uk/politics/landlords-universal-credit-warning-debt-renting-benefits-support-a8580941.html",
+        "date": null
+      }
+    ],
+    "id": "b2dddbfe-e30e-4352-b775-f6d270825770"
+  },
+  {
+    "type": "Education",
+    "string": "More than 50% of schools staff pay out of pocket for necessities like food, clothes and tampons for vulnerable students.",
+    "sources": [
+      {
+        "source": "Independent",
+        "link": "https://www.independent.co.uk/news/education/education-news/school-cuts-uk-funding-teachers-staff-poor-students-toilet-roll-food-tampons-gmb-a8412296.html",
+        "date": null
+      }
+    ],
+    "id": "1bf50e2f-b355-4fd5-93a0-d0f7db712d41"
+  },
+  {
+    "type": "Education",
+    "string": "Between 2014 – 2015 and 2016 – 2017 staff numbers have declined by 15,000, and pupils have risen by 4,500. Since 2015 this is an average loss of 5.5 staff members: 2.4 fewer teachers, 1.6 fewer assistants, 1.5 fewer support staff. This is while 2/3rds of secondary schools are seeing their class sizes increase.",
+    "sources": [
+      {
+        "source": "National Education Union",
+        "link": "https://neu.org.uk/latest/schools-forced-cut-teachers-and-teaching-assistants-posts-make-ends-meet",
+        "date": null
+      },
+      {
+        "source": "BBC News",
+        "link": "https://www.bbc.co.uk/news/education-43322412",
+        "date": null
+      }
+    ],
+    "id": "a119e9ba-40a4-4405-82a9-e0314711c4e6"
+  },
+  {
+    "type": "Poverty",
+    "string": "1 in 5 Britons live in poverty, 14 million people.",
+    "sources": [
+      {
+        "source": "JRF",
+        "link": "https://www.jrf.org.uk/report/uk-poverty-2017",
+        "date": null
+      }
+    ],
+    "id": "0a25342f-2d55-428f-a550-2bbe7a42a0c8"
+  },
+  {
+    "type": "Poverty",
+    "string": "8 million people in poverty have someone in the household that works.",
+    "sources": [
+      {
+        "source": "JRF",
+        "link": "https://www.jrf.org.uk/report/uk-poverty-2017",
+        "date": null
+      }
+    ],
+    "id": "a1aba390-bb79-4b0c-a961-219281a6af03"
+  },
+  {
+    "type": "Poverty",
+    "string": "3 million children live in poverty in a working household.",
+    "sources": [
+      {
+        "source": "JRF",
+        "link": "https://www.jrf.org.uk/report/budget-2018-tackling-rising-tide-work-poverty",
+        "date": null
+      }
+    ],
+    "id": "295ddc75-3e7f-44f7-84eb-fe9f77ea2cac"
+  },
+  {
+    "type": "Poverty",
+    "string": "From 2016/18 the number of people in poverty in a working household increased by 1 million.",
+    "sources": [
+      {
+        "source": "JRF",
+        "link": "https://www.jrf.org.uk/report/budget-2018-tackling-rising-tide-work-poverty",
+        "date": null
+      }
+    ],
+    "id": "ffd5e5aa-ff61-42a2-8a39-e23fc76548ef"
+  },
+  {
+    "type": "Social",
+    "string": "7% increase of knife crime since 2018 to 2020.",
+    "sources": [
+      {
+        "source": "BBC News",
+        "link": "https://www.bbc.co.uk/news/uk-52395986",
+        "date": null
+      }
+    ],
+    "id": "b5ff43da-02a0-42fa-83da-e3bc85e60abb"
+  },
+  {
+    "type": "Social",
+    "string": "12% increase in robbery from 2019 to 2020.",
+    "sources": [
+      {
+        "source": "BBC News",
+        "link": "https://www.bbc.co.uk/news/uk-52395986",
+        "date": null
+      }
+    ],
+    "id": "033d7e1e-a765-4134-b362-cda8d49aed0f"
+  },
+  {
+    "type": "Security",
+    "string": "Border Force still 2.7% lower than in 2014, despite Government committing to increase the force by 300",
+    "sources": [
+      {
+        "source": "BBC News",
+        "link": "https://www.bbc.co.uk/news/uk-42527750",
+        "date": null
+      }
+    ],
+    "id": "634c9bb5-12da-4e4c-83c9-86d7a3f7b1e6"
+  },
+  {
+    "type": "Poverty",
+    "string": "Organisations which support sex workers say that an increasing number of women are turing to prostitution because they struggle to afford to eat, or access government benefits.",
+    "sources": [
+      {
+        "source": "Independent",
+        "link": "https://www.independent.co.uk/news/uk/home-news/sex-work-coronavirus-poverty-b1769426.html",
+        "date": "2021/01/08"
+      }
+    ],
+    "id": "2fdec2c4-b1c2-4629-b5e5-24a7e24e5502"
+  },
+  {
+    "type": "Poverty",
+    "string": "Fabian Society study concludes that Rishi Sunak's cuts 'risk plunging more than 3 million into poverty'",
+    "sources": [
+      {
+        "source": "Guardian",
+        "link": "https://www.theguardian.com/society/2020/dec/04/rishi-sunaks-cuts-risk-plunging-more-than-3-million-into-poverty",
+        "date": "2020/12/04"
+      }
+    ],
+    "id": "c2ba3772-c8ac-4569-8047-38e21e2789b1"
+  }
+]

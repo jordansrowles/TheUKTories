@@ -1,0 +1,80 @@
+[
+  {
+    "string": "Fallacies",
+    "substring": "One primary method of disruption used by enemy actors is the use of fallacies. Fallacies are always at their core, incorrect. Some famous ones include: False equivalence, cherry picking, Ad hominem, straw man, and moving the goal posts.",
+    "wiki": "https://en.wikipedia.org/wiki/List_of_fallacies",
+    "id": "f205a876-daf1-45a4-af13-fa91cc961663"
+  },
+  {
+    "string": "Fear, uncertainty, and doubt",
+    "substring": "Tactic to influence public perception, by speading disinformation and fear.",
+    "wiki": "https://en.wikipedia.org/wiki/Fear,_uncertainty,_and_doubt",
+    "id": "333eb81b-bc42-4b15-9bc8-a2588a7e0410"
+  },
+  {
+    "string": "Big Lie",
+    "substring": "An expression first used by Adolf Hitler in his book Mein Kampf. It means to tell a lie so massive that no one would even believe that someone would say that.",
+    "wiki": "https://en.wikipedia.org/wiki/Big_lie",
+    "id": "4a320680-6102-4292-ae5f-d6a7f490092a"
+  },
+  {
+    "string": "Shilling (Shill)",
+    "substring": "A “shill” is a plant or a stooge. Modern shills normally work for or with a large corporation and work on the internet try and change negative public perceptions into good ones. Sometimes posting fluff pieces intended to deceive readers.",
+    "wiki": "https://en.wikipedia.org/wiki/Shill",
+    "id": "dfe4de59-c41a-41e5-b2d6-f5fbeabf397f"
+  },
+  {
+    "string": "Gaslighting (Confabulation)",
+    "substring": "Form of psychological manipulation, used to sow the seeds of doubt, making them question their own memory, perception, and experiences. It is used to destabilise the victim and delegitimise their claims.",
+    "wiki": "https://en.wikipedia.org/wiki/Gaslighting",
+    "id": "e65c5ff9-e9c9-43b5-a3ab-2369e14da610"
+  },
+  {
+    "string": "Creeping Normality / Gradualism",
+    "substring": "When major changes or events are viewed or perceived to be normal or acceptable, through small, unnoticeable changes over time.",
+    "wiki": "https://en.wikipedia.org/wiki/Creeping_normality",
+    "id": "3b88b55d-749c-4469-8922-5476a0f143ff"
+  },
+  {
+    "string": "Media Manipulation",
+    "substring": "When a group creates a more favourable image of themselves and their interests, while attempting to discredit opposition. While this is not one specific tactic, it is group of different attack vectors including: astroturfing, clickbait, hoaxing, and using the straw man fallacy.",
+    "wiki": "https://en.wikipedia.org/wiki/Media_manipulation",
+    "id": "4ab3e2e4-e464-49f7-ae5d-823f2523b5f6"
+  },
+  {
+    "string": "DARVO",
+    "substring": "\"Deny, Attack, and Reverse Victim and Offender\". Denying that something never happened, and the \"turning the tables\" and reversing the blame. ",
+    "wiki": "https://en.wikipedia.org/wiki/DARVO",
+    "id": "8d8bcff9-8f3e-48d1-af50-04799e11be5d"
+  },
+  {
+    "string": "Astroturfing",
+    "substring": "The act of masking donations and sponsors of organisations and political groups, making it seem like the support is coming from the \"core/grassroots\" support base.",
+    "wiki": "https://en.wikipedia.org/wiki/Astroturfing",
+    "id": "1a8b7bca-9081-451d-b401-486d3c5c88e8"
+  },
+  {
+    "string": "Stonewalling",
+    "substring": "The refusal to communicate or cooperate, making progression slow or non-functional.",
+    "wiki": "https://en.wikipedia.org/wiki/Stonewalling",
+    "id": "4d74b84c-bfa8-4797-b021-69c8337378d2"
+  },
+  {
+    "string": "Obstructionism",
+    "substring": "Deliberately delaying or preventing processes or change, sometimes through the means of stonewalling, filibustering, or literally even just moving slowly (\"slow walking\", \"cow walk\", \"Devil’s Gambit\").",
+    "wiki": "https://en.wikipedia.org/wiki/Obstructionism",
+    "id": "37b6183e-6941-41df-9ae3-2d434b775ac0"
+  },
+  {
+    "string": "Disinformation",
+    "substring": "Comes from the Russian word – dezinformatsiya, also the name of KGB department. Perfected by the Russian’s in the Cold War. It is, as defined by the Great Soviet Encyclopaedia (1952) – \"false information with the intention to deceive public opinion\". ",
+    "wiki": "https://en.wikipedia.org/wiki/Disinformation",
+    "id": "5fad49cb-bb4e-4ed0-afd9-a37b47e1ad32"
+  },
+  {
+    "string": "Projection",
+    "substring": "Often used in phychological abuse. A defence mechanism where by a person attributes negative attributes that are true of themselves. This often involves using blame shifting, victim blaming, projection of guilt (like illegal or improper activities).",
+    "wiki": "https://en.wikipedia.org/wiki/Psychological_projection",
+    "id": "ee572730-f3df-4473-b86b-06528717d60b"
+  }
+]

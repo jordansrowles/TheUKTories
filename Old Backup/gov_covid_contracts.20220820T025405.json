@@ -1,0 +1,151 @@
+[
+  {
+    "company_name": "Meller Designs Ltd.",
+    "people": [
+      "David Meller"
+    ],
+    "description": "David Meller donated £65,000 to the Conservative party.",
+    "contracts": [
+      {
+        "source": null,
+        "link": "3f7b52f6-cb0c-49fd-a7df-1efecca43365",
+        "ref": null,
+        "description": "Garments for biological or chemical protection - 35113410",
+        "location": "United Kingdom",
+        "cost": 5980918.99,
+        "date": "2020/06/14"
+      },
+      {
+        "source": null,
+        "link": "6ab193f8-1126-462d-b527-9f0847a26ed3",
+        "ref": null,
+        "description": "Garments for biological or chemical protection - 35113410",
+        "location": "United Kingdom",
+        "cost": 65832000.0,
+        "date": "2020/05/07"
+      },
+      {
+        "source": null,
+        "link": "6ab193f8-1126-462d-b527-9f0847a26ed3",
+        "ref": null,
+        "description": "Hand sanitizer - 33741300",
+        "location": "United Kingdom",
+        "cost": 2610000.0,
+        "date": "2020/05/07"
+      },
+      {
+        "source": null,
+        "link": "d75c9b0a-da7e-48a4-8144-08b1f7bc6230",
+        "ref": null,
+        "description": "Hand sanitizer - 33741300",
+        "location": "United Kingdom",
+        "cost": 1080000.0,
+        "date": "2020/05/05"
+      }
+    ],
+    "id": "81275d7e-2366-47ff-b4b8-aae339e87b2f"
+  },
+  {
+    "company_name": "P14 Medical",
+    "people": [
+      "Steve Dechan"
+    ],
+    "description": "Steve Dechan is a director of P14 Medical. He is a Conservative councillor on Stroud Town Council.",
+    "contracts": [
+      {
+        "source": null,
+        "link": "4b73ab6f-61a1-4bcc-be05-c61a036ec4ed",
+        "ref": null,
+        "description": "Garments for biological or chemical protection - 35113410",
+        "location": "United Kingdom",
+        "cost": 156291000.0,
+        "date": "2020/06/06"
+      },
+      {
+        "source": null,
+        "link": "2e4153e4-1bd2-47f2-bcce-14afa977362b",
+        "ref": null,
+        "description": "Garments for biological or chemical protection - 35113410",
+        "location": "United Kingdom",
+        "cost": 116013156.0,
+        "date": "2020/04/25"
+      },
+      {
+        "source": null,
+        "link": "990396f9-0c69-45e5-b0c2-a04c921894a6",
+        "ref": null,
+        "description": "Garments for biological or chemical protection - Face Shields",
+        "location": "United Kingdom",
+        "cost": 4192812.0,
+        "date": "2020/04/19"
+      }
+    ],
+    "id": "7d27d9a8-01ca-40a8-becf-dedfae9310c4"
+  },
+  {
+    "company_name": "Randox",
+    "people": [
+      "Owen Paterson"
+    ],
+    "description": "Randox Laboratories was hired by Hancock to carry out 100,000 tests a day. Randox employs Conservative Owen Paterson as a paid consultant. Randox was given contracts without allowing others to bid.",
+    "contracts": [
+      {
+        "source": null,
+        "link": "77691c09-d5fa-4093-8f18-1344f8a2c91b",
+        "ref": null,
+        "description": "Services provided by medical laboratories - Testing Services",
+        "location": "SW1H 0EU",
+        "cost": 346500000.0,
+        "date": "2020/10/02"
+      },
+      {
+        "source": null,
+        "link": "2e4153e4-1bd2-47f2-bcce-14afa977362b",
+        "ref": null,
+        "description": "Services provided by medical laboratories - Contract for the Delivery of Covid-19 Testing",
+        "location": "Any Region",
+        "cost": 133000000.0,
+        "date": "2020/03/30"
+      },
+      {
+        "source": null,
+        "link": "d1441656-5ffa-4cda-9c9b-11a4887f8c6e",
+        "ref": null,
+        "description": "Purchase of SARS CoV-2 Controls for Covid testing",
+        "location": "Any Region",
+        "cost": 16660.0,
+        "date": "2020/10/31"
+      }
+    ],
+    "id": "bdcebb39-c6da-44f4-873f-f511cb556888"
+  },
+  {
+    "company_name": "PPE Medpro Ltd.",
+    "people": [
+      "Anthony Page",
+      "Voirrey Coole"
+    ],
+    "description": "PPE Medpro, a company incorporated on 12 May 2020 awarded multi-million pounds. Both contracts awarded without competition.",
+    "contracts": [
+      {
+        "source": null,
+        "link": "79397607-466e-4891-b091-3307fd5819d9",
+        "ref": null,
+        "description": "Supply of Personal Protective Equipment for Healthcare Workers for the Care of Patients with Suspected or Confirmed Novel Coronavirus (COVID-19)",
+        "location": "United Kingdom",
+        "cost": 122000000.0,
+        "date": "2020/06/26"
+      },
+      {
+        "source": null,
+        "link": "782b70db-4a13-4f67-87a6-8f1a5030cae5",
+        "ref": null,
+        "description": "Supply of Personal Protective Equipment for Healthcare Workers for the Care of Patients with Suspected or Confirmed Novel Coronavirus (COVID-19)",
+        "location": "SW1H 0EU",
+        "cost": 80850000.0,
+        "date": "2020/06/12"
+      }
+    ],
+    "id": "e1682f21-5848-405f-ae29-0366e74aef94"
+  }
+]
