@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TheUKTories.Models
+namespace TheUKTories.Services.Data.Selfrolled.Models
 {
     public class Austeritys : BaseModel
     {
@@ -14,6 +14,6 @@ namespace TheUKTories.Models
         public List<SourceItem> Sources { get; set; }
 
         [JsonIgnore]
-        public int CountSources => (Sources.Count);
+        public int CountSources => Sources.Count;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TheUKTories.Models
+namespace TheUKTories.Services.Data.Selfrolled.Models
 {
     public class ExternalLinks : BaseModel
     {

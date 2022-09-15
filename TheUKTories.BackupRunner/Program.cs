@@ -1,4 +1,5 @@
 ﻿using TheUKTories;
+using TheUKTories.Services.Data.Selfrolled;
 
 ResetText();
 WriteNoticeText("Welcome to The UK Tories database backup script!");
@@ -10,7 +11,7 @@ if (String.IsNullOrEmpty(Globals.TryGetConnectionString(Globals.ExpressConnectio
 }
 
 WriteNoticeText("Connection string found, connecting to database and performing a full backup");
-await TheUKTories.Services.BackupService.OldDbBackupService.Backup();
+await OldDbBackupService.Backup();
 WriteNoticeText("Done!");
 
 // Methods

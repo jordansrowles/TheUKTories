@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel;
 
-namespace TheUKTories.Models
+namespace TheUKTories.Services.Data.Selfrolled.Models
 {
     public class SourceItem : INotifyPropertyChanged
     {

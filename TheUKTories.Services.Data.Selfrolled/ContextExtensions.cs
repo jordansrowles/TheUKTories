@@ -1,7 +1,7 @@
 ﻿namespace TheUKTories.Services.Data.Selfrolled
 {
     using Microsoft.Azure.Cosmos;
-    using TheUKTories.Models;
+    using TheUKTories.Services.Data.Selfrolled.Models;
 
     public static class ContextExtensions
     {

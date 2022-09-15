@@ -1,18 +1,16 @@
 ﻿using Newtonsoft.Json;
 
-namespace TheUKTories.Models
+namespace TheUKTories.Services.Data.Selfrolled.Models
 {
-    public class CovidResponses : BaseModel
+    public class CovidContracts : BaseModel
     {
         [JsonProperty(PropertyName = "string")]
         public string String { get; set; }
 
-        [JsonProperty(PropertyName = "date")]
-        public string Date { get; set; }
-
         [JsonProperty(PropertyName = "sources")]
         public List<SourceItem> Sources { get; set; }
 
-        public override string ToString() => String;
+        [JsonProperty(PropertyName = "contract_links")]
+        public List<GovContract> GovContracts { get; set; }
     }
 }
