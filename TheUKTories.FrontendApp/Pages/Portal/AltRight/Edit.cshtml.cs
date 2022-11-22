@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.AltRight
 {
@@ -30,7 +23,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.AltRight
                 return NotFound();
             }
 
-            var facisttactic =  await _context.FacistTactics.FirstOrDefaultAsync(m => m.FacistTacticId == id);
+            var facisttactic = await _context.FacistTactics.FirstOrDefaultAsync(m => m.FacistTacticId == id);
             if (facisttactic == null)
             {
                 return NotFound();
@@ -71,7 +64,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.AltRight
 
         private bool FacistTacticExists(int id)
         {
-          return (_context.FacistTactics?.Any(e => e.FacistTacticId == id)).GetValueOrDefault();
+            return (_context.FacistTactics?.Any(e => e.FacistTacticId == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Contracts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", $"Edit: {Model.GovPPEContractCompany.Name}")
+
+@await Html.PartialAsync("Partials/Portal/Forms/_PPECompany", Model.GovPPEContractCompany)
+
+<div>
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+    <a class="govuk-button govuk-button--warning" asp-page="./Delete" asp-route-id="@Model.GovPPEContractCompany.GovPPEContractCompanyId">Delete</a>
+    <a class="govuk-button" asp-page="./PPEContracts/Create" asp-route-id="@Model.GovPPEContractCompany.GovPPEContractCompanyId">Add Contract</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

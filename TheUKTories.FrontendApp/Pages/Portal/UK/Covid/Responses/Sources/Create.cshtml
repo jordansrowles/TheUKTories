@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "New Gov Covid Response Source")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "New Gov Covid Response Source")
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="CovidGovResponse.CovidGovResponseId" />
@@ -23,6 +23,7 @@
 </form>
 
 <a asp-page="../Index" class="govuk-button">Back to Covid Responses</a>
+<a asp-page="../Create" class="govuk-button">New Covid Responses</a>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

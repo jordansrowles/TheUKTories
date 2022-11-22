@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
 {
@@ -19,24 +12,27 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet(int? id)
         {
-        ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
+            if (id == null) return NotFound();
+            Person = await _context.People.FindAsync(id);
+            if (Person == null) return NotFound();
             return Page();
         }
 
         [BindProperty]
+        public Person Person { get; set; } = default!;
+        [BindProperty]
         public PersonQuote PersonQuote { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.PeopleQuotes == null || PersonQuote == null)
-            {
-                return Page();
-            }
-
+            Person = _context.People.Find(Person.PersonId);
+            PersonQuote.PersonId = Person.PersonId;
+            PersonQuote.Person = Person;
+            _context.Update(Person);
             _context.PeopleQuotes.Add(PersonQuote);
             await _context.SaveChangesAsync();
 

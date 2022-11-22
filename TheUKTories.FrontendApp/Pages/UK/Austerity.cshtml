@@ -1,48 +1,56 @@
 ﻿@page
 @model TheUKTories.FrontendApp.Pages.UK.AusterityModel
 @{
+    ViewData["Title"] = "Gov Austerity Measures";
 }
 
-<span class="govuk-caption-l">What exactly is austerity?</span>
-<h2 class="govuk-heading-l">The Age of Austerity</h2>
-<p class="govuk-body">
-    Austerity is an economic strategy on how to spend the countries money. It can include making cuts to public services, like welfare, police forces, public housing and libraries. It could also include methods like increasing taxes, such as the National Insurance contributions, council tax and road tax. Austerity should not be used during a recession, but during the growth period after the fact. Otherwise, austerity can lead to low economic growth, decreased consumer confidence (such as the "double-dip" recession during the coalition), and increased levels of unemployment.
-</p>
 
-<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (var item in Model.AllItems)
-    {
-    <li>
-            @if (User.Identity.IsAuthenticated) { 
-                <a class="govuk-link--muted" asp-page="../Portal/UK/Austerity/Edit" asp-route-id="@item.UKAusterityMeasureId">[edit]</a> 
-            } 
-            @if (Model.ShowAusterityDates && item.Date.Year > 1000)
-            {
-                <govuk-tag>@item.Date.Year</govuk-tag>
-            }
-            @item.Title
+    <span class="govuk-caption-l">What exactly is austerity?</span>
+    <h2 class="govuk-heading-l">The Age of Austerity</h2>
+    <p class="govuk-body">
+        Austerity is an economic strategy on how to spend the countries money. It can include making cuts to public services, like welfare, police forces, public housing and libraries. It could also include methods like increasing taxes, such as the National Insurance contributions, council tax and road tax. Austerity should not be used during a recession, but during the growth period after the fact. Otherwise, austerity can lead to low economic growth, decreased consumer confidence (such as the "double-dip" recession during the coalition), and increased levels of unemployment.
+    </p>
+    @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Austerity/Create">Add</a></p> }
 
-            @if (item.SourceItems != null)
-            {
-                @if (item.SourceItems.Count == 1)
+    <ul class="govuk-list govuk-list--spaced">
+        @foreach (var item in Model.AllItems)
+        {
+        <li>
+                @if (User.Identity.IsAuthenticated) { 
+                    <a class="govuk-link--muted" asp-page="/Portal/UK/Austerity/Edit" asp-route-id="@item.UKAusterityMeasureId">[edit]</a>
+                    <a class="govuk-link--muted" asp-page="/Portal/UK/Austerity/Sources/Create" asp-route-id="@item.UKAusterityMeasureId">[+ source]</a>
+                } 
+                @if (Model.ShowAusterityDates && item.Date.Year > 1000)
                 {
-                    <small><a href="@item.SourceItems.FirstOrDefault().Link" target="_blank">@item.SourceItems.FirstOrDefault().Source</a></small>
-                } else
+                    <govuk-tag>@item.Date.Year</govuk-tag>
+                }
+                @item.Title
+
+                @if (item.SourceItems != null || item.SourceItems.Count > 0)
                 {
-                    @foreach (var sourceitem in item.SourceItems)
+                    <span>-</span>
+                    @if (item.SourceItems.Count == 1)
                     {
-                        <a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>
+                        <small><a href="@item.SourceItems.FirstOrDefault().Link" target="_blank">@item.SourceItems.FirstOrDefault().Source</a></small>
+                    } 
+                    @if (item.SourceItems.Count > 1)
+                    {
+                        @foreach (var sourceitem in item.SourceItems.Take(item.SourceItems.Count() - 1))
+                        {
+                            <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+                        }
+                        <small><a href="@item.SourceItems.Last().Link" target="_blank">@item.SourceItems.Last().Source </a></small>
                     }
-                    
-                }
-            }else
-            {
-                @if (User.Identity.IsAuthenticated)
+                }else
                 {
-                    <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                    }
                 }
-            }
-        </li>
-    }
+            </li>
+        }
 
-</ul>
+    </ul>
+
+

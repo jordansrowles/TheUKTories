@@ -1,4 +1,4 @@
-﻿@model TheUKTories.Models.Person
+﻿@*model TheUKTories.Models.Person
 @using TheUKTories.Models
 @{
     // set up the top page navigation. creates dictionary of links and passes to
@@ -60,7 +60,7 @@
             <li>
                 @item.String
 
-                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string
                 @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
                 {
                     <small>
@@ -93,7 +93,7 @@
             <li>
                 @Html.Raw(@item.String)
 
-                @*sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string*@
+                sometimes theres a blank source item, and it just displays a '-'. So also check if first item has empty string
                 @if (item.Sources.Count() == 1 && !string.IsNullOrEmpty(item.Sources.FirstOrDefault().Source))
                 {
                     <small>
@@ -117,7 +117,7 @@
     </ul>
 }
 
-@* if quotes isnt null or the count isnt zero *@
+ if quotes isnt null or the count isnt zero 
 @if (Model.Quotes != null && Model.Quotes.Count() != 0)
 {
     <h3 class="govuk-heading-m" id="quotes">Unforgettable Quotes</h3>
@@ -140,16 +140,16 @@
                     {
                         <small>
                             -
-                            @* all of the sources, except the last *@
+                            @* all of the sources, except the last 
                             @for (int i = 0; i < item.Sources.Count() - 1; i++)
                             {
                                 <span><a href="@item.Sources[i].Link" target="_blank">@item.Sources[i].Source</a>&nbsp;|&nbsp;</span>
-                            }
-                            @* write the last source, or the only one *@
+                            
+                            @* write the last source, or the only one 
                             <a href="@item.Sources.Last().Link" target="_blank">@item.Sources.Last().Source</a>
                         </small>
                     }
-                    @* do nothing if theres no sources *@
+                    @* do nothing if theres no sources 
                     else { }
                 }
             </li>
@@ -157,3 +157,4 @@
     </ul>
 }
 
+*@

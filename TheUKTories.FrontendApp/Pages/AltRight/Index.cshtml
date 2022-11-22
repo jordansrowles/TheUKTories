@@ -2,8 +2,8 @@
 @model TheUKTories.FrontendApp.Pages.AltRight.IndexModel
 
 @{
-    ViewData["Title"] = "The UK Tories - Tactics";
-    ViewData["SelectedTopItem"] = "Tactics";
+    ViewData["Title"] = "Alt Right Tactics";
+    ViewData["MetaDescription"] = "Tactics used by the Alt Right to help spread misinformation and sow discourse.";
 }
 
 <govuk-breadcrumbs>
@@ -11,32 +11,32 @@
     <govuk-breadcrumbs-item>Alt-Right</govuk-breadcrumbs-item>
 </govuk-breadcrumbs>
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Tactics used by the \"Alt Right\"")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Tactics used by the \"Alt Right\"")
+<p>@if (User.Identity.IsAuthenticated) { <a class="govuk-button" asp-page="/Portal/AltRight/Create">Add</a> }</p>
 
-<dl class="govuk-summary-list">
 
-    @foreach (var item in Model.FacistTactic.OrderBy(o => o.Title))
-    {
-    <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-            @item.Title
-        </dt>
-        <dd class="govuk-summary-list__value">
-            @item.Subtitle
-        </dd>
-        <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="@item.Link">
-                Wiki
-            </a>
-        </dd>
-        @if (User.Identity.IsAuthenticated)
+    <dl class="govuk-summary-list">
+
+        @foreach (var item in Model.FacistTactic.OrderBy(o => o.Title))
         {
-            <dd class="govuk-summary-list__actions">
-                <a asp-page="../Portal/AltRight/Edit" asp-route-id="@item.FacistTacticId">Edit</a>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                @item.Title
+            </dt>
+            <dd class="govuk-summary-list__value">
+                @item.Subtitle
             </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="@item.Link">
+                    Wiki
+                </a>
+            </dd>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <dd class="govuk-summary-list__actions">
+                    <a asp-page="../Portal/AltRight/Edit" asp-route-id="@item.FacistTacticId">Edit</a>
+                </dd>
+            }
+        </div>
         }
-    </div>
-    }
-
-
-</dl>
+    </dl>

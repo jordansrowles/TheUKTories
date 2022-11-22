@@ -2,6 +2,23 @@
 
 namespace TheUKTories.Services.Data.EFCore
 {
+    /// <summary>
+    ///     Provides paginated access to items in the database through EF Core.
+    ///     
+    ///     IQueryable<typeparamref name="T"/> items = from c in _context.Table select c;
+    ///     var pagesize = config.GetValue("DefaultPageSize");
+    ///     items = await PaginatedList<typeparamref name="T"/>.CreateAsync(items.AsNoTracking,
+    ///         pageIndex ?? 1, pagesize);
+    /// </summary>
+    /// <typeparam name="T">Model from EFCore.Models</typeparam>
+    /// <example>
+    /// <code>
+    ///     IQueryable<typeparamref name="T"/> items = from c in _context.Table select c;
+    ///     var pagesize = config.GetValue("DefaultPageSize")
+    ///     items = await PaginatedList<typeparamref name="T"/>.CreateAsync(items.AsNoTracking,
+    ///         pageIndex ?? 1, pagesize);
+    /// </code>
+    /// </example>
     public class PaginatedList<T> : List<T>
     {
         public int PageIndex { get; private set; }

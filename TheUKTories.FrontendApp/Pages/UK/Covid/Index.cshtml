@@ -2,6 +2,8 @@
 @model TheUKTories.FrontendApp.Pages.UK.Covid.IndexModel
 @using System.Globalization
 @{
+    ViewData["Title"] = "Gov Covid Responses";
+
     string FormatPrice(double p)
     {
         var fp = p.ToString("C3", CultureInfo.CreateSpecificCulture("en-GB"));
@@ -9,38 +11,86 @@
    
     }
 }
-
+@section Head {
+    <style>
+        .govuk-accordion__section-button:hover,
+        .govuk-caption-l:hover,
+        .govuk-heading-l:hover {
+            text-decoration: none !important;
+        }
+        .govuk-accordion__section-button:focus {
+            background-color: transparent !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    </style>
+}
 <span class="govuk-caption-l" id="contractlist">An Omnibus of Omnishambles</span>
 <h1 class="govuk-heading-xl">UK Coronavirus Response</h1>
 
-@await Html.PartialAsync("Partials/General/Titles/_TitleWithSub", ("The Fabled Money Tree", "Covid Contracts"))
-
-@await Html.PartialAsync("Partials/General/Titles/_Title", "Government Responses to the Virus")
-
-<ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    @foreach (CovidGovResponse item in Model.AllResponses)
-    {
-        <li>@item.
-        @if (item.CovidGovResponseSources != null)
+<govuk-accordion id="accordion-with-summary-sections" heading-level="3">
+    <govuk-accordion-item>
+        <govuk-accordion-item-heading>The Fabled Money Tree - Covid Contract</govuk-accordion-item-heading>
+            <p class="govuk-body">How much of our money went friends of the Tories: @FormatPrice(Model.ContractsTotalCost)</p>
+            @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Covid/Contracts/Create">Add Company</a></p> }
+            @foreach (var company in Model.AllContracts)
             {
-                @if (item.CovidGovResponseSources.Count == 1)
-                {
-                    <small><a href="@item.CovidGovResponseSources.FirstOrDefault().Link" target="_blank">@item.CovidGovResponseSources.FirstOrDefault().Source</a></small>
-                } else
-                {
-                    @foreach (var sourceitem in item.CovidGovResponseSources)
+                <h1 class="govuk-heading-l">@company.Name</h1>
+                <p class="govuk-body-lead">
+                    @company.Description
+                    @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Covid/Contracts/PPEContracts/Create" asp-route-id="@company.GovPPEContractCompanyId">Add Contract</a></p> }
+                </p>
+                <dl class="govuk-summary-list">
+                    @foreach (var contract in company.Contracts)
                     {
-                        <a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                @FormatPrice(contract.Cost)
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                @contract.Description
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="https://www.contractsfinder.service.gov.uk/notice/@contract.Link" target="_blank">
+                                    Link
+                                </a>
+                            </dd>
+                        </div>
                     }
-                    
-                }
-            }else
-            {
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
-                }
+
+                </dl>
             }
-        </li>
-    }
-</ul>
+    </govuk-accordion-item>
+    <govuk-accordion-item>
+        <govuk-accordion-item-heading>Government Responses to the Virus</govuk-accordion-item-heading>
+            @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Covid/Responses/Create">Add Response</a></p> }
+            @foreach (CovidGovResponse item in Model.AllResponses)
+            {
+                <li class="govuk-body">
+                    @item.Title
+                    @if (item.CovidGovResponseSources != null|| item.CovidGovResponseSources.Count > 0)
+                    {
+                        <span>-</span>
+                        @if (item.CovidGovResponseSources.Count == 1)
+                        {
+                            <small><a href="@item.CovidGovResponseSources.FirstOrDefault().Link" target="_blank">@item.CovidGovResponseSources.FirstOrDefault().Source</a></small>
+                        } 
+                        @if (item.CovidGovResponseSources.Count > 1)
+                        {
+                            @foreach (var sourceitem in item.CovidGovResponseSources.Take(item.CovidGovResponseSources.Count() - 1))
+                            {
+                                <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+                            }
+                            <small><a href="@item.CovidGovResponseSources.Last().Link" target="_blank">@item.CovidGovResponseSources.Last().Source </a></small>
+                        }
+                    }else
+                    {
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                        }
+                    }
+                </li>
+            }
+    </govuk-accordion-item>
+</govuk-accordion>

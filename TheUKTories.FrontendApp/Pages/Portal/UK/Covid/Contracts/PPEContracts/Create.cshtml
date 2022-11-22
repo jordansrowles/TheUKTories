@@ -1,0 +1,44 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Contracts.PPEContracts.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "New Covid Company Contract")
+<p class="govuk-body">Company: (@Model.GovPPEContractCompany.GovPPEContractCompanyId) - @Model.GovPPEContractCompany.Name</p>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="GovPPEContractCompany.GovPPEContractCompanyId" />
+
+    <govuk-input asp-for="GovPPEContract.Description" type="text"/>
+    <span asp-validation-for="GovPPEContract.Description" class="text-danger"/>  
+
+    <govuk-input asp-for="GovPPEContract.Source" type="text"/>
+    <span asp-validation-for="GovPPEContract.Source" class="text-danger"/>
+
+    <govuk-input asp-for="GovPPEContract.Link" type="text"/>
+    <span asp-validation-for="GovPPEContract.Link" class="text-danger"/>  
+    
+    <govuk-input asp-for="GovPPEContract.Reference" type="text"/>
+    <span asp-validation-for="GovPPEContract.Reference" class="text-danger"/>  
+
+    <govuk-input asp-for="GovPPEContract.Location" type="text"/>
+    <span asp-validation-for="GovPPEContract.Location" class="text-danger"/> 
+    
+    <govuk-input asp-for="GovPPEContract.Cost" type="text"/>
+    <span asp-validation-for="GovPPEContract.Cost" class="text-danger"/> 
+            
+    <govuk-date-input asp-for="GovPPEContract.Date" />
+    <span asp-validation-for="GovPPEContract.Date" class="text-danger"/>
+
+    <govuk-button type="submit" value="Create">Create</govuk-button>
+</form>
+
+<a asp-page="../Index" class="govuk-button">All Companies</a>
+<a asp-page="../Create" class="govuk-button">New Company</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes.Sources
 {
@@ -30,13 +24,13 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes.Sources
                 return NotFound();
             }
 
-            var personquotesource =  await _context.PersonQuoteSources.FirstOrDefaultAsync(m => m.PersonQuoteSourceId == id);
+            var personquotesource = await _context.PersonQuoteSources.FirstOrDefaultAsync(m => m.PersonQuoteSourceId == id);
             if (personquotesource == null)
             {
                 return NotFound();
             }
             PersonQuoteSource = personquotesource;
-           ViewData["PersonQuoteId"] = new SelectList(_context.PeopleQuotes, "PersonQuoteId", "PersonQuoteId");
+            ViewData["PersonQuoteId"] = new SelectList(_context.PeopleQuotes, "PersonQuoteId", "PersonQuoteId");
             return Page();
         }
 
@@ -72,7 +66,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes.Sources
 
         private bool PersonQuoteSourceExists(int id)
         {
-          return (_context.PersonQuoteSources?.Any(e => e.PersonQuoteSourceId == id)).GetValueOrDefault();
+            return (_context.PersonQuoteSources?.Any(e => e.PersonQuoteSourceId == id)).GetValueOrDefault();
         }
     }
 }

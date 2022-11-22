@@ -1,0 +1,28 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.DbReportModel
+
+@{
+    ViewData["Title"] = "DbReport";
+
+    var data = new Dictionary<string, string>()
+    {
+        { "Tactics Total Records", Model.TacticCount.ToString() },
+        { "Contacts Total Records", Model.ContactCount.ToString() },
+        { "Austerity Total Records", Model.AusterityCount.ToString() },
+        { "Austerity Total Without Sources", Model.AusterityCountSourceless.ToString() },
+        { "Austerity Sources Total Records", Model.AusteritySourcesCount.ToString() },
+        { "PPE Companies without a Contract", Model.CovidCompanyNoContracts.ToString() },
+        { "Total Covid Responses", Model.CovidResponseCount.ToString() }
+    };
+
+}
+
+<govuk-summary-list>
+    @foreach (var item in data)
+    {
+        <govuk-summary-list-row>
+            <govuk-summary-list-row-key>@item.Key</govuk-summary-list-row-key>
+            <govuk-summary-list-row-value>@item.Value</govuk-summary-list-row-value>
+        </govuk-summary-list-row>        
+    }
+</govuk-summary-list>

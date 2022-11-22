@@ -9,5 +9,6 @@
 @await Html.PartialAsync("Partials/Portal/DetailViews/_Person", Model.Person)
 <div>
     <a class="govuk-button" asp-page="./Edit" asp-route-id="@Model.Person?.PersonId">Edit</a>
+    <a class="govuk-button" asp-page="./Quotes/Create" asp-route-id="@Model.Person?.PersonId">Add Quote</a>
     <a class="govuk-button" asp-page="./Index">Back to List</a>
 </div>

@@ -1,0 +1,20 @@
+﻿@model GovPPEContractCompany 
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="GovPPEContractCompanyId" />
+
+    <govuk-input asp-for="Name" type="text"/>
+    <span asp-validation-for="Name" class="text-danger"/>
+
+    <govuk-textarea rows="5" asp-for="Description"/>
+    <span asp-validation-for="Description" class="text-danger"/>
+
+    <govuk-input asp-for="MainPerson" type="text"/>
+    <span asp-validation-for="MainPerson" class="text-danger"/>
+
+    <govuk-date-input asp-for="Founded" />
+    <span asp-validation-for="Founded" class="text-danger"/>
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>

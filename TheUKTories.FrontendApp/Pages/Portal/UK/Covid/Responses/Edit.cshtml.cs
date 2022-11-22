@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.Covid;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
 {
@@ -30,7 +23,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
                 return NotFound();
             }
 
-            var covidgovresponse =  await _context.CovidGovResponses.FirstOrDefaultAsync(m => m.CovidGovResponseId == id);
+            var covidgovresponse = await _context.CovidGovResponses.FirstOrDefaultAsync(m => m.CovidGovResponseId == id);
             if (covidgovresponse == null)
             {
                 return NotFound();
@@ -39,16 +32,8 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            /*
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            */
             _context.Attach(CovidGovResponse).State = EntityState.Modified;
 
             try
@@ -72,7 +57,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses
 
         private bool CovidGovResponseExists(int id)
         {
-          return (_context.CovidGovResponses?.Any(e => e.CovidGovResponseId == id)).GetValueOrDefault();
+            return (_context.CovidGovResponses?.Any(e => e.CovidGovResponseId == id)).GetValueOrDefault();
         }
     }
 }

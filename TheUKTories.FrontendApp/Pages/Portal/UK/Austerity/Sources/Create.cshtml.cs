@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources
 {
@@ -22,10 +15,10 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null) return NotFound();
-            
+
             SelectedMeasure = await _context.UKAusterityMeasures.FindAsync(id);
             if (SelectedMeasure == null) return NotFound();
-            
+
             return Page();
         }
 

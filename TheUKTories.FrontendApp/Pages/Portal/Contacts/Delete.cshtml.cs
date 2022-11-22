@@ -14,7 +14,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Contacts
         }
 
         [BindProperty]
-      public Contact Contact { get; set; } = default!;
+        public Contact Contact { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,7 +31,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Contacts
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 Contact = contact;
             }

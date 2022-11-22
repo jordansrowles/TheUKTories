@@ -18,7 +18,7 @@ namespace TheUKTories.Services.Data.EFCore.Models.People
         public string? PoliticalParty { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public string? CurrentTitle { get; set; }
-        public string[] Titles { get; set; }
+        public string Titles { get; set; }
         [Description("Profile Image Blob URL")]
         public string? ProfileImageBlobUri { get; set; }
         public bool IsProfilePublic { get; set; } = false;
@@ -26,5 +26,7 @@ namespace TheUKTories.Services.Data.EFCore.Models.People
         public virtual ICollection<PersonGeneral> GeneralList { get; set; } = default!;
 
         public string GetProfileImageName() => FullName.ToLower().Replace(' ', '_').Remove('\'');
+        public string[] GetTitles() => (string.IsNullOrEmpty(Titles)) ? Array.Empty<string>() : Titles.Split(';');
+
     }
 }

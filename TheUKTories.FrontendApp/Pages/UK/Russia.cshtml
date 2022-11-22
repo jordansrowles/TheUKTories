@@ -1,18 +1,12 @@
 ﻿@page
 @model TheUKTories.FrontendApp.Pages.UK.RussiaModel
-@using TheUKTories.Models
+
 @{
-    ViewData["Title"] = "UK/Russia";
-    ViewData["SelectedTopItem"] = "UK";
+    ViewData["Title"] = "2020 ISC Russia Report";
 }
 
-<govuk-breadcrumbs>
-    <govuk-breadcrumbs-item asp-page="/Index">Home</govuk-breadcrumbs-item>
-    <govuk-breadcrumbs-item asp-page="/UK/Index">UK</govuk-breadcrumbs-item>
-    <govuk-breadcrumbs-item asp-page="/UK/Russia">Russia</govuk-breadcrumbs-item>
-</govuk-breadcrumbs>
+@await Html.PartialAsync("Partials/General/Titles/_Title", "UK ISC Russia Report 2020")
 
-<h1 class="govuk-heading-xl" id="iscreport">Russian Interference Report</h1>
 <p class="govuk-body-s">
     The Russian interference report, titled 'Russia' was released on 21<sup>st</sup> July 2020 by the British Intelligence and Security Committee of Parliament (ISC). The inquiry started in 2017 and was completed in March 2019. Redaction's were made, and was sent to the PM on 17 October 2019. The government refused to release the report before the general election in December 2019. The report was approved for the release the day following the election. The report ultimately found that Russian interference is very much common place, but can not produce evidence as there has been no investigation commissioned.
 </p>
@@ -20,24 +14,27 @@
     In fact, the report found that British governments have <strong>"welcomed the [Russian] oligarchs and their money with open arms, providing them with a means of recycling illicit finance through the London 'laundromat', and connections at the highest levels with access to U.K. companies and political figures."</strong>
 </p>
 
-<h2 class="govuk-heading-m">External Links</h2>
-<ul class="govuk-list">
-    @foreach(var file in Model.ExternalLinks)
-    {
-        <li>
-            <a href="@file.Link" class="govuk-link govuk-link--no-visited-state" target="_blank">@file.Name</a>
-        </li>
-    }
+@await Html.PartialAsync("Partials/General/Titles/_TitleWithSub", ("Report Findings", "From the report summary by the committee"))
 
+ <ul class="govuk-list govuk-list--bullet">
+    <li>Russian influence in the UK is the new normal. Successive Governments have welcomed the oligarchs and their money with open arms, providing them with a means of recycling illicit finance through the London ‘laundromat’, and connections at the highest levels with access to UK companies and political figures.</li>
+    <li>A number of members of the House of Lords have business interests that are linked to Russia, or work directly for major Russian companies linked to the Russian state.</li>
+    <li>This has led to a growth industry of ‘enablers’ including lawyers, accountants, and estate agents who are – wittingly or unwittingly – de facto agents of the Russian state.</li>
+    <li>It clearly demonstrates the inherent tension between the Government’s prosperity agenda and the need to protect national security. While we cannot now shut the stable door, greater powers and transparency are needed urgently.</li>
+    <li>UK is clearly a target for Russian disinformation. While the mechanics of our paper-based voting system are largely sound, we cannot be complacent about a hostile state taking deliberate action with the aim of influencing our democratic processes.</li>
+    <li>Yet the defence of those democratic processes has appeared something of a ‘hot potato’, with no one organisation considering itself to be in the lead, or apparently willing to conduct an assessment of such interference. This must change.</li>
+    <li>Social media companies must take action and remove covert hostile state material: Government must ‘name and shame’ those who fail to act.</li>
+    <li>We need other countries to step up with the UK and attach a cost to Putin’s actions. Salisbury must not be allowed to become the high water mark in international unity over the Russia threat.</li>
+    <li>A number of issues addressed in this published version of the Russia Report are covered in more depth in the Classified Annex. We are not able to discuss these aspects on the grounds of national security.</li>
 </ul>
 
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Quotes about the report")
 
-<span class="govuk-caption-l">From the report summary by the committee</span>
-<h2 class="govuk-heading-xl">Report Findings</h2>
 <ul class="govuk-list govuk-list--bullet">
-    @foreach (string item in Model.Report.Findings)
-    {
-        <li>@item</li>
-    }
-</ul
+    <li>There have been widespread allegations that Russia sought to influence voters in the 2016 referendum on the UK’s membership of the EU: studies have pointed to the preponderance of pro-Brexit or anti-EU stories on RT and Sputnik, and the use of ‘bots’ and ‘trolls’, as evidence. The actual impact of such attempts on the result itself would be difficult – if not impossible – to prove. However what is clear is that the government was slow to recognise the existence of the threat – only understanding it after the ‘hack and leak’ operation against the Democratic National Committee, when it should have been seen as early as 2014. As a result the government did not take action to protect the UK’s process in 2016. The committee has not been provided with any post-referendum assessment - in stark contrast to the US response to reports of interference in the 2016 presidential election. In our view there must be an analogous assessment of Russian interference in the EU referendum.</li>
+    <li>We therefore question whether the Government took its eye off the ball because of its focus on counter-terrorism: it was the opinion of the Committee that until recently the Government had badly underestimated the response required to the Russian threat -and is still playing catch up. The Committee oversees the intelligence and security activities of the UK, including the policies, expenditure, administration and operations of MI5, MI6 and the Government Communications Headquarters. The Committee makes an Annual Report on the discharge of its functions and also produces Reports on specific issues. The Committee receives highly classified evidence, much of which cannot be published without damaging the operational capabilities of the intelligence Agencies. There is therefore a lengthy process to prepare the Committee's reports ready for publication, which consists of four stages and takes around four months. The Committee's report on Russia was sent to the Prime Minister on 17 October 2019.</li>
+    <li>The Committee has not been provided with any post-referendum assessment - in stark contrast to the US response to reports of interference in the 2016 presidential election. In our view there must be an analogous assessment of Russian interference in the EU referendum.</li>
+    <li>It has previously been agreed that the Prime Minister would have ten working days in which to provide this confirmation, before the Report is laid before Parliament. The Committee’s report on Russia was sent to the Prime Minister on 17 October 2019.</li>
+    <li>There has been credible open source commentary suggesting that Russia undertook influence campaigns in relation to the Scottish independence referendum in 2014. However, at the time ***. It appears that *** what some commentators have described as potentially the first post-Soviet Russian interference in a Western democratic process. We note that – almost five years on – *** For example, it was widely reported shortly after the referendum that Russian election observers had suggested that there were irregularities in the conduct of the vote, and this position was widely pushed by Russian state media. We understand that HMG viewed this as being primarily aimed at discrediting the UK in the eyes of a domestic Russian audience. More recently, we note the study by Ben Nimmo – #ElectionWatch: Scottish Vote, Pro-Kremlin Trolls, 12 December 2017.</li>
+    <li>We note that Arron Banks became the biggest donor in British political history when he gave £8m to the Leave.EU campaign. In October 2018, the Electoral Commission – which had been investigating the source of this donation – referred the case to the National Crime Agency, which investigated it ***. In September 2019, the National Crime Agency announced that it had concluded the investigation, having found no evidence that any criminal offences had been committed under the Political Parties, Elections and Referendums Act 2000 or company law by any of the individuals or organisations referred to it by the Electoral Commission.</li>
+</ul>

@@ -5,12 +5,12 @@
     ViewData["Title"] = "Delete";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Delete Covid Response Source")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Delete Covid Response Source")
 
 @await Html.PartialAsync("Partials/Portal/DetailViews/_Source", Model.CovidGovResponseSource)
     
 <form method="post">
     <input type="hidden" asp-for="CovidGovResponseSource.CovidGovResponseSourceId" />
-    <input type="submit" value="Delete" class="btn btn-danger" /> |
-    <a asp-page="./Index">Back to List</a>
+    <input type="submit" value="Delete" class="govuk-button govuk-button--warning" />
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
 </form>

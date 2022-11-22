@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
 {
@@ -30,13 +24,13 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
                 return NotFound();
             }
 
-            var personquote =  await _context.PeopleQuotes.FirstOrDefaultAsync(m => m.PersonQuoteId == id);
+            var personquote = await _context.PeopleQuotes.FirstOrDefaultAsync(m => m.PersonQuoteId == id);
             if (personquote == null)
             {
                 return NotFound();
             }
             PersonQuote = personquote;
-           ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
+            ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
             return Page();
         }
 
@@ -44,11 +38,6 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Attach(PersonQuote).State = EntityState.Modified;
 
             try
@@ -72,7 +61,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
 
         private bool PersonQuoteExists(int id)
         {
-          return (_context.PeopleQuotes?.Any(e => e.PersonQuoteId == id)).GetValueOrDefault();
+            return (_context.PeopleQuotes?.Any(e => e.PersonQuoteId == id)).GetValueOrDefault();
         }
     }
 }

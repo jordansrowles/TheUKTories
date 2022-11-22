@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.General
 {
@@ -30,13 +24,13 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.General
                 return NotFound();
             }
 
-            var persongeneral =  await _context.PeopleGeneral.FirstOrDefaultAsync(m => m.PersonGeneralId == id);
+            var persongeneral = await _context.PeopleGeneral.FirstOrDefaultAsync(m => m.PersonGeneralId == id);
             if (persongeneral == null)
             {
                 return NotFound();
             }
             PersonGeneral = persongeneral;
-           ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
+            ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
             return Page();
         }
 
@@ -72,7 +66,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.General
 
         private bool PersonGeneralExists(int id)
         {
-          return (_context.PeopleGeneral?.Any(e => e.PersonGeneralId == id)).GetValueOrDefault();
+            return (_context.PeopleGeneral?.Any(e => e.PersonGeneralId == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,0 +1,50 @@
+﻿@model GovPPEContractCompany 
+
+<govuk-summary-list>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Name)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Name)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Description)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Description)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Founded)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Founded)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+        <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.MainPerson)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.MainPerson)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-key>
+            @Html.DisplayNameFor(model => model.Contracts)
+        </govuk-summary-list-row-key>
+        <govuk-summary-list-row-value>
+            @Html.DisplayFor(model => model.Contracts.Count)
+        </govuk-summary-list-row-value>
+    </govuk-summary-list-row>
+
+    <govuk-summary-list-row>
+        <govuk-summary-list-row-action asp-page="./Details" asp-route-id="@Model.GovPPEContractCompanyId">Details</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Edit" asp-route-id="@Model.GovPPEContractCompanyId">Edit</govuk-summary-list-row-action>
+        <govuk-summary-list-row-action asp-page="./Delete" asp-route-id="@Model.GovPPEContractCompanyId">Delete</govuk-summary-list-row-action>
+    </govuk-summary-list-row>
+</govuk-summary-list>

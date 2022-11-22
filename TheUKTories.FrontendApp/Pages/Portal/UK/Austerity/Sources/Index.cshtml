@@ -6,7 +6,7 @@
     ViewData["Title"] = "Index";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "UK Austerity Measure Sources")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "UK Austerity Measure Sources")
 
 @foreach (UKAusterityMeasureSource item in Model.UKAusterityMeasureSource)
 {

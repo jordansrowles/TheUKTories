@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +20,7 @@ namespace TheUKTories.FrontendApp.Pages.UK
             this.config = config;
             ShowAusterityDates = config.GetValue("UK.Austerity.ShowDates", false);
         }
-        
+
         public async Task OnGetAsync(int? pageIndex)
         {
             var pagesize = config.GetValue("UK.Austerity.DefaultPageSize", 30);

@@ -8,6 +8,7 @@
 @await Html.PartialAsync("Partials/General/Titles/_Title", "People Of Importance")
 
 <a class="govuk-button" asp-page="Create">Create New</a>
+<a class="govuk-button" asp-page="./Quotes/Index">Quotes</a>
 
 @await Html.PartialAsync("Partials/People/_PeopleAccordian", Model.Person)
 

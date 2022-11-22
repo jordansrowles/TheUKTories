@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.Covid;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
 {
@@ -20,7 +14,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
         }
 
         [BindProperty]
-      public CovidGovResponseSource CovidGovResponseSource { get; set; } = default!;
+        public CovidGovResponseSource CovidGovResponseSource { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,7 +29,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 CovidGovResponseSource = covidgovresponsesource;
             }

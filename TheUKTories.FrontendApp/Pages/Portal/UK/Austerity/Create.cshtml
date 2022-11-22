@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "New Austerity Measure")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "New Austerity Measure")
 
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -13,6 +13,8 @@
     <govuk-select asp-for="UKAusterityMeasure.Type">
         <govuk-select-item value="Other" selected="true">Other</govuk-select-item>
         <govuk-select-item value="NHS">NHS</govuk-select-item>
+        <govuk-select-item value="Poverty">Poverty</govuk-select-item>
+        <govuk-select-item value="Education">Education</govuk-select-item>
         <govuk-select-item value="Social">Social</govuk-select-item>
         <govuk-select-item value="Defence">Defence</govuk-select-item>
         <govuk-select-item value="Infrastructure">Infrastructure</govuk-select-item>

@@ -5,7 +5,7 @@
     ViewData["Title"] = "Edit";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Edit Gov Covid Response Source")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Edit Gov Covid Response Source")
 
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -24,6 +24,7 @@
     <govuk-button type="submit" value="Create">Create</govuk-button>
 </form>
 
+<a asp-page="./Delete" class="govuk-button govuk-button--warning" asp-route-id="@Model.CovidGovResponseSource.CovidGovResponseSourceId">Delete</a>
 <a asp-page="../Index" class="govuk-button">Back to Covid Responses</a>
 
 @section Scripts {

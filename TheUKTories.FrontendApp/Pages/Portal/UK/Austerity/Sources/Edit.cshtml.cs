@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources
 {
@@ -33,7 +26,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources
                 return NotFound();
             }
 
-            var ukausteritymeasuresource =  await _context.UKAusterityMeasuresSources.FirstOrDefaultAsync(m => m.UKAusterityMeasureSourceId == id);
+            var ukausteritymeasuresource = await _context.UKAusterityMeasuresSources.FirstOrDefaultAsync(m => m.UKAusterityMeasureSourceId == id);
             if (ukausteritymeasuresource == null)
             {
                 return NotFound();
@@ -72,7 +65,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Austerity.Sources
 
         private bool UKAusterityMeasureSourceExists(int id)
         {
-          return (_context.UKAusterityMeasuresSources?.Any(e => e.UKAusterityMeasureSourceId == id)).GetValueOrDefault();
+            return (_context.UKAusterityMeasuresSources?.Any(e => e.UKAusterityMeasureSourceId == id)).GetValueOrDefault();
         }
     }
 }

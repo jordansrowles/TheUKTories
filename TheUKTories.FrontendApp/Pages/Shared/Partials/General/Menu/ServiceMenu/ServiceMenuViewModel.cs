@@ -1,6 +1,6 @@
-﻿namespace TheUKTories.FrontendApp.Pages.Shared.ViewModels
+﻿namespace TheUKTories.FrontendApp.Pages.Shared.Partials.General.Menu.ServiceMenu
 {
-    public class MainMenuViewModel
+    public class ServiceMenuViewModel
     {
         public string? Title { get; set; } = "The UK Tories";
         public Dictionary<string, string> Links { get; set; } = default!;

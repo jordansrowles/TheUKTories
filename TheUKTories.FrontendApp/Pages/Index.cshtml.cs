@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.Selfrolled;
 
 namespace TheUKTories.FrontendApp.Pages
 {
@@ -12,7 +11,7 @@ namespace TheUKTories.FrontendApp.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         SqlServerDataContext _db;
-        
+
         public IndexModel(ILogger<IndexModel> logger, SqlServerDataContext db)
         {
             _logger = logger;

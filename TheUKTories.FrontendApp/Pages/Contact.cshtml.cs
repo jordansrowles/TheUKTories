@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models;
 
 namespace TheUKTories.FrontendApp.Pages
 {
@@ -12,7 +10,7 @@ namespace TheUKTories.FrontendApp.Pages
     {
         [Display(Name = "Your Email Address")]
         public string? EmailAddress { get; set; }
-        
+
         [Display(Name = "Message")]
         [Required(ErrorMessage = "Enter your date of birth")]
         public string? Message { get; set; }

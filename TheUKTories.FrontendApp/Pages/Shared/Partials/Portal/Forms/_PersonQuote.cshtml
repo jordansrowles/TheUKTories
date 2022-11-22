@@ -1,0 +1,15 @@
+﻿@model PersonQuote
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="PersonId" />
+    <input type="hidden" asp-for="PersonQuoteId" />
+
+    <select class="govuk-select" asp-for="PersonId" class="form-control" asp-items="ViewBag.PersonId"></select>
+    <span asp-validation-for="PersonId" class="text-danger"></span>
+
+    <govuk-input asp-for="Quote" type="text" />
+    <span asp-validation-for="Quote" class="text-danger" />
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>

@@ -24,7 +24,10 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Contacts
         {
             _context.Contacts?.Add(new Contact()
             {
-                Message = "Test message", Details = "Test Details", EmailAddress = "test@email.co.uk", CreatedDate = DateTime.Now,
+                Message = "Test message",
+                Details = "Test Details",
+                EmailAddress = "test@email.co.uk",
+                CreatedDate = DateTime.Now,
                 Name = "John Smith"
             });
             await _context.SaveChangesAsync();

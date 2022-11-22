@@ -5,7 +5,7 @@
     ViewData["Title"] = "Delete";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Are you sure you want to delete this?")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Are you sure you want to delete this?")
 
 @await Html.PartialAsync("Partials/Portal/DetailViews/_Source", Model.UKAusterityMeasureSource)
 

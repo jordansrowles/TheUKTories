@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Castle.Core.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheUKTories.Services.Data.EFCore.Models;
 using TheUKTories.Services.Data.EFCore.Models.Covid;
@@ -6,6 +7,9 @@ using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.Services.Data.EFCore
 {
+    /// <summary>
+    ///     Database context class, can either connect to local SQL Express or Azure SQL for production
+    /// </summary>
     public class SqlServerDataContext : DbContext
     {
         public DbSet<Contact>? Contacts { get; set; }
@@ -28,19 +32,22 @@ namespace TheUKTories.Services.Data.EFCore
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options
-                .UseSqlServer(Globals.TryGetConnectionString(Globals.ConnectionString));
+                .UseSqlServer(Globals.TryGetConnectionString(Globals.ExpressConnectionString));
 
             options.LogTo(Console.WriteLine).EnableDetailedErrors().EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            /*
+            // Set up value converter for titles
             var person_titles_converter = new ValueConverter<string[], string>(
                 v => string.Join(";", v),
                 v => v.Split(";", StringSplitOptions.RemoveEmptyEntries).ToArray());
 
             builder.Entity<Person>()
                 .Property(i => i.Titles).HasConversion(person_titles_converter);
+            */
         }
     }
 }

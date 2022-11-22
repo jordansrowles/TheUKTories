@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.Covid;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
 {
@@ -32,13 +26,13 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
                 return NotFound();
             }
 
-            var covidgovresponsesource =  await _context.CovidGovResponseSources.FirstOrDefaultAsync(m => m.CovidGovResponseSourceId == id);
+            var covidgovresponsesource = await _context.CovidGovResponseSources.FirstOrDefaultAsync(m => m.CovidGovResponseSourceId == id);
             if (covidgovresponsesource == null)
             {
                 return NotFound();
             }
             CovidGovResponseSource = covidgovresponsesource;
-           ViewData["CovidGovResponseId"] = new SelectList(_context.CovidGovResponses, "CovidGovResponseId", "Title");
+            ViewData["CovidGovResponseId"] = new SelectList(_context.CovidGovResponses, "CovidGovResponseId", "Title");
             return Page();
         }
 
@@ -72,7 +66,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Responses.Sources
 
         private bool CovidGovResponseSourceExists(int id)
         {
-          return (_context.CovidGovResponseSources?.Any(e => e.CovidGovResponseSourceId == id)).GetValueOrDefault();
+            return (_context.CovidGovResponseSources?.Any(e => e.CovidGovResponseSourceId == id)).GetValueOrDefault();
         }
     }
 }

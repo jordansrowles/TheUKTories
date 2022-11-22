@@ -1,9 +1,10 @@
 ﻿@page
 @model TheUKTories.FrontendApp.Pages.ContactModel
 @{
+    ViewData["Title"] = "Contact Us";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Contact Form")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Contact Form")
 
 <form method="post" novalidate>
     <govuk-input asp-for="Name" type="text"/>

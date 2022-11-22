@@ -1,0 +1,15 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Contracts.PPEContracts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "PPE Contract Details")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_PPEContract", Model.GovPPEContract)
+
+<div>
+    <a class="govuk-button" asp-page="./Edit" asp-route-id="@Model.GovPPEContract?.GovPPEContractId">Edit</a>
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+</div>

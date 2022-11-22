@@ -1,0 +1,17 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Contracts.PPEContracts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "View all PPE Contracts")
+
+<p>
+    <a class="govuk-button" asp-page="../Create">Create Company</a>
+</p>
+
+@foreach (var item in Model.GovPPEContract) 
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_PPEContract", item)
+}

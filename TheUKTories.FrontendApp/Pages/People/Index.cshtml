@@ -1,0 +1,64 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.People.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<govuk-breadcrumbs>
+    <govuk-breadcrumbs-item asp-page="/Index">Home</govuk-breadcrumbs-item>
+    <govuk-breadcrumbs-item asp-page="/People/Index">People</govuk-breadcrumbs-item>
+</govuk-breadcrumbs>
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "People Directory")
+
+@if (User.Identity.IsAuthenticated) { 
+    <p><a class="govuk-button" asp-page="/Portal/People/Create">Add Person</a></p> 
+}
+
+@if (Model.Person.Count() == 0)
+{
+    @await Html.PartialAsync("Partials/General/Titles/_Title", "Very lonely in here...")
+}
+else
+{
+   @if (Model.Person.Where(c => c.Nationality.ToUpper() == "BRITISH").Count() != 0)
+    {
+        <span class="govuk-caption-l">PMs, Ministers, MPs, Lords, Influential People</span>
+        <h2 class="govuk-heading-l">United Kingdom</h2>
+        <ul class="govuk-list">
+        @foreach (Person p in Model.Person.Where(c => c.Nationality.ToUpper() == "BRITISH"))
+        {
+            <li>
+                <a asp-page="./Person" asp-route-id="@p.PersonId">@p.FullName</a> | 
+                <small>@p.CurrentTitle</small>
+            </li>
+        }
+        </ul>
+    }
+
+    @if (Model.Person.Where(c => c.Nationality.ToUpper() == "FRENCH").Count() != 0)
+    {
+        <span class="govuk-caption-l">Reluctantly,</span>
+        <h2 class="govuk-heading-l">The French</h2>
+        <ul class="govuk-list">
+        @foreach (Person p in Model.Person.Where(c => c.Nationality.ToUpper() == "FRENCH"))
+        {
+            <li><a asp-page="./Person" asp-route-id="@p.PersonId">@p.FullName</a> | <small>@p.CurrentTitle</small></li>
+        }
+        </ul>
+    }
+
+    @if (Model.Person.Where(c => c.Nationality.ToUpper() == "GERMAN").Count() != 0)
+    {
+        <!-- span class="govuk-caption-l">PMs, Ministers, MPs, Lords, Influential People</span -->
+        <h2 class="govuk-heading-l">The Germans</h2>
+        <ul class="govuk-list">
+        @foreach (Person p in Model.Person.Where(c => c.Nationality.ToUpper() == "GERMAN"))
+        {
+            <li><a asp-page="./Person" asp-route-id="@p.PersonId">@p.FullName</a> | <small>@p.CurrentTitle</small></li>
+        }
+        </ul>
+    } 
+}
+

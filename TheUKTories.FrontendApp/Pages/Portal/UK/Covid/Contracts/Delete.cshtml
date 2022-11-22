@@ -1,0 +1,16 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.UK.Covid.Contracts.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", $"Delete: {Model.GovPPEContractCompany.Name}")
+
+@await Html.PartialAsync("Partials/Portal/DetailViews/_PPECompany", Model.GovPPEContractCompany)
+    
+<form method="post">
+    <input type="hidden" asp-for="GovPPEContractCompany.GovPPEContractCompanyId" />
+    <input type="submit" value="Delete" class="govuk-button govuk-button--warning"  />
+    <a class="govuk-button" asp-page="./Index">Back to List</a>
+</form>

@@ -1,6 +1,7 @@
 ﻿@page
 @model TheUKTories.FrontendApp.Pages.ContactThanksModel
 @{
+    ViewData["Title"] = "Thank you!";
 }
 
-@await Html.PartialAsync("Partials/_PageTitlePartial", "Thanks for the message!")
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Thanks for the message!")

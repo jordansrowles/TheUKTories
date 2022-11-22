@@ -14,7 +14,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Contacts
             this.config = config;
         }
 
-        public IList<Contact> Contact { get;set; } = default!;
+        public IList<Contact> Contact { get; set; } = default!;
 
         public async Task OnGetAsync(int? pageIndex)
         {

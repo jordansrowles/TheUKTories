@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.General
 {
@@ -21,18 +15,18 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.General
 
         public IActionResult OnGet()
         {
-        ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
+            ViewData["PersonId"] = new SelectList(_context.People, "PersonId", "FullName");
             return Page();
         }
 
         [BindProperty]
         public PersonGeneral PersonGeneral { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.PeopleGeneral == null || PersonGeneral == null)
+            if (!ModelState.IsValid || _context.PeopleGeneral == null || PersonGeneral == null)
             {
                 return Page();
             }

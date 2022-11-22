@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TheUKTories.Services.Data.EFCore;
-using TheUKTories.Services.Data.EFCore.Models.People;
 
 namespace TheUKTories.FrontendApp.Pages.Portal.People.General.Sources
 {
@@ -30,13 +24,13 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.General.Sources
                 return NotFound();
             }
 
-            var persongeneralsource =  await _context.PersonGeneralSources.FirstOrDefaultAsync(m => m.PersonGeneralSourceId == id);
+            var persongeneralsource = await _context.PersonGeneralSources.FirstOrDefaultAsync(m => m.PersonGeneralSourceId == id);
             if (persongeneralsource == null)
             {
                 return NotFound();
             }
             PersonGeneralSource = persongeneralsource;
-           ViewData["PersonGeneralId"] = new SelectList(_context.PeopleGeneral, "PersonGeneralId", "PersonGeneralId");
+            ViewData["PersonGeneralId"] = new SelectList(_context.PeopleGeneral, "PersonGeneralId", "PersonGeneralId");
             return Page();
         }
 
@@ -72,7 +66,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.General.Sources
 
         private bool PersonGeneralSourceExists(int id)
         {
-          return (_context.PersonGeneralSources?.Any(e => e.PersonGeneralSourceId == id)).GetValueOrDefault();
+            return (_context.PersonGeneralSources?.Any(e => e.PersonGeneralSourceId == id)).GetValueOrDefault();
         }
     }
 }

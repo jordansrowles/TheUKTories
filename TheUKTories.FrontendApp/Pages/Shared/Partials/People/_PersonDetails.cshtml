@@ -1,0 +1,33 @@
+﻿@model Person
+
+<!--
+        // set up the top page navigation. creates dictionary of links and passes to
+    //  _PageNavigation through ViewData
+    Dictionary<string, string> NavItems = new Dictionary<string, string>();
+    if (Model.GeneralPoints.Count != 0) NavItems.Add("#general", "General bits and bobs");
+    if (Model.RussianConnections.Count != 0) NavItems.Add("#russians", "Those pesky Russians");
+    if (Model.Quotes.Count != 0) NavItems.Add("#quotes", "Unforgettable Quotes");
+
+    ViewData["PageNavItems"] = NavItems;
+-->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m"><govuk-tag class="govuk-tag--green">Current</govuk-tag> @Model.CurrentTitle</span>
+        <h1 class="govuk-heading-l">@Model.FullName</h1>
+        @if (Model.Titles != null)
+        {
+            <ul class="govuk-list">
+                @foreach (var item in Model.GetTitles())
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <img style="display: inline;" src="@Model.ProfileImageBlobUri" alt="@Model.ProfileImageBlobUri.ToString()" height="150" width="130">
+    </div>
+    
+</div>
