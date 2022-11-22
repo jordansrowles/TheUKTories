@@ -29,4 +29,4 @@
 </form>
 
 <a asp-page="../Index" class="govuk-button">Back to Quotes</a>
-<a asp-page="../Create" class="govuk-button">New Quote</a>
+<a asp-page="../Create" asp-route-id="@Model.PersonQuote.PersonId" class="govuk-button">New Quote</a>
