@@ -36,7 +36,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Quotes
             _context.PeopleQuotes.Add(PersonQuote);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Sources/Create", new { id = PersonQuote.PersonQuoteId });
         }
     }
 }

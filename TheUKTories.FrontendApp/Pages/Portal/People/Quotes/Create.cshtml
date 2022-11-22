@@ -12,7 +12,7 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="Person.PersonId" />
 
-    <govuk-input asp-for="PersonQuote.Quote" type="text"/>
+    <govuk-textarea asp-for="PersonQuote.Quote" type="text" rows="10"/>
     <span asp-validation-for="PersonQuote.Quote" class="text-danger" />
 
     <govuk-button type="submit" value="Create">Submit</govuk-button>
