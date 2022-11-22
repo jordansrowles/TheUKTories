@@ -14,15 +14,39 @@
 @if (Model is not null)
 {
    <h3 class="govuk-heading-m" id="quotes">Unforgettable Quotes</h3>
-    <ul class="govuk-list govuk-list--spaced">
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
         @foreach (var item in Model)
         {
             <li>
                 @if (User.Identity.IsAuthenticated) { 
                     <a class="govuk-link--muted" asp-page="/Portal/People/Quotes/Edit" asp-route-id="@item.PersonQuoteId">[edit]</a>
+                    <a class="govuk-link--muted" asp-page="/Portal/People/Quotes/Delete" asp-route-id="@item.PersonQuoteId">[delete]</a>
                     <a class="govuk-link--muted" asp-page="/Portal/People/Quotes/Sources/Create" asp-route-id="@item.PersonQuoteId">[+ source]</a>
                 } 
                 @item.Quote
+                @if (item.SourceItems != null || item.SourceItems.Count > 0)
+                {
+                    <span>-</span>
+
+                    @if (item.SourceItems.Count == 1)
+                    {
+                        <small><a href="@item.SourceItems.FirstOrDefault().Link" target="_blank">@item.SourceItems.FirstOrDefault().Source</a></small>
+                    } 
+                    @if (item.SourceItems.Count > 1)
+                    {
+                        @foreach (var sourceitem in item.SourceItems.Take(item.SourceItems.Count() - 1))
+                        {
+                            <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+                        }
+                        <small><a href="@item.SourceItems.Last().Link" target="_blank">@item.SourceItems.Last().Source </a></small>
+                    }
+                }else
+                {
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                    }
+                }
             </li>        
         }
 

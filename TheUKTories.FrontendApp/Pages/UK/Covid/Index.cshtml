@@ -62,35 +62,39 @@
             }
     </govuk-accordion-item>
     <govuk-accordion-item>
-        <govuk-accordion-item-heading>Government Responses to the Virus</govuk-accordion-item-heading>
+        <govuk-accordion-item-heading>@Model.AllResponses.Count Government Responses to the Virus</govuk-accordion-item-heading>
             @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Covid/Responses/Create">Add Response</a></p> }
-            @foreach (CovidGovResponse item in Model.AllResponses)
-            {
-                <li class="govuk-body">
-                    @item.Title
-                    @if (item.CovidGovResponseSources != null|| item.CovidGovResponseSources.Count > 0)
-                    {
-                        <span>-</span>
-                        @if (item.CovidGovResponseSources.Count == 1)
+            <ul class="govuk-list govuk-list--bullet">
+                @foreach (CovidGovResponse item in Model.AllResponses)
+                {
+                    <li class="govuk-body">
+                        @item.Title
+                        @if (item.CovidGovResponseSources != null|| item.CovidGovResponseSources.Count > 0)
                         {
-                            <small><a href="@item.CovidGovResponseSources.FirstOrDefault().Link" target="_blank">@item.CovidGovResponseSources.FirstOrDefault().Source</a></small>
-                        } 
-                        @if (item.CovidGovResponseSources.Count > 1)
-                        {
-                            @foreach (var sourceitem in item.CovidGovResponseSources.Take(item.CovidGovResponseSources.Count() - 1))
+                            <span>-</span>
+                            @if (item.CovidGovResponseSources.Count == 1)
                             {
-                                <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+                                <small><a href="@item.CovidGovResponseSources.FirstOrDefault().Link" target="_blank">@item.CovidGovResponseSources.FirstOrDefault().Source</a></small>
+                            } 
+                            @if (item.CovidGovResponseSources.Count > 1)
+                            {
+                                @foreach (var sourceitem in item.CovidGovResponseSources.Take(item.CovidGovResponseSources.Count() - 1))
+                                {
+                                    <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+                                }
+                                <small><a href="@item.CovidGovResponseSources.Last().Link" target="_blank">@item.CovidGovResponseSources.Last().Source </a></small>
                             }
-                            <small><a href="@item.CovidGovResponseSources.Last().Link" target="_blank">@item.CovidGovResponseSources.Last().Source </a></small>
-                        }
-                    }else
-                    {
-                        @if (User.Identity.IsAuthenticated)
+                        }else
                         {
-                            <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+                            }
                         }
-                    }
-                </li>
-            }
+                    </li>
+                }
+            </ul>
+
+
     </govuk-accordion-item>
 </govuk-accordion>

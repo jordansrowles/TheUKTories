@@ -1,22 +1,25 @@
 ﻿@model List<ISourceItem> 
 
-if (Model != null && Model.Count() != 0) {
-    if (Model.Count() == 1) {
-                <small> - <a href="@Model[0].Link" target="_blank">@Model[0].Source</a></small>
-    }
-    else
+@if (Model != null || Model.Count > 0)
+{
+    <span>-</span>
+    @if (Model.Count == 1)
     {
-         <small>
-            -
-            @foreach (var item in Model.Take(Model.Count - 1))
-            {
-                <span><a href="@item.Link" target="_blank">
-                    @item.Source 
-                </a> |</span>
-            }
-            <a href="@Model.Last().Link" target="_blank">@Model.Last().Source</a>
-        </small>   
+        <small><a href="@Model.FirstOrDefault().Link" target="_blank">@Model.FirstOrDefault().Source</a></small>
+    } 
+    @if (Model.Count > 1)
+    {
+        @foreach (var sourceitem in Model.Take(Model.Count() - 1))
+        {
+            <small><a href="@sourceitem.Link" target="_blank"> @sourceitem.Source </a>, </small>
+        }
+        <small><a href="@Model.Last().Link" target="_blank">@Model.Last().Source </a></small>
     }
-
+}else
+{
+    @if (User.Identity.IsAuthenticated)
+    {
+        <govuk-tag class="govuk-tag--red">SOURCES NEEDED</govuk-tag>
+    }
 }
 
