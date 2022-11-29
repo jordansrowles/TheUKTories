@@ -4,37 +4,21 @@
 }
 
 @await Html.PartialAsync("Partials/General/Titles/_Title", "Backend tools")
-<span>
-    <a class="govuk-button" asp-page="./DbReport">Database Report</a> 
-    <a class="govuk-button" asp-page="./Contacts/Index">Contacts</a>
-</span>
- 
-@await Html.PartialAsync("Partials/General/Titles/_Title", "Facist Tactics")
-<span>
-    <a class="govuk-button" asp-page="./AltRight/Index">List</a>
-    <a class="govuk-button" asp-page="./AltRight/Create">Create</a> 
-</span>
 
-@await Html.PartialAsync("Partials/General/Titles/_Title", "UK Austerity")
-<span>
-    <a class="govuk-button" asp-page="./UK/Austerity/Index">List</a>
-    <a class="govuk-button" asp-page="./UK/Austerity/Create">Create</a>
-</span>
+<ul class="govuk-list">
+    <li><a asp-page="./DbReport" class="govuk-link govuk-link--no-visited-state">Database Reports</a></li>
+    <li><a asp-page="./Contacts/Index" class="govuk-link govuk-link--no-visited-state">All Contacts</a></li>
+    <li><a asp-page="./UK/Austerity/Index" class="govuk-link govuk-link--no-visited-state">Austerity > List</a></li>
+    <li><a asp-page="./UK/Austerity/Create" class="govuk-link govuk-link--no-visited-state">Austerity > Create</a></li>
 
-@await Html.PartialAsync("Partials/General/Titles/_Title", "UK Coronavirus")
-<span>
-    <a class="govuk-button" asp-page="./UK/Covid/Responses/Index">List Responses</a>
-    <a class="govuk-button" asp-page="./UK/Covid/Responses/Create">Create Response</a> 
-    <br/>
-    <a class="govuk-button" asp-page="./UK/Covid/Contracts/Index">List PPE Companies</a>
-    <a class="govuk-button" asp-page="./UK/Covid/Contracts/Create">Create PPE Company</a>
-        <br/>
-    <a class="govuk-button" asp-page="./UK/Covid/Contracts/PPEContracts/Index">List Contracts</a>
-    <a class="govuk-button" asp-page="./UK/Covid/Contracts/PPEContracts/Create">Create Contract</a>
-</span>
+    <li><a asp-page="./UK/Covid/Responses/Index" class="govuk-link govuk-link--no-visited-state">Covid Responses > List</a></li>
+    <li><a asp-page="./UK/Covid/Responses/Create" class="govuk-link govuk-link--no-visited-state">Covid Responses > Create</a></li><li>
+    <li><a asp-page="./UK/Covid/Contracts/Index" class="govuk-link govuk-link--no-visited-state">Covid PPE Companies > List</a></li>
+    <li><a asp-page="./UK/Covid/Contracts/Create" class="govuk-link govuk-link--no-visited-state">Covid PPE Companies > Create</a></li>
 
-@await Html.PartialAsync("Partials/General/Titles/_Title", "People")
-<span>
-    <a class="govuk-button" asp-page="./People/Index">List</a>
-    <a class="govuk-button" asp-page="./People/Create">Create</a>
-</span>
+    <li><a asp-page="./People/Index" class="govuk-link govuk-link--no-visited-state">People > List</a></li>
+    <li><a asp-page="./People/Create" class="govuk-link govuk-link--no-visited-state">People > Create</a></li>
+
+    <li><a asp-page="./AltRight/Index" class="govuk-link govuk-link--no-visited-state">Tactics > List</a></li>
+    <li><a asp-page="./AltRight/Create" class="govuk-link govuk-link--no-visited-state">Tactics > Create</a></li>
+</ul>

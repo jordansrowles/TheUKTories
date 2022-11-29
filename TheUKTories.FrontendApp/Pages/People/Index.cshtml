@@ -5,11 +5,6 @@
     ViewData["Title"] = "Index";
 }
 
-<govuk-breadcrumbs>
-    <govuk-breadcrumbs-item asp-page="/Index">Home</govuk-breadcrumbs-item>
-    <govuk-breadcrumbs-item asp-page="/People/Index">People</govuk-breadcrumbs-item>
-</govuk-breadcrumbs>
-
 @await Html.PartialAsync("Partials/General/Titles/_Title", "People Directory")
 
 @if (User.Identity.IsAuthenticated) { 

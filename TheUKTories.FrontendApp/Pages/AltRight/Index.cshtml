@@ -6,11 +6,6 @@
     ViewData["MetaDescription"] = "Tactics used by the Alt Right to help spread misinformation and sow discourse.";
 }
 
-<govuk-breadcrumbs>
-    <govuk-breadcrumbs-item asp-page="/Index">Home</govuk-breadcrumbs-item>
-    <govuk-breadcrumbs-item>Alt-Right</govuk-breadcrumbs-item>
-</govuk-breadcrumbs>
-
 @await Html.PartialAsync("Partials/General/Titles/_Title", "Tactics used by the \"Alt Right\"")
 <p>@if (User.Identity.IsAuthenticated) { <a class="govuk-button" asp-page="/Portal/AltRight/Create">Add</a> }</p>
 
