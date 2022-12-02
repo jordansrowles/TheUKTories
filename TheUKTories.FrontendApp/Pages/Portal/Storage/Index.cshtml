@@ -1,0 +1,17 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Storage.IndexModel
+@{
+}
+
+<a class="govuk-button" asp-page="./Upload/PersonImage">Upload Profile Picture</a>
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Profile Images")
+
+<ul class="govuk-list govuk-list--spaced">
+    @foreach(var item in Model.ProfileImages)
+    {
+        <li>
+            <a href="@item.Value">@item.Key</a>
+        </li>
+    }
+</ul>

@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.BackupRunner", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Services.Data.Selfrolled", "TheUKTories.Services.Data.Selfrolled\TheUKTories.Services.Data.Selfrolled.csproj", "{7A04D51E-B950-4AFF-B5D5-C48BA3C50FDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheUKTories.Backend.DesktopApp", "TheUKTories.Backend.DesktopApp\TheUKTories.Backend.DesktopApp.csproj", "{B08BC63B-0F45-4A4B-A256-48A4B876CB95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheUKTories.Backend.DesktopApp", "TheUKTories.Backend.DesktopApp\TheUKTories.Backend.DesktopApp.csproj", "{B08BC63B-0F45-4A4B-A256-48A4B876CB95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

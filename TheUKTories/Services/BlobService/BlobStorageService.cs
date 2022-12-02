@@ -53,8 +53,11 @@
         }
 
         // Person profile images
-        public async Task<string> UploadPersonProfileImage(Stream data, Person person) => 
-            await UploadFileBlobAsync(data, "", "people_profile_images", person.GetProfileImageName());
-        public async Task<Dictionary<string, Uri>> AllPeopleProfileImages() => await Iterate("people_profile_images");
+        public async Task<string> UploadPersonProfileImage(Stream data, Person person) {
+            return await UploadFileBlobAsync(data, "", "profiles", person.GetProfileImageName());
+
+        }
+
+        public async Task<Dictionary<string, Uri>> AllPeopleProfileImages() => await Iterate("profiles");
     }
 }
