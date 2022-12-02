@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheUKTories.Services.Data.EFCore;
 
@@ -11,9 +12,10 @@ using TheUKTories.Services.Data.EFCore;
 namespace TheUKTories.Migrations
 {
     [DbContext(typeof(SqlServerDataContext))]
-    partial class SqlServerDataContextModelSnapshot : ModelSnapshot
+    [Migration("20221202030841_AddPersonRusCxn")]
+    partial class AddPersonRusCxn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -331,56 +333,6 @@ namespace TheUKTories.Migrations
                     b.ToTable("PersonQuoteSources");
                 });
 
-            modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxn", b =>
-                {
-                    b.Property<int>("PersonRusCxnId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonRusCxnId"), 1L, 1);
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PersonRusCxnId");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("PersonRusCxn");
-                });
-
-            modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxnSource", b =>
-                {
-                    b.Property<int>("PersonRusCxnSourceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonRusCxnSourceId"), 1L, 1);
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PersonRusCxnId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Source")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PersonRusCxnSourceId");
-
-                    b.HasIndex("PersonRusCxnId");
-
-                    b.ToTable("PersonRusCxnSource");
-                });
-
             modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.UKAusterityMeasure", b =>
                 {
                     b.Property<int>("UKAusterityMeasureId")
@@ -500,28 +452,6 @@ namespace TheUKTories.Migrations
                     b.Navigation("PersonQuote");
                 });
 
-            modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxn", b =>
-                {
-                    b.HasOne("TheUKTories.Services.Data.EFCore.Models.People.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Person");
-                });
-
-            modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxnSource", b =>
-                {
-                    b.HasOne("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxn", "PersonRusCxn")
-                        .WithMany("SourceItems")
-                        .HasForeignKey("PersonRusCxnId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PersonRusCxn");
-                });
-
             modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.UKAusterityMeasureSource", b =>
                 {
                     b.HasOne("TheUKTories.Services.Data.EFCore.Models.UKAusterityMeasure", "UKAusterityMeasure")
@@ -556,11 +486,6 @@ namespace TheUKTories.Migrations
                 });
 
             modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonQuote", b =>
-                {
-                    b.Navigation("SourceItems");
-                });
-
-            modelBuilder.Entity("TheUKTories.Services.Data.EFCore.Models.People.PersonRusCxn", b =>
                 {
                     b.Navigation("SourceItems");
                 });

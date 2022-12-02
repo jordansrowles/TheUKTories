@@ -1,0 +1,20 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.Russia.Sources.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Person Rus Cxn Sources")
+
+
+<a class="govuk-button" asp-page="Create">Create New</a>
+
+@foreach (var item in Model.PersonRusCxnSource)
+{
+    @await Html.PartialAsync("Partials/Portal/DetailViews/_Source", item)
+    <a class="govuk-button" asp-page="./Edit" asp-route-id="@item.PersonRusCxnSourceId">Edit</a>
+    <a class="govuk-button" asp-page="./Details" asp-route-id="@item.PersonRusCxnSourceId">Details</a>
+    <a class="govuk-button" asp-page="./Delete" asp-route-id="@item.PersonRusCxnSourceId">Delete</a>
+}
+

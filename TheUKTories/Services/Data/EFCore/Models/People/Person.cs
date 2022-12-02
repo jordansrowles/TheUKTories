@@ -24,6 +24,7 @@ namespace TheUKTories.Services.Data.EFCore.Models.People
         public bool IsProfilePublic { get; set; } = false;
         public virtual ICollection<PersonQuote> Quotes { get; set; } = default!;
         public virtual ICollection<PersonGeneral> GeneralList { get; set; } = default!;
+        public virtual ICollection<PersonRusCxn> RussianConnections { get; set; } = default!;
 
         public string GetProfileImageName() => FullName.ToLower().Replace(' ', '_').Remove('\'');
         public string[] GetTitles() => (string.IsNullOrEmpty(Titles)) ? Array.Empty<string>() : Titles.Split(';');

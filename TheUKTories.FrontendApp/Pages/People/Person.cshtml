@@ -9,6 +9,7 @@
     <span>
         <a class="govuk-button" asp-page="/Portal/People/Edit" asp-route-id="@Model.Person.PersonId">Edit</a>
         <a class="govuk-button govuk-button--secondary" asp-page="/Portal/People/Quotes/Create" asp-route-id="@Model.Person.PersonId">+ Quote</a>
+        <a class="govuk-button govuk-button--secondary" asp-page="/Portal/People/Russia/Create" asp-route-id="@Model.Person.PersonId">+ RusCxn</a>
         <a class="govuk-button govuk-button--warning" asp-page="/Portal/People/Delete" asp-route-id="@Model.Person.PersonId">Delete</a>
     </span> 
 }
@@ -18,4 +19,8 @@
 
 @if (Model.Person.Quotes != null) {
     @await Html.PartialAsync("Partials/People/_QuoteList", Model.Person.Quotes.ToList())
+}
+
+@if (Model.Person.RussianConnections != null) {
+    @await Html.PartialAsync("Partials/People/_RusList", Model.Person.RussianConnections.ToList())
 }
