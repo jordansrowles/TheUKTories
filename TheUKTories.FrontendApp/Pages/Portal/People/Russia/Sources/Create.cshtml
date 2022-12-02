@@ -1,0 +1,32 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.People.Russia.Sources.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Create new RusCxn Source")
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="SelectedRusCxnId" />
+
+    <govuk-input asp-for="PersonRusCxnSource.Source"/>
+    <span asp-validation-for="PersonRusCxnSource.Source" class="text-danger"/>
+
+    <govuk-input asp-for="PersonRusCxnSource.Link"/>
+    <span asp-validation-for="PersonRusCxnSource.Link" class="text-danger"/>
+
+    <govuk-date-input asp-for="PersonRusCxnSource.Date" />
+    <span asp-validation-for="PersonRusCxnSource.Date" class="text-danger"/>
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>
+
+<div>
+    <a class="govuk-button" asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
