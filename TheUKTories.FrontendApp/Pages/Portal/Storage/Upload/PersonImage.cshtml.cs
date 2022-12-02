@@ -13,9 +13,11 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Storage
             Storage = storage;
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
 
+            await Storage.UploadFileBlobAsync(file.OpenReadStream(), file.ContentType, "profiles", file.FileName);
+            return RedirectToPage("../Index");
         }
     }
 }

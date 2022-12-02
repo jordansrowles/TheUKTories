@@ -2,3 +2,11 @@
 @model TheUKTories.FrontendApp.Pages.Portal.Storage.CreateModel
 @{
 }
+
+<form method="post" enctype="multipart/form-data">
+    <govuk-file-upload name="file" typeof="file">
+        <govuk-file-upload-label>Upload a file</govuk-file-upload-label>
+    </govuk-file-upload>
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>
