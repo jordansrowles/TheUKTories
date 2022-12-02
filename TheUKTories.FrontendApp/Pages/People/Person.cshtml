@@ -20,3 +20,7 @@
 @if (Model.Person.Quotes != null) {
     @await Html.PartialAsync("Partials/People/_QuoteList", Model.Person.Quotes.ToList())
 }
+
+@if (Model.Person.RussianConnections != null) {
+    @await Html.PartialAsync("Partials/People/_RusList", Model.Person.RussianConnections.ToList())
+}
