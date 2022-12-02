@@ -28,19 +28,22 @@ namespace TheUKTories.Services.Data.EFCore
         public DbSet<PersonGeneral>? PeopleGeneral { get; set; }
         public DbSet<PersonQuoteSource>? PersonQuoteSources { get; set; }
         public DbSet<PersonGeneralSource>? PersonGeneralSources { get; set; }
+        public DbSet<PersonRusCxn>? PersonRusCxn { get; set; }
+        public DbSet<PersonRusCxnSource>? PersonRusCxnSource { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options
-                .UseSqlServer(Globals.TryGetConnectionString(Globals.ConnectionString));
+                .UseSqlServer(Globals.TryGetConnectionString(Globals.ExpressConnectionString));
 
             options.LogTo(Console.WriteLine).EnableDetailedErrors().EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            /*
-            // Set up value converter for titles
+            
+            /* Set up value converter for titles
             var person_titles_converter = new ValueConverter<string[], string>(
                 v => string.Join(";", v),
                 v => v.Split(";", StringSplitOptions.RemoveEmptyEntries).ToArray());
