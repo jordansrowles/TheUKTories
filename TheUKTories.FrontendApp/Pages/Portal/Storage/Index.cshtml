@@ -1,0 +1,33 @@
+﻿@page
+@model TheUKTories.FrontendApp.Pages.Portal.Storage.IndexModel
+@{
+}
+
+<a class="govuk-button" asp-page="./Upload/PersonImage">Upload Profile Picture</a>
+
+@await Html.PartialAsync("Partials/General/Titles/_Title", "Profile Images")
+
+
+<form method="post" enctype="multipart/form-data" asp-page-handler="Upload">
+    <govuk-file-upload name="file" typeof="file">
+        <govuk-file-upload-label>Upload a file</govuk-file-upload-label>
+    </govuk-file-upload>
+
+    <govuk-button type="submit" value="Create">Submit</govuk-button>
+</form>
+
+
+
+<ul class="govuk-list govuk-list--spaced">
+    @foreach(var item in Model.ProfileImages)
+    {
+        <li>
+            <a href="@item.Value">@item.Key</a>
+            <form method="post" enctype="multipart/form-data" asp-page-handler="Delete">
+                <input type="hidden" name="key" value="@item.Key" />
+
+                <govuk-button type="submit" value="Delete">Delete</govuk-button>
+            </form>
+        </li>
+    }
+</ul>

@@ -13,6 +13,8 @@
         private readonly ILogger<BlobStorageService> _logger;
         BlobServiceClient _client;
 
+        public BlobServiceClient Client => _client;
+
         public IConfiguration Config { get; }
 
         public BlobStorageService(IConfiguration config, ILogger<BlobStorageService> logger)
@@ -40,6 +42,12 @@
             return ("", exist.Value);
         }
 
+        public async Task DeleteBlobAsync(string container_name, string filename)
+        {
+            var container = _client.GetBlobContainerClient(container_name);
+            await container.GetBlobClient(filename).DeleteAsync();
+        }
+
         public async Task<Dictionary<string, Uri>> Iterate(string container_name)
         {
             var container = _client.GetBlobContainerClient(container_name);
@@ -53,8 +61,11 @@
         }
 
         // Person profile images
-        public async Task<string> UploadPersonProfileImage(Stream data, Person person) => 
-            await UploadFileBlobAsync(data, "", "people_profile_images", person.GetProfileImageName());
-        public async Task<Dictionary<string, Uri>> AllPeopleProfileImages() => await Iterate("people_profile_images");
+        public async Task<string> UploadPersonProfileImage(Stream data, Person person) {
+            return await UploadFileBlobAsync(data, "", "profiles", person.GetProfileImageName());
+
+        }
+
+        public async Task<Dictionary<string, Uri>> AllPeopleProfileImages() => await Iterate("profiles");
     }
 }
