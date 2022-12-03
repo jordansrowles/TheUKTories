@@ -20,5 +20,22 @@ namespace TheUKTories.FrontendApp.Pages.Portal.Storage
         {
             ProfileImages = await _service.Iterate("profiles");
         }
+        
+        public async Task<IActionResult> OnPostUpload(IFormFile file)
+        {
+            await _service.UploadFileBlobAsync(file.OpenReadStream(), file.ContentType, "profiles", file.FileName);
+            return RedirectToPage("./Index");
+        }
+
+        public async Task<IActionResult> OnPostDelete(string key)
+        {
+            if (key == null) 
+                return NotFound();
+            else
+            {
+                await _service.DeleteBlobAsync("profiles", key);
+                return RedirectToPage("./Index");
+            }
+        }
     }
 }

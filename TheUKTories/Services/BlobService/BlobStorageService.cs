@@ -13,6 +13,8 @@
         private readonly ILogger<BlobStorageService> _logger;
         BlobServiceClient _client;
 
+        public BlobServiceClient Client => _client;
+
         public IConfiguration Config { get; }
 
         public BlobStorageService(IConfiguration config, ILogger<BlobStorageService> logger)
@@ -38,6 +40,12 @@
             var exist = await blob.ExistsAsync();
             if (exist) return (blob.Uri.AbsoluteUri, exist.Value);
             return ("", exist.Value);
+        }
+
+        public async Task DeleteBlobAsync(string container_name, string filename)
+        {
+            var container = _client.GetBlobContainerClient(container_name);
+            await container.GetBlobClient(filename).DeleteAsync();
         }
 
         public async Task<Dictionary<string, Uri>> Iterate(string container_name)
