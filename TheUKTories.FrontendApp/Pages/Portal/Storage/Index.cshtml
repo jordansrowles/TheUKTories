@@ -22,7 +22,7 @@
     @foreach(var item in Model.ProfileImages)
     {
         <li>
-            <a href="@item.Value">@item.Key</a>
+            <img style="display: inline;" src="@item.Value" alt="@item.Key" height="250" width="250"/>
             <form method="post" enctype="multipart/form-data" asp-page-handler="Delete">
                 <input type="hidden" name="key" value="@item.Key" />
 
