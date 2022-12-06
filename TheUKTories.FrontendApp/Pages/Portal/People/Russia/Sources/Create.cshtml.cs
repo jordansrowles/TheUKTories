@@ -37,7 +37,7 @@ namespace TheUKTories.FrontendApp.Pages.Portal.People.Russia.Sources
             _context.PersonRusCxnSource.Add(PersonRusCxnSource);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Create", new { id = PersonRusCxnSource.PersonRusCxnId });
         }
     }
 }
