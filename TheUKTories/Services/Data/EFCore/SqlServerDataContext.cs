@@ -35,7 +35,7 @@ namespace TheUKTories.Services.Data.EFCore
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options
-                .UseSqlServer(Globals.TryGetConnectionString(Globals.ExpressConnectionString));
+                .UseSqlServer(Globals.TryGetConnectionString(Globals.ConnectionString));
 
             options.LogTo(Console.WriteLine).EnableDetailedErrors().EnableSensitiveDataLogging();
         }

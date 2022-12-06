@@ -20,7 +20,7 @@ namespace TheUKTories.FrontendApp.Pages
 
         public async Task OnGet()
         {
-            _db.Database.Migrate();
+            //_db.Database.Migrate();
         }
     }
 }
