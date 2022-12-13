@@ -28,12 +28,21 @@ namespace TheUKTories.FrontendApp.Pages.People
                 return NotFound();
             }
 
-            var person = await _context.People
-                .Include(i => i.Quotes)
-                    .ThenInclude(q => q.SourceItems)
-                .Include(i => i.RussianConnections)
-                    .ThenInclude(q => q.SourceItems)
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+            Person? person = User.Identity.IsAuthenticated
+                ? await _context.People
+                    .Include(i => i.Quotes)
+                        .ThenInclude(q => q.SourceItems)
+                    .Include(i => i.RussianConnections)
+                        .ThenInclude(q => q.SourceItems)
+                    .FirstOrDefaultAsync(m => m.PersonId == id)
+                : await _context.People
+                    .Where(i => i.IsProfilePublic)
+                    .Include(i => i.Quotes)
+                        .ThenInclude(q => q.SourceItems)
+                    .Include(i => i.RussianConnections)
+                        .ThenInclude(q => q.SourceItems)
+                    .FirstOrDefaultAsync(m => m.PersonId == id);
+
             if (person == null)
             {
                 return NotFound();
