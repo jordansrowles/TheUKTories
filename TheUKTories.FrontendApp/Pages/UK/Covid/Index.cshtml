@@ -64,7 +64,7 @@
     <govuk-accordion-item>
         <govuk-accordion-item-heading>@Model.AllResponses.Count Government Responses to the Virus</govuk-accordion-item-heading>
             @if (User.Identity.IsAuthenticated) { <p><a class="govuk-button" asp-page="/Portal/UK/Covid/Responses/Create">Add Response</a></p> }
-            <ul class="govuk-list govuk-list--bullet">
+            <ul class="govuk-list govuk-list--spaced govuk-list--bullet">
                 @foreach (CovidGovResponse item in Model.AllResponses)
                 {
                     <li class="govuk-body">
